@@ -49,10 +49,14 @@ public class Galtc2 {
 
 
     public Galtc2() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        FMLJavaModLoadingContext context = FMLJavaModLoadingContext.get();
 
         // Register the commonSetup method for modloading
+        IEventBus modEventBus = context.getModEventBus();
+        IEventBus forgeEventBus = MinecraftForge.EVENT_BUS;
+        MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::commonSetup);
+
 
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
@@ -65,10 +69,13 @@ public class Galtc2 {
         MinecraftForge.EVENT_BUS.register(this);
 
         // Register the item to a creative tab
-        modEventBus.addListener(this::addCreative);
-        galtcItem.register(modEventBus);
-        galtctag.register(modEventBus);
-        galtc2Modifier.MODIFIERS.register(modEventBus);
+      galtc2Fluid.FLUIDS.register(modEventBus);
+      galtcItem.ITEMS.register(modEventBus);
+      galtctag.CREATIVE_MODE_TAB_DEFERRED_REGISTER.register(modEventBus);
+      galtc2Modifier.MODIFIERS.register(modEventBus);
+
+
+
 
 
 

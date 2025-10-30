@@ -24,18 +24,18 @@ public class galtc2Modifier {
 
     public  static  final  StaticModifier<eightstrike> Eightstrike = MODIFIERS.register("eightstrike",eightstrike::new);
 
-    public  static  final StaticModifier<longnv> Longnv = MODIFIERS.register("longnv",longnv::new);
+    public  static  final StaticModifier<Kagome> kagome= MODIFIERS.register("kagome",Kagome::new);
     public static  final  StaticModifier<broke> Broke = MODIFIERS.register("broke",broke::new);
 
     public  static  final  StaticModifier<leeched> leeched =MODIFIERS.register("leeched",leeched::new);
 
     public static  final StaticModifier<narcissus> narcissus = MODIFIERS.register("narcissus",narcissus::new);
 
+    public static final StaticModifier<Valuation> valuation = MODIFIERS.register("valuation",Valuation::new);
 
 
 
-    public static <T extends Modifier> void modifier(ModifierManager.ModifierRegistrationEvent event, ModifierDatas id, Supplier<T> modifier) {
-        event.registerStatic(id.getId(), modifier.get());
-    }
+
+   public static void register(){}
 
 }

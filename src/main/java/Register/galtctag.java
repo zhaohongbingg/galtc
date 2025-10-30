@@ -17,18 +17,19 @@ public class galtctag {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Galtc2.MODID);
     public static final RegistryObject<CreativeModeTab> galtctab =
             CREATIVE_MODE_TAB_DEFERRED_REGISTER.register("galtc2",()-> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(galtcItem.SPRB.get()))
+                    .icon(() -> new ItemStack(galtcItem.sprb.get()))
                     .title(Component.translatable("itemGroup.galtctab"))
                     .displayItems((pParameters,pOutput)->{
-                        pOutput.accept(galtcItem.Test.get());
-                        pOutput.accept(galtcItem.SPRB.get());
+                        galtcItem.ALL_ITEMS.forEach(item->
+                                pOutput.accept(item.get()));
+
                     })
                     .build());
 
 
 
-public static void register(IEventBus eventBus){
-    CREATIVE_MODE_TAB_DEFERRED_REGISTER.register(eventBus);
+public static void register(){
+
 }
 
 

@@ -17,7 +17,7 @@ public class narcissus extends BaseModifiers{
         Entity entity = context.getTarget();
         if (entity instanceof LivingEntity target) {
             if (target != null) {
-                // 每级造成目标最大血量2%的额外伤害
+                // 每级造成目标最大血量15%的额外伤害
                 float percentDamage = 0.15f * modifier.getEffectiveLevel();
                 float extraDamage = target.getMaxHealth() * percentDamage;
 

@@ -1,7 +1,73 @@
 {
-  "item.galtc2.test": "test",
-  "item.galtc2.sprb": "sprb"
+  "item.galtc2.sprb": "SPRB",
+  "item.galtc2.zeroone": "Zero-One Ingot",
+  "item.galtc2.kagome": "Kagome",
+  "item.galtc2.aosora": "Aosora",
+  "item.galtc2.kagari": "Kagari",
+  "item.galtc2.arti": "Arti",
+  "item.galtc2.apeiria": "Apeiria",
+  "item.galtc2.einstein": "Einstein",
+  "item.galtc2.narcissus": "Narcissus",
+
+
+
+  "modifier.galtc2.rude": "Rude",
+  "modifier.galtc2.rude.flavor": "Deal extra damage to enemies with more than 20 health",
+  "modifier.galtc2.power": "Power",
+  "modifier.galtc2.power.flavor": "Increases attack speed and damage",
+  "modifier.galtc2.sprb": "SPRB",
+  "modifier.galtc2.sprb.flavor": "Adds upgrade slots",
+  "modifier.galtc2.celestial": "Soaring",
+  "modifier.galtc2.celestial.flavor": "Flight",
+  "modifier.galtc2.zhuyin": "Sacred Sound",
+  "modifier.galtc2.zhuyin.flavor": "Echo strikes with extra damage",
+  "modifier.galtc2.eightstrike": "Eight Strike",
+  "modifier.galtc2.eightstrike.flavor": "High attack speed, ignores invincibility frames",
+  "modifier.galtc2.kagome": "Compensation",
+  "modifier.galtc2.kagome.flavor": "Kagome bears the negative effects for you",
+  "modifier.galtc2.broke": "Armor Break",
+  "modifier.galtc2.broke.flavor": "Armor piercing damage",
+  "modifier.galtc2.leeched": "Leeched",
+  "modifier.galtc2.leeched.flavor": "Life steal",
+  "modifier.galtc2.narcissus": "Narcissus",
+  "modifier.galtc2.narcissus.flavor": "Deals additional damage equal to 15% of target's maximum health",
+  "modifier.galtc2.valuation": "Gamble",
+  "modifier.galtc2.valuation.flavor": "Based on luck value, small chance to damage yourself, high chance to deal 1~99x damage to enemies",
+
+
+
+
+  "material.galtc2.sprb": "SPRB",
+  "material.galtc2.sprb.encyclopedia": "",
+
+  "material.galtc2.zeroone": "Zero One",
+  "material.galtc2.zeroone.encyclopedia": "",
+
+  "material.galtc2.kagome": "Kagome",
+  "material.galtc2.kagome.encyclopedia": "",
+
+  "material.galtc2.aosora": "Aosora",
+  "material.galtc2.aosora.encyclopedia": "",
+
+  "material.galtc2.kagari": "Kagari",
+  "material.galtc2.kagari.encyclopedia": "",
+
+  "material.galtc2.arti": "Arti",
+  "material.galtc2.arti.encyclopedia": "",
+
+  "material.galtc2.apeiria": "Apeiria",
+  "material.galtc2.apeiria.encyclopedia": "",
+
+  "material.galtc2.einstein": "Einstein",
+  "material.galtc2.einstein.encyclopedia": "",
+
+  "material.galtc2.narcissus": "Narcissus",
+  "material.galtc2.narcissus.encyclopedia": ""
+
 
 
 
 }
+
+
+

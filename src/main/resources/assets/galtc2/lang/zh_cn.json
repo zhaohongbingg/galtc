@@ -1,0 +1,69 @@
+{
+  "item.galtc2.sprb": "SPRB",
+  "item.galtc2.zeroone": "零一锭",
+  "item.galtc2.kagome": "笼女",
+  "item.galtc2.aosora": "苍彼",
+  "item.galtc2.kagari": "篝",
+  "item.galtc2.arti": "Arti",
+  "item.galtc2.apeiria": "艾佩理雅",
+  "item.galtc2.einstein": "爱因斯坦",
+  "item.galtc2.narcissus": "水仙",
+
+
+
+  "modifier.galtc2.rude": "粗鲁",
+  "modifier.galtc2.rude.flavor": "对高于20血的敌人造成额外伤害",
+  "modifier.galtc2.power": "强力",
+  "modifier.galtc2.power.flavor": "加攻击速度和伤害",
+  "modifier.galtc2.sprb": "SPRB",
+  "modifier.galtc2.sprb.flavor": "加升级槽位",
+  "modifier.galtc2.celestial": "翱翔",
+  "modifier.galtc2.celestial.flavor": "飞行",
+  "modifier.galtc2.zhuyin": "圣音",
+  "modifier.galtc2.zhuyin.flavor": "回音打击，额外伤害",
+  "modifier.galtc2.eightstrike": "八段刺",
+  "modifier.galtc2.eightstrike.flavor": "高额攻速，无视无敌帧",
+  "modifier.galtc2.kagome": "代偿",
+  "modifier.galtc2.kagome.flavor": "笼女替你承担了负面效果",
+  "modifier.galtc2.broke": "破甲",
+  "modifier.galtc2.broke.flavor": "穿甲伤害",
+  "modifier.galtc2.leeched": "汲取",
+  "modifier.galtc2.leeched.flavor": "吸血",
+  "modifier.galtc2.narcissus": "水仙",
+  "modifier.galtc2.narcissus.flavor": "额外造成目标最大血量15%的伤害",
+  "modifier.galtc2.valuation": "对赌",
+  "modifier.galtc2.valuation.flavor": "根据幸运值，小概率对自己造成伤害，大概率对敌人造成1~99倍的伤害",
+
+  "material.galtc2.sprb": "SPRB",
+  "material.galtc2.sprb.encyclopedia": "",
+
+  "material.galtc2.zeroone": "零一",
+  "material.galtc2.zeroone.encyclopedia": "",
+
+  "material.galtc2.kagome": "笼女",
+  "material.galtc2.kagome.encyclopedia": "",
+
+  "material.galtc2.aosora": "苍彼",
+  "material.galtc2.aosora.encyclopedia": "",
+
+  "material.galtc2.kagari": "篝",
+  "material.galtc2.kagari.encyclopedia": "",
+
+  "material.galtc2.arti": "Arti",
+  "material.galtc2.arti.encyclopedia": "",
+
+  "material.galtc2.apeiria": "艾佩理雅",
+  "material.galtc2.apeiria.encyclopedia": "",
+
+  "material.galtc2.einstein": "爱因斯坦",
+  "material.galtc2.einstein.encyclopedia": "",
+
+  "material.galtc2.narcissus": "水仙",
+  "material.galtc2.narcissus.encyclopedia": ""
+
+
+
+}
+
+
+
