@@ -28,7 +28,7 @@ public class Sprb extends Modifier implements VolatileDataModifierHook  {
     }
     @Override
     public void addVolatileData(IToolContext context, ModifierEntry modifier, ToolDataNBT volatileData) {
-        volatileData.addSlots(SlotType.UPGRADE,10);
+        volatileData.addSlots(SlotType.UPGRADE,2);
         }
     }
 

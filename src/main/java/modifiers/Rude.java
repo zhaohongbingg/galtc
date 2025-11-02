@@ -30,7 +30,7 @@ public class Rude extends Modifier implements MeleeDamageModifierHook {
             //检测该实体最大生命值是否为20点
             if(enemy!=null&&enemy.getMaxHealth()==20){
                 //是，则输出原伤害+996
-                return damage+996;
+                return damage+20;
             }
             //否则输出这个原伤害
             return damage;
