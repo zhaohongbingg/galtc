@@ -1,0 +1,195 @@
+{
+  "item.galtc2.sprb": "SPRB",
+  "item.galtc2.zeroone": "Zero-One Ingot",
+  "item.galtc2.kagome": "Kagome",
+  "item.galtc2.aosora": "Aosora",
+  "item.galtc2.kagari": "Kagari",
+  "item.galtc2.atri": "Atri",
+  "item.galtc2.apeiria": "Apeiria",
+  "item.galtc2.einstein": "Einstein",
+  "item.galtc2.narcissus": "Narcissus",
+  "item.galtc2.ca": "CA",
+  "item.galtc2.steinsgate": "Steinsgate",
+  "item.galtc2.azarashi": "Azarashi",
+  "item.galtc2.nighttimesheep": "Nighttime Sheep",
+  "item.galtc2.oumunnbyou": "Oumunnbyou",
+  "item.galtc2.kisaragikurenai": "Kisaragi Kurenai",
+  "item.galtc2.blacklily": "Black Lily",
+  "item.galtc2.muramasa": "Muramasa",
+  "item.galec2.kaleidoscope": "kaleidoscope",
+
+
+
+  "item.galtc2.molten_sprb_bucket": "Molten SPRB Bucket",
+  "item.galtc2.molten_zeroone_bucket": "Molten ZeroOne Bucket",
+  "item.galtc2.molten_kagome_bucket": "Molten Kagome Bucket",
+  "item.galtc2.molten_aosora_bucket": "Molten Aosora Bucket",
+  "item.galtc2.molten_kagari_bucket": "Molten Kagari Bucket",
+  "item.galtc2.molten_atri_bucket": "Molten ATRI Bucket",
+  "item.galtc2.molten_apeiria_bucket": "Molten Apeiria Bucket",
+  "item.galtc2.molten_einstein_bucket": "Molten Einstein Bucket",
+  "item.galtc2.molten_narcissus_bucket": "Molten Narcissus Bucket",
+  "item.galtc2.molten_ca_bucket": "Molten CA Bucket",
+  "item.galtc2.molten_steinsgate_bucket": "Molten Steinsgate Bucket",
+  "item.galtc2.molten_azarashi_bucket": "Molten Azarashi Bucket",
+  "item.galtc2.molten_nighttimesheep_bucket": "Molten Nighttime Sheep Bucket",
+  "item.galtc2.molten_oumunnbyou_bucket": "Molten Oumunnbyou Bucket",
+  "item.galtc2.molten_kisaragikurenai_bucket": "Molten Kisaragi Kurenai Bucket",
+  "item.galtc2.molten_blacklily_bucket": "Molten Black Lily Bucket",
+  "item.galtc2.molten_muramasa": "Molten muramasa",
+
+
+
+
+
+  "modifier.galtc2.rude": "Rude",
+  "modifier.galtc2.rude.flavor": "Deal extra damage to enemies with more than 20 health",
+  "modifier.galtc2.rude.description": "",
+  "modifier.galtc2.power": "Power",
+  "modifier.galtc2.power.flavor": "Increases attack speed and damage",
+  "modifier.galtc2.power.description": "",
+  "modifier.galtc2.sprb": "SPRB",
+  "modifier.galtc2.sprb.flavor": "Adds upgrade slots",
+  "modifier.galtc2.sprb.description": "",
+  "modifier.galtc2.celestial": "Soaring",
+  "modifier.galtc2.celestial.flavor": "Flight",
+  "modifier.galtc2.celestial.description": "",
+  "modifier.galtc2.zhuyin": "Sacred Sound",
+  "modifier.galtc2.zhuyin.flavor": "Echo strikes with extra damage",
+  "modifier.galtc2.zhuyin.description": "",
+  "modifier.galtc2.eightstrike": "Eight Strike",
+  "modifier.galtc2.eightstrike.flavor": "High attack speed, ignores invincibility frames",
+  "modifier.galtc2.eightstrike.description": "",
+  "modifier.galtc2.kagome": "Compensation",
+  "modifier.galtc2.kagome.flavor": "Kagome bears the negative effects for you",
+  "modifier.galtc2.kagome.description": "",
+  "modifier.galtc2.broke": "Armor Break",
+  "modifier.galtc2.broke.flavor": "Armor piercing damage",
+  "modifier.galtc2.broke.description": "",
+  "modifier.galtc2.leeched": "Leeched",
+  "modifier.galtc2.leeched.flavor": "Life steal",
+  "modifier.galtc2.leeched.description": "",
+  "modifier.galtc2.narcissus": "Narcissus",
+  "modifier.galtc2.narcissus.flavor": "Deals additional damage equal to 15% of target's maximum health",
+  "modifier.galtc2.narcissus.description": "",
+  "modifier.galtc2.valuation": "Gamble",
+  "modifier.galtc2.valuation.flavor": "Based on luck value, small chance to damage yourself, high chance to deal 1~99x damage to enemies",
+  "modifier.galtc2.valuation.description": "",
+  "modifier.galtc2.kaleidoscope": "Kaleidoscope",
+  "modifier.galtc2.kaleidoscope.flavor": "Attribute Enhancement",
+  "modifier.galtc2.kaleidoscope.description": "30% per level",
+  "modifier.galtc2.steinsgate": "Steins Gate",
+  "modifier.galtc2.steinsgate.flavor": "Deceive the world, fake death once",
+  "modifier.galtc2.steinsgate.description": "After feigning death, restores health and grants 2s invincibility, 60s cooldown",
+  "modifier.galtc2.azarashi": "Seal",
+  "modifier.galtc2.azarashi.flavor": "Big is good",
+  "modifier.galtc2.azarashi.description": "When attack value exceeds 100, triple the damage",
+  "modifier.galtc2.nighttimesheep": "Night Sheep",
+  "modifier.galtc2.nighttimesheep.flavor": "Small is good",
+  "modifier.galtc2.nighttimesheep.description": "Attack values below 50 receive additional bonus",
+  "modifier.galtc2.oumunnbyou": "Cherry Blossom Disease",
+  "modifier.galtc2.oumunnbyou.flavor": "Has a chance to stack cherry blossom marks",
+  "modifier.galtc2.oumunnbyou.description": "After 5 cherry blossom marks, deals massive damage",
+  "modifier.galtc2.kisaragikurenai": "Moonlit Shadow Phantom",
+  "modifier.galtc2.kisaragikurenai.flavor": "Three minutes to entry level",
+  "modifier.galtc2.kisaragikurenai.description": "Deals extra damage to non-spider creatures, increases health (armor)",
+  "modifier.galtc2.tagetes": "Marigold",
+  "modifier.galtc2.tagetes.flavor": "Frenzy",
+  "modifier.galtc2.tagetes.description": "Increases attack power based on lost health",
+  "modifier.galtc2.rosmarinus": "Rosemary",
+  "modifier.galtc2.rosmarinus.flavor": "Control",
+  "modifier.galtc2.rosmarinus.description": "3 second control effect",
+  "modifier.galtc2.lavare": "Lavender",
+  "modifier.galtc2.lavare.flavor": "Jealousy",
+  "modifier.galtc2.lavare.description": "Deals extra damage to high health and high armor targets",
+  "modifier.galtc2.muramasa": "Muramasa",
+  "modifier.galtc2.muramasa.flavor": "Good and evil offset",
+  "modifier.galtc2.muramasa.description": "After killing an enemy creature, must kill a friendly creature",
+  "modifier.galtc2.aid": "AI Resistance",
+  "modifier.galtc2.aid.flavor": "High-performance robots resist damage for you",
+  "modifier.galtc2.aid.description": "After taking damage, resist the same type of damage for 30s",
+  "modifier.galtc2.aia": "AI Armor",
+  "modifier.galtc2.aia.flavor": "Robots enhance your defense",
+  "modifier.galtc2.aia.description": "After taking 50 hits, increase armor and armor toughness by 1 point",
+
+
+
+
+
+
+
+
+  "material.galtc2.sprb": "SPRB",
+  "material.galtc2.sprb.encyclopedia": "Full of summer memories",
+
+  "material.galtc2.zeroone": "Zero One",
+  "material.galtc2.zeroone.encyclopedia": "High attack speed material",
+
+  "material.galtc2.kagome": "Kagome",
+  "material.galtc2.kagome.encyclopedia": "Block everything for you",
+
+  "material.galtc2.aosora": "Aosora",
+  "material.galtc2.aosora.encyclopedia": "Soar in the sky",
+
+  "material.galtc2.kagari": "Kagari",
+  "material.galtc2.kagari.encyclopedia": "Will of the Earth",
+
+  "material.galtc2.atri": "Atri",
+  "material.galtc2.atri.encyclopedia": "A high-performance robot girl",
+
+  "material.galtc2.apeiria": "Apeiria",
+  "material.galtc2.apeiria.encyclopedia": "High-performance AI",
+
+  "material.galtc2.einstein": "Einstein",
+  "material.galtc2.einstein.encyclopedia": "Carrying love to the utmost",
+
+  "material.galtc2.narcissus": "Narcissus",
+  "material.galtc2.narcissus.encyclopedia": "If your life had a countdown, what would you think about?",
+  "material.galtc2.ca": "CA",
+  "material.galtc2.ca.encyclopedia": "All in",
+  "material.galtc2.kaleidoscope": "Kaleidoscope",
+  "material.galtc2.kaleidoscope.encyclopedia": "Attribute Enhancement",
+  "material.galtc2.steinsgate": "Steins Gate",
+  "material.galtc2.steinsgate.encyclopedia": "El Psy Congroo",
+  "material.galtc2.azarashi": "Seal",
+  "material.galtc2.azarashi.encyclopedia": "Likes Big Ones",
+  "material.galtc2.nighttimesheep": "Night Sheep",
+  "material.galtc2.nighttimesheep.encyclopedia": "Likes Small Ones",
+  "material.galtc2.oumunnbyou": "Spare Parts of Life",
+  "material.galtc2.oumunnbyou.encyclopedia": "Death Comes as Scheduled",
+  "material.galtc2.kisaragikurenai": "Moonlit Shadow Phantom",
+  "material.galtc2.kisaragikurenai.encyclopedia": "Three Minutes to Entry Level",
+  "material.galtc2.blacklily": "Black Lily",
+  "material.galtc2.blacklily.encyclopedia": "Femme Fatale",
+  "material.galtc2.muramasa": "Muramasa",
+  "material.galtc2.muramasa.encyclopedia": "This is Not a Hero's Tale",
+
+  "fluid_type.galtc2.molten_sprb":"motlen_sprb",
+  "fluid_type.galtc2.molten_zeroone": "Molten ZEROONE",
+  "fluid_type.galtc2.molten_kagome": "Molten Kagome",
+  "fluid_type.galtc2.molten_aosora": "Molten Aosora",
+  "fluid_type.galtc2.molten_kagari": "Molten Kagari",
+  "fluid_type.galtc2.molten_atri": "Molten Atri",
+  "fluid_type.galtc2.molten_apeiria": "Molten Apeiria",
+  "fluid_type.galtc2.molten_einstein": "Molten Einstein",
+  "fluid_type.galtc2.molten_narcissus": "Molten Narcissus",
+  "fluid_type.galtc2.molten_ca": "Molten CA",
+  "fluid_type.galtc2.molten_steinsgate": "Molten Steins Gate",
+  "fluid_type.galtc2.molten_azarashi": "Molten Azarashi",
+  "fluid_type.galtc2.molten_nighttimesheep": "Molten Nighttime Sheep",
+  "fluid_type.galtc2.molten_oumunnbyou": "Molten Oumunnbyou",
+  "fluid_type.galtc2.molten_kisaragikurenai": "Molten Kisaragi Kurenai",
+  "fluid_type.galtc2.molten_blacklily": "Molten Black Lily",
+  "fluid.type.galtc2.molten_muramasa": "Molten muranasa",
+
+
+
+  "message.galtc.death_immunity":"Deceive the world, El Psy Congroo"
+
+
+
+
+}
+
+
+

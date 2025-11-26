@@ -1,0 +1,14 @@
+GALTC2 熔融流体桶模型文件汇总
+========================================
+
+已创建的桶模型文件:
+
+ 1. molten_steinsgate_bucket.json -> galtc2:molten_steinsgate
+ 2. molten_azarashi_bucket.json -> galtc2:molten_azarashi
+ 3. molten_nighttimesheep_bucket.json -> galtc2:molten_nighttimesheep
+ 4. molten_oumunnbyou_bucket.json -> galtc2:molten_oumunnbyou
+ 5. molten_kisaragikurenai_bucket.json -> galtc2:molten_kisaragikurenai
+ 6. molten_blacklil_bucket.json -> galtc2:molten_blacklil
+
+总计: 6 个桶模型文件
+创建时间: 2025-11-23 20:58:32
