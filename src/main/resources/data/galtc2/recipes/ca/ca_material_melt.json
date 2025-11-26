@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "galtc2:ca",
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_ca"
+  },
+  "temperature": 1200
+}

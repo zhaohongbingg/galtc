@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "galtc2:blacklily",
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_blacklily"
+  },
+  "temperature": 1200
+}
