@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_fluid",
-  "fluid": {
-    "amount": 90,
-    "fluid": "galtc2:molten_aosora"
-  },
-  "output": "galtc2:aosora",
-  "temperature": 1200
-}

@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "galtc2:apeiria",
-  "result": {
-    "amount": 90,
-    "fluid": "galtc2:molten_apeiria"
-  },
-  "temperature": 1200
-}

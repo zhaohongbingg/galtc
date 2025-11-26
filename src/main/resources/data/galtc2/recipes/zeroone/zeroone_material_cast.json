@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_fluid",
-  "fluid": {
-    "amount": 90,
-    "fluid": "galtc2:molten_zeroone"
-  },
-  "output": "galtc2:zeroone",
-  "temperature": 1200
-}

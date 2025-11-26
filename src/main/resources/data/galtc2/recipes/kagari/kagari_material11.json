@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "item": "galtc2:kagari"
-  },
-  "material": "galtc2:kagari",
-  "needed": 1,
-  "value": 1
-}
