@@ -1,28 +1,28 @@
 {
   "stats": {
-    "tconstruct:extra": {},
+    "tconstruct:binding": {},
+    "tconstruct:grip": {
+      "accuracy": -0.2,
+      "durability": 1.1,
+      "melee_damage": 3.5
+    },
     "tconstruct:handle": {
       "durability": 0.42,
-      "miningSpeed": 0.42,
-      "attackSpeed": 0.42,
-      "attackDamage": 0.42
+      "melee_damage": 0.42,
+      "melee_speed": 0.42,
+      "mining_speed": 0.42
     },
     "tconstruct:head": {
       "durability": 1200,
-      "miningSpeed": 8,
-      "harvestTier": "minecraft:netherite",
-      "attack": 8
+      "melee_attack": 8,
+      "mining_speed": 8,
+      "mining_tier": "minecraft:netherite"
     },
     "tconstruct:limb": {
+      "accuracy": -0.15,
+      "draw_speed": -0.35,
       "durability": 1250,
-      "drawSpeed": -0.35,
-      "velocity": 0.25,
-      "accuracy": -0.15
-    },
-    "tconstruct:grip": {
-      "durability": 1.1,
-      "accuracy": -0.2,
-      "meleeAttack": 3.5
+      "velocity": 0.25
     },
     "tconstruct:maille": {},
     "tconstruct:plating_boots": {
