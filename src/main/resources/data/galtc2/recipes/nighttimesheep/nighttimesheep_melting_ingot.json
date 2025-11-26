@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:nighttimesheep"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_nighttimesheep"
+  },
+  "temperature": 1200,
+  "time": 72
+}
