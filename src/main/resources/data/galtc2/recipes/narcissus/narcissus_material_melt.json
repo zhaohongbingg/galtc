@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "galtc2:narcissus",
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_narcissus"
+  },
+  "temperature": 1200
+}

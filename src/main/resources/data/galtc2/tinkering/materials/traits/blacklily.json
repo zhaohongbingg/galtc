@@ -1,0 +1,16 @@
+{
+  "default": [
+    {
+      "name": "galtc2:tagetes",
+      "level": 1
+    },
+    {
+      "name": "galtc2:lavare",
+      "level": 1
+    },
+    {
+      "name": "galtc2:rosmarinus",
+      "level": 1
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:kisaragikurenai"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_kisaragikurenai"
+  },
+  "temperature": 1200,
+  "time": 72
+}

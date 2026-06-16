@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "galtc2:muramasa"
+  },
+  "material": "galtc2:muramasa",
+  "needed": 1,
+  "value": 1
+}

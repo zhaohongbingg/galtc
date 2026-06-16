@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "galtc2:kagari",
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_kagari"
+  },
+  "temperature": 1200
+}

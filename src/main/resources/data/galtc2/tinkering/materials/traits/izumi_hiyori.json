@@ -1,0 +1,12 @@
+{
+  "default": [
+    {
+      "name": "galtc2:spoiled_by_rich_girl",
+      "level": 1
+    },
+    {
+      "name": "galtc2:healed_by_sister",
+      "level": 1
+    }
+  ]
+}
