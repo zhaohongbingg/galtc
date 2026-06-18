@@ -36,6 +36,11 @@ public class galtcFluidGen extends AbstractFluidTextureProvider {
         this.molten(galtc2Fluid.molten_muramasa,  0xFF660000);
         this.molten(galtc2Fluid.molten_shochou, 0xFFcdb29e);
         this.molten(galtc2Fluid.molten_izumi_hiyori, 0xFFfff0a5);
+        this.molten(galtc2Fluid.molten_nishiki_asumi, 0xFFD8EFF5);
+        this.molten(galtc2Fluid.molten_qienidian, 0xFFB4B9DD);
+        this.molten(galtc2Fluid.molten_rewrite, 0xFFE9AD86);
+        this.molten(galtc2Fluid.molten_badwoman, 0xFFF9C9D3);
+        this.molten(galtc2Fluid.molten_galaxy_railroad, 0xFF0A1128);
 
 
 

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:galaxy_railroad"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_galaxy_railroad"
+  },
+  "temperature": 900,
+  "time": 60
+}

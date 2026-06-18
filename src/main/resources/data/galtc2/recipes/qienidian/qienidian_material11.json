@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "galtc2:qienidian"
+  },
+  "material": "galtc2:qienidian",
+  "needed": 1,
+  "value": 1
+}

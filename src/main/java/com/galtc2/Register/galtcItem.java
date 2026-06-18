@@ -63,6 +63,16 @@ public class galtcItem {
             ITEMS.register("shochou",()->new Item(new Item.Properties()));//所长
     public static final RegistryObject<Item> izumi_hiyori =
             ITEMS.register("izumi_hiyori",()->new Item(new Item.Properties()));//泉ひより
+    public static final RegistryObject<Item> nishiki_asumi =
+            ITEMS.register("nishiki_asumi",()->new Item(new Item.Properties()));//锦明日海
+    public static final RegistryObject<Item> qienidian =
+            ITEMS.register("qienidian",()->new Item(new Item.Properties()));//奇恩异典
+    public static final RegistryObject<Item> rewrite =
+            ITEMS.register("rewrite",()->new Item(new Item.Properties()));//罚抄
+    public static final RegistryObject<Item> badwoman =
+            ITEMS.register("badwoman",()->new Item(new Item.Properties()));//坏女人
+    public static final RegistryObject<Item> galaxy_railroad =
+            ITEMS.register("galaxy_railroad",()->new Item(new Item.Properties()));//银河铁道之夜
 
 
     public static final List<RegistryObject<Item>> ALL_ITEMS = List.of(
@@ -87,7 +97,12 @@ public class galtcItem {
             gal_core,
             gal_record,
             shochou,
-            izumi_hiyori
+            izumi_hiyori,
+            nishiki_asumi,
+            qienidian,
+            rewrite,
+            badwoman,
+            galaxy_railroad
     );
 
 

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:nishiki_asumi"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_nishiki_asumi"
+  },
+  "temperature": 900,
+  "time": 60
+}

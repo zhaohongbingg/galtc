@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "galtc2:kisaragikurenai",
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_kisaragikurenai"
+  },
+  "temperature": 1200
+}

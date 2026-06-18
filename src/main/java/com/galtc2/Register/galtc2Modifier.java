@@ -63,6 +63,19 @@ public class galtc2Modifier {
     public static final StaticModifier<SpoiledByRichGirl> spoiled_by_rich_girl = MODIFIERS.register("spoiled_by_rich_girl",SpoiledByRichGirl::new);
     public static final StaticModifier<HealedBySister> healed_by_sister = MODIFIERS.register("healed_by_sister",HealedBySister::new);
 
+    public static final StaticModifier<MeatbunModifier> meatbun = MODIFIERS.register("meatbun", MeatbunModifier::new);
+    public static final StaticModifier<VtbModifier> vtb = MODIFIERS.register("vtb", VtbModifier::new);
+    public static final StaticModifier<QienModifier> qien = MODIFIERS.register("qien", QienModifier::new);
+    public static final StaticModifier<YidianModifier> yidian = MODIFIERS.register("yidian", YidianModifier::new);
+    public static final StaticModifier<RewriteModifier> rewrite = MODIFIERS.register("rewrite", RewriteModifier::new);
+    public static final StaticModifier<HeartWallModifier> heartwall = MODIFIERS.register("heartwall", HeartWallModifier::new);
+    public static final StaticModifier<ZouLeZouLeModifier> zoulezoule = MODIFIERS.register("zoulezoule", ZouLeZouLeModifier::new);
+    public static final StaticModifier<CamusModifier> camus = MODIFIERS.register("camus", CamusModifier::new);
+    public static final StaticModifier<WonderfulModifier> wonderful = MODIFIERS.register("wonderful", WonderfulModifier::new);
+    public static final StaticModifier<StarryTravelModifier> starry_travel = MODIFIERS.register("starry_travel", StarryTravelModifier::new);
+    public static final StaticModifier<StarryTravelArmorModifier> starry_travel_armor = MODIFIERS.register("starry_travel_armor", StarryTravelArmorModifier::new);
+    public static final StaticModifier<SuperLuckyModifier> super_lucky = MODIFIERS.register("super_lucky", SuperLuckyModifier::new);
+
 
 
 

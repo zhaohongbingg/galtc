@@ -1,0 +1,16 @@
+{
+  "default": [
+    {
+      "name": "galtc2:vtb",
+      "level": 1
+    }
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:meatbun",
+        "level": 1
+      }
+    ]
+  }
+}

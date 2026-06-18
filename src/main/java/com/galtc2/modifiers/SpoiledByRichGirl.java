@@ -1,38 +1,44 @@
 package com.galtc2.modifiers;
 
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
-import slimeknights.tconstruct.library.modifiers.hook.interaction.EntityInteractionModifierHook;
-import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
+import slimeknights.tconstruct.library.modifiers.hook.armor.EquipmentChangeModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
+import slimeknights.tconstruct.library.tools.context.EquipmentChangeContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-/**
- * 被富婆包养了 - 与村民交互时获得额外好感
- */
-public class SpoiledByRichGirl extends Modifier implements EntityInteractionModifierHook {
+public class SpoiledByRichGirl extends Modifier implements EquipmentChangeModifierHook {
+
+    private static final int EFFECT_DURATION = Integer.MAX_VALUE;
 
     public SpoiledByRichGirl() {}
 
     @Override
     protected void registerHooks(ModuleHookMap.@NotNull Builder hookBuilder) {
-        hookBuilder.addHook(this, ModifierHooks.ENTITY_INTERACT);
+        hookBuilder.addHook(this, ModifierHooks.EQUIPMENT_CHANGE);
     }
 
     @Override
-    public InteractionResult afterEntityUse(IToolStackView tool, ModifierEntry modifier, Player player, LivingEntity target, InteractionHand hand, InteractionSource source) {
-        // 当与村民交互时触发
-        if (target instanceof Villager villager && !player.level().isClientSide) {
-            // 可以在这里添加额外逻辑
-            // 例如：给予玩家更好的交易价格（需要自定义实现）
+    public void onEquip(IToolStackView tool, ModifierEntry modifier, EquipmentChangeContext context) {
+        LivingEntity entity = context.getEntity();
+        if (entity instanceof Player player && !entity.level().isClientSide()) {
+            int level = modifier.getLevel();
+            int amplifier = level + 1;
+            player.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, EFFECT_DURATION, amplifier, false, false, true));
         }
-        return InteractionResult.PASS;
+    }
+
+    @Override
+    public void onUnequip(IToolStackView tool, ModifierEntry modifier, EquipmentChangeContext context) {
+        LivingEntity entity = context.getEntity();
+        if (entity instanceof Player player && !entity.level().isClientSide()) {
+            player.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
+        }
     }
 }

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:badwoman"
+  },
+  "result": {
+    "fluid": "galtc2:molten_badwoman",
+    "amount": 90
+  },
+  "temperature": 900,
+  "time": 60
+}

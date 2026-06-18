@@ -1,0 +1,16 @@
+{
+  "default": [
+    {
+      "name": "galtc2:zoulezoule",
+      "level": 1
+    }
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:heartwall",
+        "level": 1
+      }
+    ]
+  }
+}

@@ -12,9 +12,6 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-/**
- * 被妹妹治愈了 - 受到伤害后，恢复3/4的血量
- */
 public class HealedBySister extends Modifier implements OnAttackedModifierHook {
 
     public HealedBySister() {}
@@ -26,10 +23,12 @@ public class HealedBySister extends Modifier implements OnAttackedModifierHook {
 
     @Override
     public void onAttacked(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
-        // 受到伤害后恢复3/4的血量
         LivingEntity entity = context.getEntity();
         if (entity != null && !entity.level().isClientSide) {
-            float healAmount = amount * 0.75f;
+            int level = modifier.getLevel();
+            // 1级=1/4, 2级=2/4, 3级=3/4
+            float healRatio = level * 0.25f;
+            float healAmount = amount * healRatio;
             entity.heal(healAmount);
         }
     }

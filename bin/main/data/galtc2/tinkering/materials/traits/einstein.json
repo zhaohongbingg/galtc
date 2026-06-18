@@ -1,0 +1,12 @@
+{
+  "default": [
+    {
+      "name": "galtc2:aid",
+      "level": 1
+    },
+    {
+      "name": "galtc2:aia",
+      "level": 1
+    }
+  ]
+}

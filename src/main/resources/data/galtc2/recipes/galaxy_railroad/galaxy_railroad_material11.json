@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "galtc2:galaxy_railroad"
+  },
+  "material": "galtc2:galaxy_railroad",
+  "needed": 1,
+  "value": 1
+}
