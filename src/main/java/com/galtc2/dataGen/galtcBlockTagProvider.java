@@ -20,9 +20,17 @@ public class galtcBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(galtcBlock.GAL_ORE.get());
+                .add(galtcBlock.GAL_ORE.get())
+                .add(galtcBlock.JUQING_ORE.get())
+                .add(galtcBlock.SEQI_ORE.get())
+                .add(galtcBlock.FEIMENG_ORE.get())
+                .add(galtcBlock.GURO_ORE.get());
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(galtcBlock.GAL_ORE.get());
+                .add(galtcBlock.GAL_ORE.get())
+                .add(galtcBlock.JUQING_ORE.get())
+                .add(galtcBlock.SEQI_ORE.get())
+                .add(galtcBlock.FEIMENG_ORE.get())
+                .add(galtcBlock.GURO_ORE.get());
     }
 }

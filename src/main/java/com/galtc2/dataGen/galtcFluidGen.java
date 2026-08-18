@@ -19,9 +19,7 @@ public class galtcFluidGen extends AbstractFluidTextureProvider {
     public void addTextures() {
         this.molten(galtc2Fluid.molten_kagome, 0xFFF8F8FF);
         this.molten(galtc2Fluid.molten_aosora, 0xFF87CEFA);
-        this.molten(galtc2Fluid.molten_kagari, 0xFFe6aefc);
         this.molten(galtc2Fluid.molten_apeiria, 0xFFfcf7e1);
-        this.molten(galtc2Fluid.molten_einstein, 0xFFF5F5DC);
         this.molten(galtc2Fluid.molten_narcissus, 0xFFBF9DFD);
         this.molten(galtc2Fluid.molten_ca, 0xFFFFD700);
         this.molten(galtc2Fluid.molten_atri,0xFFfce6d8);
@@ -41,6 +39,12 @@ public class galtcFluidGen extends AbstractFluidTextureProvider {
         this.molten(galtc2Fluid.molten_rewrite, 0xFFE9AD86);
         this.molten(galtc2Fluid.molten_badwoman, 0xFFF9C9D3);
         this.molten(galtc2Fluid.molten_galaxy_railroad, 0xFF0A1128);
+        this.molten(galtc2Fluid.molten_ciallo, 0xFFB6CFA5);
+
+        this.molten(galtc2Fluid.molten_juqing, 0xFFD4AF37);
+        this.molten(galtc2Fluid.molten_seqi, 0xFFFF69B4);
+        this.molten(galtc2Fluid.molten_feimeng, 0xFF87CEEB);
+        this.molten(galtc2Fluid.molten_guro, 0xFF8B0000);
 
 
 

@@ -74,6 +74,8 @@ public class GaltcConfig {
 
         // 所长(Shochou) 财迷特性配置
         public final ForgeConfigSpec.ConfigValue<String> SHOCHOU_MONEY_ITEM;
+        public final ForgeConfigSpec.DoubleValue SHOCHOU_DROP_CHANCE;
+        public final ForgeConfigSpec.IntValue SHOCHOU_DROP_AMOUNT;
 
         // 心之壁配置
         public final ForgeConfigSpec.IntValue HEARTWALL_SHIELD_PER_LEVEL;
@@ -81,7 +83,6 @@ public class GaltcConfig {
         // 星空列车配置
         public final ForgeConfigSpec.IntValue STARRY_TRAVEL_CHUNKS_PER_DAMAGE;
         public final ForgeConfigSpec.IntValue STARRY_TRAVEL_CHUNKS_PER_ARMOR;
-
 
         public Common(ForgeConfigSpec.Builder builder) {
 
@@ -103,6 +104,12 @@ public class GaltcConfig {
             this.SHOCHOU_MONEY_ITEM = builder
                     .comment("财迷特性：掉落的物品ID，默认为绿宝石(minecraft:emerald)")
                     .define("shochouMoneyItem", "minecraft:emerald");
+            this.SHOCHOU_DROP_CHANCE = builder
+                    .comment("财迷特性：每次攻击掉落概率，0.8表示80%")
+                    .defineInRange("shochouDropChance", 0.8, 0.01, 1.0);
+            this.SHOCHOU_DROP_AMOUNT = builder
+                    .comment("财迷特性：单次掉落数量上限（在1~上限之间随机掉落）")
+                    .defineInRange("shochouDropAmount", 10, 1, 10);
 
             // 心之壁配置
             this.HEARTWALL_SHIELD_PER_LEVEL = builder
@@ -116,8 +123,6 @@ public class GaltcConfig {
             this.STARRY_TRAVEL_CHUNKS_PER_ARMOR = builder
                     .comment("星空列车：每多少区块增加1点护甲值和韧性")
                     .defineInRange("starryTravelChunksPerArmor", 5, 1, 100);
-
-
 
         }
 

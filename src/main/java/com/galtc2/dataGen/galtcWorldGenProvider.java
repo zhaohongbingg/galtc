@@ -41,25 +41,103 @@ public class galtcWorldGenProvider extends DatapackBuiltinEntriesProvider {
     }
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> GAL_ORE_CONFIGURED = ResourceKey.create(
-            Registries.CONFIGURED_FEATURE, new ResourceLocation(Galtc2.MODID, "gal_ore"));
+            Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(Galtc2.MODID, "gal_ore"));
 
     public static final ResourceKey<PlacedFeature> GAL_ORE_PLACED = ResourceKey.create(
-            Registries.PLACED_FEATURE, new ResourceLocation(Galtc2.MODID, "gal_ore"));
+            Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(Galtc2.MODID, "gal_ore"));
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> JUQING_ORE_CONFIGURED = ResourceKey.create(
+            Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(Galtc2.MODID, "juqing_ore"));
+
+    public static final ResourceKey<PlacedFeature> JUQING_ORE_PLACED = ResourceKey.create(
+            Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(Galtc2.MODID, "juqing_ore"));
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SEQI_ORE_CONFIGURED = ResourceKey.create(
+            Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(Galtc2.MODID, "seqi_ore"));
+
+    public static final ResourceKey<PlacedFeature> SEQI_ORE_PLACED = ResourceKey.create(
+            Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(Galtc2.MODID, "seqi_ore"));
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FEIMENG_ORE_CONFIGURED = ResourceKey.create(
+            Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(Galtc2.MODID, "feimeng_ore"));
+
+    public static final ResourceKey<PlacedFeature> FEIMENG_ORE_PLACED = ResourceKey.create(
+            Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(Galtc2.MODID, "feimeng_ore"));
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> GURO_ORE_CONFIGURED = ResourceKey.create(
+            Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(Galtc2.MODID, "guro_ore"));
+
+    public static final ResourceKey<PlacedFeature> GURO_ORE_PLACED = ResourceKey.create(
+            Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(Galtc2.MODID, "guro_ore"));
 
     public static void ConfiguredFeatures(BootstapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest deepslateReplaceable = new TagMatchTest(net.minecraft.tags.BlockTags.BASE_STONE_OVERWORLD);
 
-        List<OreConfiguration.TargetBlockState> targets = List.of(
-                OreConfiguration.target(deepslateReplaceable, galtcBlock.GAL_ORE.get().defaultBlockState())
-        );
-
         context.register(GAL_ORE_CONFIGURED, new ConfiguredFeature<>(
-                Feature.ORE, new OreConfiguration(targets, 2, 0.0F)));
+                Feature.ORE, new OreConfiguration(
+                        List.of(OreConfiguration.target(deepslateReplaceable, galtcBlock.GAL_ORE.get().defaultBlockState())),
+                        2, 0.0F)));
+
+        context.register(JUQING_ORE_CONFIGURED, new ConfiguredFeature<>(
+                Feature.ORE, new OreConfiguration(
+                        List.of(OreConfiguration.target(deepslateReplaceable, galtcBlock.JUQING_ORE.get().defaultBlockState())),
+                        2, 0.0F)));
+
+        context.register(SEQI_ORE_CONFIGURED, new ConfiguredFeature<>(
+                Feature.ORE, new OreConfiguration(
+                        List.of(OreConfiguration.target(deepslateReplaceable, galtcBlock.SEQI_ORE.get().defaultBlockState())),
+                        2, 0.0F)));
+
+        context.register(FEIMENG_ORE_CONFIGURED, new ConfiguredFeature<>(
+                Feature.ORE, new OreConfiguration(
+                        List.of(OreConfiguration.target(deepslateReplaceable, galtcBlock.FEIMENG_ORE.get().defaultBlockState())),
+                        2, 0.0F)));
+
+        context.register(GURO_ORE_CONFIGURED, new ConfiguredFeature<>(
+                Feature.ORE, new OreConfiguration(
+                        List.of(OreConfiguration.target(deepslateReplaceable, galtcBlock.GURO_ORE.get().defaultBlockState())),
+                        2, 0.0F)));
     }
 
     public static void PlacedFeatures(BootstapContext<PlacedFeature> context) {
         context.register(GAL_ORE_PLACED, new PlacedFeature(
                 context.lookup(Registries.CONFIGURED_FEATURE).getOrThrow(GAL_ORE_CONFIGURED),
+                List.of(
+                        CountPlacement.of(1),
+                        InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(-30)),
+                        BiomeFilter.biome()
+                )));
+
+        context.register(JUQING_ORE_PLACED, new PlacedFeature(
+                context.lookup(Registries.CONFIGURED_FEATURE).getOrThrow(JUQING_ORE_CONFIGURED),
+                List.of(
+                        CountPlacement.of(1),
+                        InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(-30)),
+                        BiomeFilter.biome()
+                )));
+
+        context.register(SEQI_ORE_PLACED, new PlacedFeature(
+                context.lookup(Registries.CONFIGURED_FEATURE).getOrThrow(SEQI_ORE_CONFIGURED),
+                List.of(
+                        CountPlacement.of(1),
+                        InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(-30)),
+                        BiomeFilter.biome()
+                )));
+
+        context.register(FEIMENG_ORE_PLACED, new PlacedFeature(
+                context.lookup(Registries.CONFIGURED_FEATURE).getOrThrow(FEIMENG_ORE_CONFIGURED),
+                List.of(
+                        CountPlacement.of(1),
+                        InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(-30)),
+                        BiomeFilter.biome()
+                )));
+
+        context.register(GURO_ORE_PLACED, new PlacedFeature(
+                context.lookup(Registries.CONFIGURED_FEATURE).getOrThrow(GURO_ORE_CONFIGURED),
                 List.of(
                         CountPlacement.of(1),
                         InSquarePlacement.spread(),

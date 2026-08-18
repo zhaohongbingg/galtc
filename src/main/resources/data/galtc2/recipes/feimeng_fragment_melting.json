@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:feimeng_fragment"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_feimeng"
+  },
+  "temperature": 400,
+  "time": 30
+}

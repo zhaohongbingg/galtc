@@ -23,16 +23,12 @@ public class galtcItem {
             ITEMS.register("zeroone",()->new Item(new Item.Properties()));
     public static  final RegistryObject<Item> kagome =
             ITEMS.register("kagome",()->new Item(new Item.Properties()));//笼女
-    public static  final RegistryObject<Item>  aosora=
+    public  static  final RegistryObject<Item> aosora=
             ITEMS.register("aosora",()->new Item(new Item.Properties()));//苍彼
-    public  static  final RegistryObject<Item> kagari=
-            ITEMS.register("kagari",()->new Item(new Item.Properties()));//篝
     public static final RegistryObject<Item> atri=
             ITEMS.register("atri",()->new Item(new Item.Properties()));//arti
     public static final RegistryObject<Item> apeiria=
             ITEMS.register("apeiria",()->new Item(new Item.Properties()));//艾佩莉雅
-    public  static  final  RegistryObject<Item> einstein=
-            ITEMS.register("einstein",()->new Item(new Item.Properties()));// 爱因斯坦挟爱之上
     public  static  final  RegistryObject<Item> narcissus=
             ITEMS.register("narcissus",()->new Item(new Item.Properties()));//水仙
     public  static  final  RegistryObject<Item> ca =
@@ -74,16 +70,28 @@ public class galtcItem {
     public static final RegistryObject<Item> galaxy_railroad =
             ITEMS.register("galaxy_railroad",()->new Item(new Item.Properties()));//银河铁道之夜
 
+    // Ciallo
+    public static final RegistryObject<Item> ciallo =
+            ITEMS.register("ciallo", () -> new Item(new Item.Properties()));
+
+    // 矿石碎片
+    public static final RegistryObject<Item> juqing_fragment =
+            ITEMS.register("juqing_fragment", () -> new Item(new Item.Properties()));//剧情碎片
+    public static final RegistryObject<Item> seqi_fragment =
+            ITEMS.register("seqi_fragment", () -> new Item(new Item.Properties()));//涩气碎片
+    public static final RegistryObject<Item> feimeng_fragment =
+            ITEMS.register("feimeng_fragment", () -> new Item(new Item.Properties()));//废萌碎片
+    public static final RegistryObject<Item> guro_fragment =
+            ITEMS.register("guro_fragment", () -> new Item(new Item.Properties()));//guro碎片
+
 
     public static final List<RegistryObject<Item>> ALL_ITEMS = List.of(
             sprb,
             zeroone,
             kagome,
             aosora,
-            kagari,
             atri,
             apeiria,
-            einstein,
             narcissus,
             ca,
             kaleidoscope,
@@ -102,7 +110,12 @@ public class galtcItem {
             qienidian,
             rewrite,
             badwoman,
-            galaxy_railroad
+            galaxy_railroad,
+            ciallo,
+            juqing_fragment,
+            seqi_fragment,
+            feimeng_fragment,
+            guro_fragment
     );
 
 

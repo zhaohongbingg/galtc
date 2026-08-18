@@ -1,0 +1,11 @@
+{
+  "ciallo.ciallo": {
+    "sounds": [
+      {
+        "name": "galtc2:ciallo/ciallo",
+        "stream": true
+      }
+    ],
+    "subtitle": "Ciallo~"
+  }
+}

@@ -31,7 +31,7 @@ public class Muramasa extends BaseModifiers {
 
     ;
 
-    private static final ResourceLocation NEED_PACIFY = new ResourceLocation("modid", "need_pacify");
+    private static final ResourceLocation NEED_PACIFY = ResourceLocation.fromNamespaceAndPath("modid", "need_pacify");
 
     /**
      * 获取状态

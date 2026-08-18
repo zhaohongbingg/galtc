@@ -1,9 +1,8 @@
 package com.galtc2.modifiers;
 
 
+import com.galtc2.Register.galtc2Effects;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-
 import net.minecraft.world.entity.LivingEntity;
 
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -29,33 +28,16 @@ public class Rosmarinus extends BaseModifiers {
 
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
-        LivingEntity target=context.getLivingTarget();
-        if(target!=null){
-            target.addEffect(
-                            new MobEffectInstance(
-                                    MobEffects.MOVEMENT_SLOWDOWN,
-                                    60,
-                            255,
-                            false,
-                            false,
-                                    false
-                            ));
-
-
+        LivingEntity target = context.getLivingTarget();
+        if (target != null) {
+            target.addEffect(new MobEffectInstance(galtc2Effects.STUN.get(), 40, 0, false, false, true));
         }
     }
 
     @Override
     public void onProjectileHitTarget(ModifierNBT modifiers, ModDataNBT persistentData, int level, Projectile projectile, AbstractArrow arrow, EntityHitResult hit, LivingEntity attacker, LivingEntity target) {
-         if(target!=null)
-             target.addEffect(
-                     new MobEffectInstance(
-                             MobEffects.MOVEMENT_SLOWDOWN,
-                             60,
-                             255,
-                             false,
-                             false,
-                             false
-                     ));
+        if (target != null) {
+            target.addEffect(new MobEffectInstance(galtc2Effects.STUN.get(), 40, 0, false, false, true));
+        }
     }
 }

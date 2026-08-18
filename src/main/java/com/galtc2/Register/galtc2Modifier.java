@@ -76,8 +76,9 @@ public class galtc2Modifier {
     public static final StaticModifier<StarryTravelArmorModifier> starry_travel_armor = MODIFIERS.register("starry_travel_armor", StarryTravelArmorModifier::new);
     public static final StaticModifier<SuperLuckyModifier> super_lucky = MODIFIERS.register("super_lucky", SuperLuckyModifier::new);
 
+    public static final StaticModifier<GalRecord> gal_record = MODIFIERS.register("gal_record", GalRecord::new);
 
-
+    public static final StaticModifier<CialloModifier> ciallo = MODIFIERS.register("ciallo", CialloModifier::new);
 
 
 

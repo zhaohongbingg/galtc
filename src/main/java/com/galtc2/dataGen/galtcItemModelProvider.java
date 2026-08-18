@@ -26,7 +26,9 @@ public class galtcItemModelProvider extends ItemModelProvider {
         // 只为新物品生成模型（其他物品已有手动模型）
         basicItem(galtcItem.gal_core.get());
         basicItem(galtcItem.gal_record.get());
-        basicItem(galtcItem.shochou.get());
-        basicItem(galtcItem.izumi_hiyori.get());
+        basicItem(galtcItem.juqing_fragment.get());
+        basicItem(galtcItem.seqi_fragment.get());
+        basicItem(galtcItem.feimeng_fragment.get());
+        basicItem(galtcItem.guro_fragment.get());
     }
 }

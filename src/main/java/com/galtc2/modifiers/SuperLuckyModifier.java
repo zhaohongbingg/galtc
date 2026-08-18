@@ -1,5 +1,6 @@
 package com.galtc2.modifiers;
 
+import com.galtc2.Register.galtc2Modifier;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -8,8 +9,10 @@ import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.behavior.EnchantmentModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.build.ValidateModifierHook;
+import slimeknights.tconstruct.library.modifiers.modules.build.ModifierRequirementsModule;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.tools.data.ModifierIds;
 
 import javax.annotation.Nullable;
 import java.util.Map;
@@ -23,6 +26,11 @@ public class SuperLuckyModifier extends Modifier implements EnchantmentModifierH
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, ModifierHooks.ENCHANTMENTS, ModifierHooks.VALIDATE);
+        // 参考匠魂“不毁”强化：需要“幸运”III 作为前置
+        hookBuilder.addModule(ModifierRequirementsModule.builder()
+                .requireUpgrade(ModifierIds.luck, 3)
+                .modifierKey(galtc2Modifier.super_lucky)
+                .build());
     }
 
     @Override

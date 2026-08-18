@@ -2,6 +2,7 @@ package com.galtc2;
 
 import com.galtc2.Register.*;
 
+import com.galtc2.content.machine.OreGeneratorConfig;
 import com.galtc2.dataGen.*;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -26,7 +27,6 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -35,6 +35,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.fml.loading.FMLPaths;
 import org.slf4j.Logger;
 
 import java.util.concurrent.CompletableFuture;
@@ -73,18 +74,23 @@ public class Galtc2 {
 
     public Galtc2() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::addCreative);
         galtc2Fluid.FLUIDS.register(modEventBus);
         galtcItem.ITEMS.register(modEventBus);
         galtcBlock.BLOCKS.register(modEventBus);
+        galtcBlockEntity.BLOCK_ENTITIES.register(modEventBus);
         galtc2Effects.EFFECTS.register(modEventBus);
         galtctag.CREATIVE_MODE_TAB_DEFERRED_REGISTER.register(modEventBus);
+        galtc2Sounds.SOUND_EVENTS.register(modEventBus);
         galHooks.register();
         GaltcConfig.init();
         galtc2Modifier.MODIFIERS.register(modEventBus);
     }
     private void commonSetup(final FMLCommonSetupEvent event) {
         LOGGER.info("HELLO FROM COMMON SETUP");
+        // 加载矿石生成器配置
+        OreGeneratorConfig.load(FMLPaths.CONFIGDIR.get().toFile());
     }
 
     // Add the example block item to the building blocks tab
@@ -111,7 +117,7 @@ public class Galtc2 {
         }
     }
     public static ResourceLocation loc(String s) {
-        return new ResourceLocation(MODID, s);
+        return ResourceLocation.fromNamespaceAndPath(MODID, s);
     }
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ModEvents {

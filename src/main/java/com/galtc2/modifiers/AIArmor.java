@@ -36,10 +36,10 @@ public class AIArmor extends BaseModifiers {
     private static int counts = 0;
 
     private static final String hitcount = "hitcount";
-    private static final ResourceLocation HIT_COUNT = new ResourceLocation("galtc2", "hit_count");
+    private static final ResourceLocation HIT_COUNT = ResourceLocation.fromNamespaceAndPath("galtc2", "hit_count");
     private static final int HIT_THRESHOLD = GaltcConfig.COMMON.HIT_THRESHOLD.get();
     private static final ResourceLocation ARMOR_BONUS =
-            new ResourceLocation("galtc2", "armor_bonus");
+            ResourceLocation.fromNamespaceAndPath("galtc2", "armor_bonus");
 
     @Override
     public void onAttacked(IToolStackView tool,
@@ -79,7 +79,7 @@ public class AIArmor extends BaseModifiers {
 
         IModDataView data = context.getPersistentData();
 
-        int armorBonus = data.getInt(new ResourceLocation("galtc2", "armor_bonus"));
+        int armorBonus = data.getInt(ResourceLocation.fromNamespaceAndPath("galtc2", "armor_bonus"));
         if (armorBonus > 0) {
             ToolStats.ARMOR.add(builder, armorBonus);
             ToolStats.ARMOR_TOUGHNESS.add(builder, armorBonus);

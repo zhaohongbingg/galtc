@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "item": "galtc2:gal_record"
+    },
+    {
+      "item": "galtc2:gal_record"
+    },
+    {
+      "item": "galtc2:gal_record"
+    },
+    {
+      "item": "galtc2:gal_record"
+    },
+    {
+      "item": "galtc2:gal_record"
+    }
+  ],
+  "level": {
+    "max": 5
+  },
+  "result": "galtc2:gal_record",
+  "tools": {
+    "tag": "tconstruct:modifiable/durability"
+  }
+}

@@ -23,6 +23,11 @@ public class galtctag {
                         galtcItem.ALL_ITEMS.forEach(item->
                                 pOutput.accept(item.get()));
                         pOutput.accept(galtcBlock.GAL_ORE.get());
+                        pOutput.accept(galtcBlock.JUQING_ORE.get());
+                        pOutput.accept(galtcBlock.SEQI_ORE.get());
+                        pOutput.accept(galtcBlock.FEIMENG_ORE.get());
+                        pOutput.accept(galtcBlock.GURO_ORE.get());
+                        pOutput.accept(galtcBlock.ORE_GENERATOR.get());
                     })
                     .build());
 

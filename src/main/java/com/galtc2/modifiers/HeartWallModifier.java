@@ -24,8 +24,8 @@ import java.util.List;
 
 public class HeartWallModifier extends Modifier implements InventoryTickModifierHook, TooltipModifierHook {
 
-    private static final ResourceLocation SHIELD_CURRENT = new ResourceLocation("galtc2", "heartwall_current");
-    private static final ResourceLocation SHIELD_MAX = new ResourceLocation("galtc2", "heartwall_max");
+    private static final ResourceLocation SHIELD_CURRENT = ResourceLocation.fromNamespaceAndPath("galtc2", "heartwall_current");
+    private static final ResourceLocation SHIELD_MAX = ResourceLocation.fromNamespaceAndPath("galtc2", "heartwall_max");
 
     public HeartWallModifier() {
         MinecraftForge.EVENT_BUS.register(this);

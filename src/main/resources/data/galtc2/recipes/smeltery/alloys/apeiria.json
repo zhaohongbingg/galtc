@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "amount": 90,
+      "fluid": "galtc2:molten_juqing"
+    },
+    {
+      "amount": 90,
+      "fluid": "galtc2:molten_seqi"
+    },
+    {
+      "amount": 90,
+      "tag": "forge:molten_manyullyn"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_apeiria"
+  },
+  "temperature": 1200
+}

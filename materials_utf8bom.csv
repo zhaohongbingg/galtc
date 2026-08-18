@@ -1,0 +1,26 @@
+﻿材料ID,中文名,英文名,百科描述,颜色,可合成,等级,耐久,攻击力,挖掘速度,挖掘等级,特性
+sprb,SPRB,SPRB,充满夏天的回忆,#00bfff,否,5,1200,7,8,下界合金,galtc2:sprb
+zeroone,零一,Zero One,高攻速材料,#a08e5f,否,5,800,16,6,下界合金,galtc2:eightstrike
+kagome,笼女,Kagome,替你挡下一切,#f8f8ff,否,5,1200,8,8,下界合金,galtc2:kagome
+aosora,苍彼,Aosora,在天空中翱翔吧,#0ffcfe,否,5,1100,7,12,下界合金,galtc2:celestial
+kagari,篝,Kagari,地球的意志,#e6aefc,否,5,1300,11,7,下界合金,galtc2:zhuyin
+atri,Atri,Atri,萝卜子是高性能的,#fce6d8,否,5,-,-,-,-,galtc2:aia(仅盔甲)
+apeiria,艾佩莉雅,Apeiria,高性能ai,#fcf7e1,否,5,-,-,-,-,galtc2:aid(仅盔甲)
+einstein,爱因斯坦,Einstein,携爱至上,#f5f5dc,否,5,-,-,-,-,galtc2:aid+galtc2:aia(仅盔甲)
+narcissus,水仙,Narcissus,如果你生命进入倒计时了你会思考什么,#bf9dfd,否,5,1200,12,4,下界合金,galtc2:narcissus
+ca,CA,CA,all in,#ffd700,否,5,1000,8,6,下界合金,galtc2:valuation
+kaleidoscope,万花镜,Kaleidoscope,属性提升,#214e66,-,-,-,-,-,-,未完成
+steinsgate,石头门,Steins Gate,El Psy Congroo,#ffa500,否,5,1200,8,8,下界合金,galtc2:steinsgate
+azarashi,海豹,Seal,喜欢大的,#87ceeb,否,5,1800,12,8,下界合金,galtc2:azarashi
+nighttimesheep,夜羊,Night Sheep,喜欢小的,#214e66,否,5,600,3,6,下界合金,galtc2:nighttimesheep
+oumunnbyou,生命的备件,Spare Parts of Life,死亡如期而至,#ffb7c5,否,5,1400,12,8,下界合金,galtc2:oumunnbyou
+kisaragikurenai,月影魅像,Moonlit Shadow Phantom,入门三分,#ff6961,否,5,1200,7,7,下界合金,galtc2:kisaragikurenai
+blacklily,黑莉莉,Black Lily,蛇蝎美人,#000000,否,5,1400,12,7,下界合金,galtc2:tagetes+galtc2:lavare+galtc2:rosmarinus
+muramasa,村正,Muramasa,这不是英雄的故事,#660000,否,5,1250,3.5,6.5,下界合金,galtc2:muramasa
+shochou,所长,Shochou,金钱就是力量,#cdb29e,是,5,800,5,6,下界合金,galtc2:shochou
+izumi_hiyori,和泉妃爱,Izumi Hiyori,富婆妹的温柔,#fff0a5,是,5,1400,12,7,下界合金,galtc2:spoiled_by_rich_girl+galtc2:healed_by_sister(盔甲)
+nishiki_asumi,锦明日海,Nishiki Asumi,永不饥饿基于最大生命值的额外伤害,#d8eff5,否,5,800,5,6,下界合金,galtc2:vtb+galtc2:meatbun(盔甲)
+qienidian,奇恩异典,Qienidian,What color is your attribute?,#b4b9dd,否,5,1200,7,8,下界合金,galtc2:qien+galtc2:yidian(盔甲)
+rewrite,罚抄,Rewrite,获得攻击对象的护甲值和血量,#e9ad86,否,5,1400,12,7,下界合金,galtc2:rewrite
+badwoman,坏女人,Bad Woman,心之壁与奏了,#f9c9d3,否,5,2400,7,8,下界合金,galtc2:zoulezoule+galtc2:heartwall(盔甲)
+galaxy_railroad,银河铁道之夜,Galaxy Railroad,星空下的旅程,#0a1128,否,5,1200,7,8,下界合金,galtc2:camus+galtc2:wonderful+galtc2:starry_travel+galtc2:starry_travel_armor(盔甲)

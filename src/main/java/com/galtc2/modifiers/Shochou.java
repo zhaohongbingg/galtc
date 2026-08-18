@@ -49,11 +49,15 @@ public class Shochou extends Modifier implements MeleeHitModifierHook {
             return; // 还在冷却中
         }
 
-        // 1:1 掉落，伤害值即为掉落数量
-        int dropCount = (int) damageDealt;
-        if (dropCount <= 0) return;
+        // 概率判定
+        double chance = GaltcConfig.COMMON.SHOCHOU_DROP_CHANCE.get();
+        if (attacker.getRandom().nextDouble() >= chance) return;
 
-        // 获取配置的掉落物品
+        // 获取配置的单次掉落数量上限，并在 1~上限 之间随机掉落
+        int dropMax = GaltcConfig.COMMON.SHOCHOU_DROP_AMOUNT.get();
+        if (dropMax <= 0) return;
+        int dropCount = 1 + attacker.getRandom().nextInt(dropMax);
+
         ResourceLocation itemLoc = ResourceLocation.tryParse(GaltcConfig.COMMON.SHOCHOU_MONEY_ITEM.get());
         if (itemLoc == null) return;
         Item moneyItem = ForgeRegistries.ITEMS.getValue(itemLoc);

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:juqing_fragment"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_juqing"
+  },
+  "temperature": 600,
+  "time": 30
+}

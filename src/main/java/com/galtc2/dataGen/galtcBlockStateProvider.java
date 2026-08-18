@@ -17,6 +17,8 @@ public class galtcBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         for (RegistryObject<Block> block : galtcBlock.BLOCKS.getEntries()) {
+            // ore_generator 使用自定义 blockstate/模型（lit 状态），已有手动资源，跳过生成
+            if (block == galtcBlock.ORE_GENERATOR) continue;
             simpleBlock(block.get());
         }
     }

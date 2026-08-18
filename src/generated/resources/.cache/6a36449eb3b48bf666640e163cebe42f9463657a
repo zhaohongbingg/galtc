@@ -1,6 +1,13 @@
-// 1.20.1	2026-06-16T22:59:43.4511076	Item Models: galtc2
+// 1.20.1	2026-08-17T01:03:46.9213401	Item Models: galtc2
+0d8babc9763caf6f7a5478a53a5863ecc62ff341 assets/galtc2/models/item/feimeng_fragment.json
+d4ab64ed1ca5c6aaa497ae4611c68bd813d86b77 assets/galtc2/models/item/feimeng_ore.json
 b410196d3d3473c5953278c2e4cc48df45511681 assets/galtc2/models/item/gal_core.json
 7092c79b80199abfe2b70e7909c8b449125796b6 assets/galtc2/models/item/gal_ore.json
 b21ba39fb8ebef430ef8da8926b8e02c662f4fc0 assets/galtc2/models/item/gal_record.json
-05f8af3b5a99341f388d39807e49635c4fef103a assets/galtc2/models/item/izumi_hiyori.json
-e813778eec1a2b5f24b081196be714df52e52c5a assets/galtc2/models/item/shochou.json
+71d33e1bc6ad266620d1b32b38936fea51fe5827 assets/galtc2/models/item/guro_fragment.json
+bd3c1138cffe5091c3ad42bec2c18c7cbf7c1aa6 assets/galtc2/models/item/guro_ore.json
+5f0969acf1530d9adcaf376027cfedf5ccbc482a assets/galtc2/models/item/juqing_fragment.json
+afff15f0e22392cfcf62901bf17ab6e238ad3302 assets/galtc2/models/item/juqing_ore.json
+da0ca3a9480dd0bb566cbe1ea9729afd6755005a assets/galtc2/models/item/ore_generator.json
+5c392333a16d809cb8f90e72a2820e6425477c69 assets/galtc2/models/item/seqi_fragment.json
+0ab86c57412a1cc48524f34a8ab59c4c738786ce assets/galtc2/models/item/seqi_ore.json

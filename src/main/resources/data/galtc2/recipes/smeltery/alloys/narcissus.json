@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "amount": 90,
+      "fluid": "galtc2:molten_juqing"
+    },
+    {
+      "amount": 90,
+      "tag": "tconstruct:molten_emerald"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_narcissus"
+  },
+  "temperature": 1200
+}

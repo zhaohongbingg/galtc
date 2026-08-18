@@ -24,7 +24,7 @@ public class sakura extends MobEffect {
         int currentLayers = amplifier + 1;
         if (currentLayers >= maxLayers) {
             if (!entity.level().isClientSide()) {
-                entity.hurt(entity.damageSources().magic(), Float.MAX_VALUE);
+                // 直接设置血量为0，触发正常死亡流程（掉落物正常）
                 entity.setHealth(0);
                 }
             }}

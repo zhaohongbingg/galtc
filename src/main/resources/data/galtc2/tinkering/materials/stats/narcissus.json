@@ -1,58 +1,15 @@
 {
   "stats": {
     "tconstruct:binding": {},
-    "tconstruct:grip": {
-      "accuracy": -0.2,
-      "durability": 0.1,
-      "melee_damage": 3.5
-    },
-    "tconstruct:handle": {
-      "durability": 0.25,
-      "melee_damage": 0.2,
-      "melee_speed": 0.3,
-      "mining_speed": 0.2
-    },
-    "tconstruct:head": {
-      "durability": 1200,
-      "melee_attack": 12,
-      "mining_speed": 4,
-      "mining_tier": "minecraft:netherite"
-    },
-    "tconstruct:limb": {
-      "accuracy": 0.0,
-      "draw_speed": -0.35,
-      "durability": 1250,
-      "velocity": 0.25
-    },
+    "tconstruct:grip": {"accuracy": -0.2, "durability": 0.8, "melee_damage": 1.5},
+    "tconstruct:handle": {"durability": 0.5, "mining_speed": 0.5, "melee_speed": 0.5, "melee_damage": 0.5},
+    "tconstruct:head": {"durability": 600, "mining_speed": 5, "mining_tier": "minecraft:netherite", "melee_attack": 6.0},
+    "tconstruct:limb": {"accuracy": -0.1, "draw_speed": -0.25, "durability": 650, "velocity": 0.15},
     "tconstruct:maille": {},
-    "tconstruct:plating_boots": {
-      "armor": 2.0,
-      "durability": 455,
-      "knockback_resistance": 0.05,
-      "toughness": 3.0
-    },
-    "tconstruct:plating_chestplate": {
-      "armor": 7.0,
-      "durability": 560,
-      "knockback_resistance": 0.05,
-      "toughness": 3.0
-    },
-    "tconstruct:plating_helmet": {
-      "armor": 2.0,
-      "durability": 385,
-      "knockback_resistance": 0.05,
-      "toughness": 3.0
-    },
-    "tconstruct:plating_leggings": {
-      "armor": 5.0,
-      "durability": 525,
-      "knockback_resistance": 0.05,
-      "toughness": 3.0
-    },
-    "tconstruct:plating_shield": {
-      "durability": 630,
-      "knockback_resistance": 0.05,
-      "toughness": 3.0
-    }
+    "tconstruct:plating_boots": {"armor": 1.5, "durability": 350, "knockback_resistance": 0.03, "toughness": 2.0},
+    "tconstruct:plating_chestplate": {"armor": 5.0, "durability": 440, "knockback_resistance": 0.03, "toughness": 2.0},
+    "tconstruct:plating_helmet": {"armor": 1.5, "durability": 300, "knockback_resistance": 0.03, "toughness": 2.0},
+    "tconstruct:plating_leggings": {"armor": 4.0, "durability": 410, "knockback_resistance": 0.03, "toughness": 2.0},
+    "tconstruct:plating_shield": {"durability": 450, "knockback_resistance": 0.03, "toughness": 2.0}
   }
 }

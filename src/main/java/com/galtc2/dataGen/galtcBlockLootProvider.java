@@ -19,10 +19,16 @@ public class galtcBlockLootProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropOther(galtcBlock.GAL_ORE.get(), galtcItem.gal_core.get());
+        dropOther(galtcBlock.JUQING_ORE.get(), galtcItem.juqing_fragment.get());
+        dropOther(galtcBlock.SEQI_ORE.get(), galtcItem.seqi_fragment.get());
+        dropOther(galtcBlock.FEIMENG_ORE.get(), galtcItem.feimeng_fragment.get());
+        dropOther(galtcBlock.GURO_ORE.get(), galtcItem.guro_fragment.get());
+        dropSelf(galtcBlock.ORE_GENERATOR.get());
     }
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return galtcBlock.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+        return galtcBlock.BLOCKS.getEntries().stream()
+                .map(RegistryObject::get)::iterator;
     }
 }

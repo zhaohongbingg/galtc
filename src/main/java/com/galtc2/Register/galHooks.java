@@ -13,7 +13,7 @@ public class galHooks {
     public static final IdAwareComponentRegistry<ModuleHook<?>> loader =
             new IdAwareComponentRegistry<>("gal_hooks");
     public static final ModuleHook<LivingEventModifierHook> LIVING_EVENT =
-            ModifierHooks.register(new ResourceLocation(MODID,"livingevent"),LivingEventModifierHook.class,LivingEventModifierHook.AllMerger::new,new LivingEventModifierHook(){});
+            ModifierHooks.register(ResourceLocation.fromNamespaceAndPath(MODID,"livingevent"),LivingEventModifierHook.class,LivingEventModifierHook.AllMerger::new,new LivingEventModifierHook(){});
 
 
     public static void register() {

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "galtc2:block/ore_generator"
+    },
+    "lit=true": {
+      "model": "galtc2:block/ore_generator_on"
+    }
+  }
+}
