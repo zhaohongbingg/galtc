@@ -31,13 +31,14 @@ public class IngotItemColor {
         Map.entry("blacklily", 0xFF000000),
         Map.entry("muramasa", 0xFF660000),
         Map.entry("shochou", 0xFFCDB29E),
-        Map.entry("izumi_hiyori", 0xFFFFF0A5),
+        Map.entry("izumi_hiyori", 0xFFFFFF00),
         Map.entry("nishiki_asumi", 0xFFD8EFF5),
         Map.entry("qienidian", 0xFFB4B9DD),
         Map.entry("rewrite", 0xFFE9AD86),
         Map.entry("badwoman", 0xFFF9C9D3),
         Map.entry("galaxy_railroad", 0xFF0A1128),
-        Map.entry("ciallo", 0xFFB6CFA5)
+        Map.entry("ciallo", 0xFFB6CFA5),
+        Map.entry("tsukiyashiro_kisaki", 0xFFF2E7A1)
     );
 
     @SubscribeEvent
@@ -76,7 +77,8 @@ public class IngotItemColor {
             galtcItem.rewrite.get(),
             galtcItem.badwoman.get(),
             galtcItem.galaxy_railroad.get(),
-            galtcItem.ciallo.get()
+            galtcItem.ciallo.get(),
+            galtcItem.tsukiyashiro_kisaki.get()
         );
     }
 }

@@ -1,4 +1,4 @@
-// 1.20.1	2026-08-17T01:03:46.9223312	galtc2
+// 1.20.1	2026-08-23T03:14:51.249789	galtc2
 6956714d8a8488e880a787cd71c76ceb39803826 assets/galtc2/mantle/fluid_texture/molten_aosora.json
 08a10147732be05e20d1c02cd9f59b18a618b181 assets/galtc2/mantle/fluid_texture/molten_apeiria.json
 8caaf47b4a12802e11c44543873ccbea174767e8 assets/galtc2/mantle/fluid_texture/molten_atri.json
@@ -10,7 +10,7 @@ ce5ff1709a105f1bbc0c19de9b37250d7c29412a assets/galtc2/mantle/fluid_texture/molt
 6dc5c248a3b69ebb08f8db83c80d125970638b7e assets/galtc2/mantle/fluid_texture/molten_feimeng.json
 00db778832a4b4cc5bc6bf4b22baf3a28a55c522 assets/galtc2/mantle/fluid_texture/molten_galaxy_railroad.json
 bd7ac6f2082b7b80fce8a727e4275f089879f764 assets/galtc2/mantle/fluid_texture/molten_guro.json
-67e847e38150ad43a9ffc9bd0095052bf3bf3202 assets/galtc2/mantle/fluid_texture/molten_izumi_hiyori.json
+58512efc4a4c90f31d9ab554339fe0e7de9dddb7 assets/galtc2/mantle/fluid_texture/molten_izumi_hiyori.json
 21ba7e8bcb8cc4e5665dca1c6f7b08ae1b4323c6 assets/galtc2/mantle/fluid_texture/molten_juqing.json
 a0010cc568eb0e28ce6f9886007f153e23b6620b assets/galtc2/mantle/fluid_texture/molten_kagome.json
 c5203cc7030561396fc4008885e9f4e29244fca4 assets/galtc2/mantle/fluid_texture/molten_kisaragikurenai.json
@@ -25,4 +25,5 @@ da6cfe86fdc126525fb7df6bef54e977d08b777d assets/galtc2/mantle/fluid_texture/molt
 ff127fb619da99ae45067184593e0bb028d50a42 assets/galtc2/mantle/fluid_texture/molten_shochou.json
 02f5248c86f967434f29e8b664b98c9eb288fcfd assets/galtc2/mantle/fluid_texture/molten_sprb.json
 dfb7b7f7ccc04a29d039cddb2e761e49c5bbeac5 assets/galtc2/mantle/fluid_texture/molten_steinsgate.json
+c478baa7c304a61967b3b64a8482e296f3061d60 assets/galtc2/mantle/fluid_texture/molten_tsukiyashiro_kisaki.json
 ea66f5d3629f5651fc5ad898f9a4301b9b00612c assets/galtc2/mantle/fluid_texture/molten_zeroone.json

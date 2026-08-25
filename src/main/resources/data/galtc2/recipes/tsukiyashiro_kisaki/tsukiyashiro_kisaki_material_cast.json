@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "amount": 90,
+    "fluid": "galtc2:molten_tsukiyashiro_kisaki"
+  },
+  "output": "galtc2:tsukiyashiro_kisaki",
+  "temperature": 900
+}

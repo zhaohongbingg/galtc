@@ -108,6 +108,10 @@ public static final FlowingFluidObject<ForgeFlowingFluid> molten_muramasa =
             registerFluid(FLUIDS, "molten_izumi_hiyori", 800, 1000, 1300, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_YELLOW, 0), 8, 1.5f));
 
+    public static final FlowingFluidObject<ForgeFlowingFluid> molten_tsukiyashiro_kisaki =
+            registerFluid(FLUIDS, "molten_tsukiyashiro_kisaki", 900, 1200, 1500, 0,
+                    supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_YELLOW, 0), 10, 2.0f));
+
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_nishiki_asumi =
             registerFluid(FLUIDS, "molten_nishiki_asumi", 900, 1200, 1500, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_ORANGE, 0), 10, 2.0f));

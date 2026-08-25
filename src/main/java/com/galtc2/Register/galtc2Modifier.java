@@ -80,6 +80,12 @@ public class galtc2Modifier {
 
     public static final StaticModifier<CialloModifier> ciallo = MODIFIERS.register("ciallo", CialloModifier::new);
 
+    public static final StaticModifier<KisakiModifier> kisaki = MODIFIERS.register("kisaki", KisakiModifier::new);
+
+    public static final StaticModifier<KisakiLikesModifier> kisaki_likes = MODIFIERS.register("kisaki_likes", KisakiLikesModifier::new);
+
+    public static final StaticModifier<KisakiHatesModifier> kisaki_hates = MODIFIERS.register("kisaki_hates", KisakiHatesModifier::new);
+
 
 
    public static void register(){}

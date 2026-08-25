@@ -74,6 +74,10 @@ public class galtcItem {
     public static final RegistryObject<Item> ciallo =
             ITEMS.register("ciallo", () -> new Item(new Item.Properties()));
 
+    // 月社妃
+    public static final RegistryObject<Item> tsukiyashiro_kisaki =
+            ITEMS.register("tsukiyashiro_kisaki", () -> new Item(new Item.Properties()));
+
     // 矿石碎片
     public static final RegistryObject<Item> juqing_fragment =
             ITEMS.register("juqing_fragment", () -> new Item(new Item.Properties()));//剧情碎片
@@ -112,6 +116,7 @@ public class galtcItem {
             badwoman,
             galaxy_railroad,
             ciallo,
+            tsukiyashiro_kisaki,
             juqing_fragment,
             seqi_fragment,
             feimeng_fragment,
