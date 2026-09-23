@@ -22,12 +22,13 @@ public class galtctag {
                     .displayItems((pParameters,pOutput)->{
                         galtcItem.ALL_ITEMS.forEach(item->
                                 pOutput.accept(item.get()));
-                        pOutput.accept(galtcBlock.GAL_ORE.get());
-                        pOutput.accept(galtcBlock.JUQING_ORE.get());
-                        pOutput.accept(galtcBlock.SEQI_ORE.get());
-                        pOutput.accept(galtcBlock.FEIMENG_ORE.get());
-                        pOutput.accept(galtcBlock.GURO_ORE.get());
+                        pOutput.accept(galtcBlock.GAL_CRYSTAL_BLOCK.get());
                         pOutput.accept(galtcBlock.ORE_GENERATOR.get());
+                        pOutput.accept(galtcBlock.GAL_CORE.get());
+                        pOutput.accept(galtcBlock.SMALL_GAL_CORE_BUD.get());
+                        pOutput.accept(galtcBlock.MEDIUM_GAL_CORE_BUD.get());
+                        pOutput.accept(galtcBlock.LARGE_GAL_CORE_BUD.get());
+                        pOutput.accept(galtcBlock.BUDDING_GAL_CORE.get());
                     })
                     .build());
 

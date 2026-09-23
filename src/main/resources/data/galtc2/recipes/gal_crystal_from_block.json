@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "galtc2:gal_crystal_block"
+    }
+  ],
+  "result": {
+    "item": "galtc2:gal_crystal",
+    "count": 4
+  }
+}

@@ -18,14 +18,14 @@ public class galtcItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        // 方块物品模型（继承方块模型）
+        // 方块物品模型（继承方块模型）；Gal 晶簇用的是手写平面图标，跳过
         for (RegistryObject<Block> block : galtcBlock.BLOCKS.getEntries()) {
+            if (block == galtcBlock.GAL_CORE) continue;
             withExistingParent(block.getId().getPath(), modLoc("block/" + block.getId().getPath()));
         }
 
         // 只为新物品生成模型（其他物品已有手动模型）
-        basicItem(galtcItem.gal_core.get());
-        basicItem(galtcItem.gal_record.get());
+        basicItem(galtcItem.gal_crystal.get());
         basicItem(galtcItem.juqing_fragment.get());
         basicItem(galtcItem.seqi_fragment.get());
         basicItem(galtcItem.feimeng_fragment.get());

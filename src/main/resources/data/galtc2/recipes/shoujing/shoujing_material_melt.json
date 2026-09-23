@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "jerotesvillage"
+    }
+  ],
+  "input": "galtc2:shoujing",
+  "result": {"amount": 90, "fluid": "galtc2:molten_shoujing"},
+  "temperature": 1200
+}

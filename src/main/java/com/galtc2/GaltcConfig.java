@@ -128,9 +128,13 @@ public class GaltcConfig {
 
 
     }
-    public static void init() {
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, COMMON_SPEC);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CLIENT_SPEC);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, SERVER_SPEC);
+    /**
+     * @param context 由 {@link Galtc2} 构造函数里注入的 mod 加载上下文
+     *                （{@code ModLoadingContext.get()} 已被标记待删除，改成用注入的实例）
+     */
+    public static void init(ModLoadingContext context) {
+        context.registerConfig(ModConfig.Type.COMMON, COMMON_SPEC);
+        context.registerConfig(ModConfig.Type.CLIENT, CLIENT_SPEC);
+        context.registerConfig(ModConfig.Type.SERVER, SERVER_SPEC);
     }
 }

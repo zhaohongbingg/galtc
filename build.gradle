@@ -178,11 +178,23 @@ dependencies {
     implementation fg.deobf("slimeknights.mantle:Mantle:1.20.1-1.11.79")
     implementation fg.deobf("slimeknights.tconstruct:TConstruct:1.20.1-3.10.2.92")
     implementation fg.deobf("curse.maven:jei-238222:6075247")
-    implementation fg.deobf(jarJar(group: 'com.tterrag.registrate', name: 'Registrate', version: "[MC1.20,MC1.21)"))
+    // Registrate 原来是动态版本 "[MC1.20,MC1.21)"：Gradle 每次构建都要向所有仓库（含已失效的 dvs1.progwml6.com）
+    // 查询可用的版本列表，网络/SSL 一旦不通就 BUILD FAILED、游戏直接起不来（报 IO/TLS 错误）。
+    // 这里用 Maven 的"硬指定"写法钉死成本地缓存里已有的版本：既不需要联网列版本，
+    // 又能通过 JarJar 的版本格式校验（直接写 'MC1.20-1.3.11' 会被 JarJar 判为非法、build 失败）。
+    // 以后要升级就改括号里的版本号。
+    implementation fg.deobf(jarJar(group: 'com.tterrag.registrate', name: 'Registrate', version: '[MC1.20-1.3.11]'))
     // implementation fg.deobf("curse.maven:etst-lib-1206379:7194792") // 已移除：mixin兼容性问题
 
 
     implementation fg.deobf("curse.maven:tconjei-974154:6260922")
+
+    // J村(Jerotes Village) 软联动：仅编译期依赖，运行期可选。
+    // 源码见 com/galtc2/compat/jerotes/，通过 ModList 判断，未装 J村 时全部跳过。
+    // 反混淆产物复用 jvt(D:\game\mc\jvt) 已生成的本地缓存(mapping 相同)，无需联网重下。
+    // 若在某机器上缓存缺失，可参照 jvt/build.gradle 的 repository 配置补上。
+    implementation fg.deobf("curse.maven:jerotes-village-1004844:8616193")
+    implementation fg.deobf("curse.maven:jerotes-warehouse-1249728:8621401")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }

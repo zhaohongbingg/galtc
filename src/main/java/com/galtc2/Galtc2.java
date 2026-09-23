@@ -1,6 +1,8 @@
 package com.galtc2;
 
 import com.galtc2.Register.*;
+import com.galtc2.client.tooltip.TooltipImageRegistry;
+import com.galtc2.compat.jerotes.JerotesCompat;
 
 import com.galtc2.content.machine.OreGeneratorConfig;
 import com.galtc2.dataGen.*;
@@ -21,6 +23,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -72,8 +75,13 @@ public class Galtc2 {
                 output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
             }).build());
 
-    public Galtc2() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    /**
+     * 构造参数由 Forge 注入（javafml 语言加载器提供的上下文）。
+     * 这是 {@code FMLJavaModLoadingContext.get()} 被标记为待删除后的官方写法，
+     * Forge 会优先找这个带参构造函数，找不到才回退到无参构造。
+     */
+    public Galtc2(FMLJavaModLoadingContext context) {
+        IEventBus modEventBus = context.getModEventBus();
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::addCreative);
         galtc2Fluid.FLUIDS.register(modEventBus);
@@ -84,8 +92,10 @@ public class Galtc2 {
         galtctag.CREATIVE_MODE_TAB_DEFERRED_REGISTER.register(modEventBus);
         galtc2Sounds.SOUND_EVENTS.register(modEventBus);
         galHooks.register();
-        GaltcConfig.init();
+        GaltcConfig.init(context);
         galtc2Modifier.MODIFIERS.register(modEventBus);
+        // J村(Jerotes Village) 软联动：未安装时自动跳过
+        JerotesCompat.init(modEventBus);
     }
     private void commonSetup(final FMLCommonSetupEvent event) {
         LOGGER.info("HELLO FROM COMMON SETUP");
@@ -114,6 +124,12 @@ public class Galtc2 {
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        }
+
+        /** 提示框自定义图片：读 assets/<modid>/tooltip_images/*.json，随资源包重载刷新 */
+        @SubscribeEvent
+        public static void onRegisterClientReloadListeners(RegisterClientReloadListenersEvent event) {
+            event.registerReloadListener(TooltipImageRegistry.get());
         }
     }
     public static ResourceLocation loc(String s) {

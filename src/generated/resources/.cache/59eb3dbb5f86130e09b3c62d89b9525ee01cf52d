@@ -1,7 +1,8 @@
-// 1.20.1	2026-08-17T01:03:46.9166488	Loot Tables
-2dd1ebf8ae58141c914efb7898aa16557625f7fe data/galtc2/loot_tables/blocks/feimeng_ore.json
-48f2d16e071fc8a8d6846a7d6e2bd1dbc7d9743a data/galtc2/loot_tables/blocks/gal_ore.json
-df54c28cd64596a1df044704e5a507d7bd6d041d data/galtc2/loot_tables/blocks/guro_ore.json
-70747e082966639be65bbad0327ec80fbc198da4 data/galtc2/loot_tables/blocks/juqing_ore.json
+// 1.20.1	2026-09-23T17:34:41.212604	Loot Tables
+f1e5b917ab03cb77a2d7bfa439241d3b867278b2 data/galtc2/loot_tables/blocks/budding_gal_core.json
+754479a04802bcade900a5352d085df59c59529b data/galtc2/loot_tables/blocks/gal_core.json
+fa73e576c2ffdcaa7538669f7fd252b059e75f48 data/galtc2/loot_tables/blocks/gal_crystal_block.json
+6140112d2b1c8d39dc5cb46a48b8f8dc88a5de89 data/galtc2/loot_tables/blocks/large_gal_core_bud.json
+f2a04042c0deef07fb5fbb887fa2aaba7c6c235a data/galtc2/loot_tables/blocks/medium_gal_core_bud.json
 9fb189e214be6206346f4c52c0a1b882a74f3cc9 data/galtc2/loot_tables/blocks/ore_generator.json
-bb889c51d0311f78454e07a77985bcb7f49786a9 data/galtc2/loot_tables/blocks/seqi_ore.json
+8dd9e781fbdbd092fce9b92f18a4222afc3c9919 data/galtc2/loot_tables/blocks/small_gal_core_bud.json

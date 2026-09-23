@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:casting_table",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "jerotesvillage"
+    }
+  ],
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/ingot"
+  },
+  "cooling_time": 72,
+  "fluid": {
+    "amount": 90,
+    "fluid": "galtc2:molten_saya"
+  },
+  "result": "galtc2:saya"
+}

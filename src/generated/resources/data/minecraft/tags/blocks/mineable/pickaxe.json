@@ -1,9 +1,10 @@
 {
   "values": [
-    "galtc2:gal_ore",
-    "galtc2:juqing_ore",
-    "galtc2:seqi_ore",
-    "galtc2:feimeng_ore",
-    "galtc2:guro_ore"
+    "galtc2:gal_crystal_block",
+    "galtc2:gal_core",
+    "galtc2:small_gal_core_bud",
+    "galtc2:medium_gal_core_bud",
+    "galtc2:large_gal_core_bud",
+    "galtc2:budding_gal_core"
   ]
 }

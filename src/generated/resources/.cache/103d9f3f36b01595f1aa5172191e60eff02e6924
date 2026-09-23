@@ -1,11 +1,3 @@
-// 1.20.1	2026-08-17T00:23:49.5057027	Registries
-1301857f66f9d5ac09e93ebdb4a0cc11bead13e2 data/galtc2/worldgen/configured_feature/feimeng_ore.json
-f3919eb9a1a7a607690cd84bef4a077013d792ee data/galtc2/worldgen/configured_feature/gal_ore.json
-9cd5c200b9d247ce3ed5fe4d8e91ad72267fdbd1 data/galtc2/worldgen/configured_feature/guro_ore.json
-2fb52531faf3f84181a7fad4f98fca59b8318baf data/galtc2/worldgen/configured_feature/juqing_ore.json
-87bd7b605d295952fc618395335a9f23a4cb60b9 data/galtc2/worldgen/configured_feature/seqi_ore.json
-14071eb39409fa8a2fad0bf72cbedde0d451485c data/galtc2/worldgen/placed_feature/feimeng_ore.json
-384bd63e88c0a1435403453565dcf2dbb566994c data/galtc2/worldgen/placed_feature/gal_ore.json
-5230599a49ca568814a63ec11da4a19a78718163 data/galtc2/worldgen/placed_feature/guro_ore.json
-996daa488a841217d510df5039d7260a849f0e10 data/galtc2/worldgen/placed_feature/juqing_ore.json
-9162b1e504e2bdbef78be8eeba97b4e88893553c data/galtc2/worldgen/placed_feature/seqi_ore.json
+// 1.20.1	2026-09-23T17:34:41.2136059	Registries
+3aecd1d5f800aa6665e18383e70d377444159486 data/galtc2/worldgen/configured_feature/gal_geode.json
+1a69ad5c0e13e79f78d3ced21a72b07c89d69002 data/galtc2/worldgen/placed_feature/gal_geode.json

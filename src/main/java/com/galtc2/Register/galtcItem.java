@@ -2,7 +2,6 @@ package com.galtc2.Register;
 
 
 import com.galtc2.Galtc2;
-import com.galtc2.content.items.GalRecordItem;
 import net.minecraft.world.item.Item;
 
 import net.minecraftforge.registries.DeferredRegister;
@@ -51,10 +50,6 @@ public class galtcItem {
             ITEMS.register("blacklily",()->new Item(new Item.Properties()));//黑百合
     public static  final RegistryObject<Item> muramasa=
             ITEMS.register("muramasa",()->new Item(new Item.Properties()));//村正
-    public static final RegistryObject<Item> gal_core =
-            ITEMS.register("gal_core",()->new Item(new Item.Properties()));//Gal核心
-    public static final RegistryObject<Item> gal_record =
-            ITEMS.register("gal_record",()->new GalRecordItem(new Item.Properties().stacksTo(1)));//Gal唱片
     public static final RegistryObject<Item> shochou =
             ITEMS.register("shochou",()->new Item(new Item.Properties()));//所长
     public static final RegistryObject<Item> izumi_hiyori =
@@ -77,6 +72,24 @@ public class galtcItem {
     // 月社妃
     public static final RegistryObject<Item> tsukiyashiro_kisaki =
             ITEMS.register("tsukiyashiro_kisaki", () -> new Item(new Item.Properties()));
+
+    // 沙耶
+    public static final RegistryObject<Item> saya =
+            ITEMS.register("saya", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> shoujing =
+            ITEMS.register("shoujing", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> euthanasia =
+            ITEMS.register("euthanasia", () -> new Item(new Item.Properties()));
+    // 清枫
+    public static final RegistryObject<Item> qingfeng =
+            ITEMS.register("qingfeng", () -> new Item(new Item.Properties()));
+    // 莫尔加那
+    public static final RegistryObject<Item> morgana =
+            ITEMS.register("morgana", () -> new Item(new Item.Properties()));
+
+    // 挖晶簇掉的水晶
+    public static final RegistryObject<Item> gal_crystal =
+            ITEMS.register("gal_crystal", () -> new Item(new Item.Properties()));
 
     // 矿石碎片
     public static final RegistryObject<Item> juqing_fragment =
@@ -106,8 +119,6 @@ public class galtcItem {
             kisaragikurenai,
             blacklily,
             muramasa,
-            gal_core,
-            gal_record,
             shochou,
             izumi_hiyori,
             nishiki_asumi,
@@ -117,6 +128,12 @@ public class galtcItem {
             galaxy_railroad,
             ciallo,
             tsukiyashiro_kisaki,
+            saya,
+            shoujing,
+            euthanasia,
+            qingfeng,
+            morgana,
+            gal_crystal,
             juqing_fragment,
             seqi_fragment,
             feimeng_fragment,

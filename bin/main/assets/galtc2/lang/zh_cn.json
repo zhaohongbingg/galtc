@@ -302,7 +302,39 @@
   "itemGroup.galtctab":"旮旯匠魂",
 
 
-  "block.galtc2.ore_generator": "矿石生成器"
+  "block.galtc2.ore_generator": "矿石生成器",
+
+  "modifier.galtc2.scroll_cast": "卷轴·法术刻印",
+  "modifier.galtc2.scroll_cast.flavor": "把无暇魔法卷轴刻印进工具。",
+  "modifier.galtc2.scroll_cast.description": "手持工具+副手放带法术的无暇魔法卷轴并潜行，把法术抄录进工具(消耗卷轴)。近战型法术在命中时施放，其余法术右键目标施放。",
+  "modifier.galtc2.fire_apostle": "火焰使徒",
+  "modifier.galtc2.fire_apostle.flavor": "烈焰俯首。",
+  "modifier.galtc2.fire_apostle.description": "每件护甲降低20%火系承伤、提升30%自身造成的火系伤害。",
+
+  "item.galtc2.saya": "沙耶锭",
+  "item.galtc2.molten_saya_bucket": "熔融沙耶桶",
+  "fluid_type.galtc2.molten_saya": "熔融沙耶",
+  "material.galtc2.saya": "沙耶",
+  "material.galtc2.saya.encyclopedia": "一段深绿色的不可名状之物，据说来自沙耶。",
+  "modifier.galtc2.saya": "沙耶",
+  "modifier.galtc2.saya.flavor": "不可名状的触感。",
+  "modifier.galtc2.saya.description": "近战命中后，在目标附近召唤一只触手协助攻击（触手来自 J村，需安装 J村）。",
+  "item.galtc2.shoujing": "勺景锭",
+  "item.galtc2.molten_shoujing_bucket": "熔融勺景桶",
+  "fluid_type.galtc2.molten_shoujing": "熔融勺景",
+  "material.galtc2.shoujing": "勺景",
+  "material.galtc2.shoujing.encyclopedia": "攻防一体的勺景之力。",
+  "modifier.galtc2.shoujing": "勺景",
+  "modifier.galtc2.shoujing.flavor": "攻防兼备。",
+  "modifier.galtc2.shoujing.description": "攻击或受击时呼唤暗乱助战（暗乱来自 J村，需安装 J村）。",
+  "item.galtc2.euthanasia": "腐姬锭",
+  "item.galtc2.molten_euthanasia_bucket": "熔融腐姬桶",
+  "fluid_type.galtc2.molten_euthanasia": "熔融腐姬",
+  "material.galtc2.euthanasia": "腐姬",
+  "material.galtc2.euthanasia.encyclopedia": "近战与远程皆可降下不洁的血雨。",
+  "modifier.galtc2.euthanasia": "腐姬",
+  "modifier.galtc2.euthanasia.flavor": "不洁血雨。",
+  "modifier.galtc2.euthanasia.description": "近战或箭矢命中时，在目标处降下不洁血雨（血雨来自 J村，需安装 J村）。"
 
 }
 

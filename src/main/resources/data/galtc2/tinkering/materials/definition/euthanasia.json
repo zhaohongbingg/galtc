@@ -1,0 +1,10 @@
+{
+  "condition": {
+    "modid": "jerotesvillage",
+    "type": "forge:mod_loaded"
+  },
+  "craftable": true,
+  "hidden": false,
+  "sortOrder": 5,
+  "tier": 5
+}

@@ -76,7 +76,6 @@ public class galtc2Modifier {
     public static final StaticModifier<StarryTravelArmorModifier> starry_travel_armor = MODIFIERS.register("starry_travel_armor", StarryTravelArmorModifier::new);
     public static final StaticModifier<SuperLuckyModifier> super_lucky = MODIFIERS.register("super_lucky", SuperLuckyModifier::new);
 
-    public static final StaticModifier<GalRecord> gal_record = MODIFIERS.register("gal_record", GalRecord::new);
 
     public static final StaticModifier<CialloModifier> ciallo = MODIFIERS.register("ciallo", CialloModifier::new);
 
@@ -85,6 +84,12 @@ public class galtc2Modifier {
     public static final StaticModifier<KisakiLikesModifier> kisaki_likes = MODIFIERS.register("kisaki_likes", KisakiLikesModifier::new);
 
     public static final StaticModifier<KisakiHatesModifier> kisaki_hates = MODIFIERS.register("kisaki_hates", KisakiHatesModifier::new);
+
+    public static final StaticModifier<SayaModifier> saya = MODIFIERS.register("saya", SayaModifier::new);
+    public static final StaticModifier<ShoujingModifier> shoujing = MODIFIERS.register("shoujing", ShoujingModifier::new);
+    public static final StaticModifier<EuthanasiaModifier> euthanasia = MODIFIERS.register("euthanasia", EuthanasiaModifier::new);
+    public static final StaticModifier<QingfengModifier> qingfeng = MODIFIERS.register("qingfeng", QingfengModifier::new);
+    public static final StaticModifier<MorganaModifier> morgana = MODIFIERS.register("morgana", MorganaModifier::new);
 
 
 

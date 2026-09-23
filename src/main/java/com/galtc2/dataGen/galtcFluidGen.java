@@ -2,6 +2,8 @@ package com.galtc2.dataGen;
 
 import com.galtc2.Galtc2;
 import com.galtc2.Register.galtc2Fluid;
+import com.galtc2.compat.jerotes.JerotesCompat;
+import com.galtc2.compat.jerotes.JerotesFluids;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -46,6 +48,18 @@ public class galtcFluidGen extends AbstractFluidTextureProvider {
         this.molten(galtc2Fluid.molten_seqi, 0xFFFF69B4);
         this.molten(galtc2Fluid.molten_feimeng, 0xFF87CEEB);
         this.molten(galtc2Fluid.molten_guro, 0xFF8B0000);
+
+        this.molten(galtc2Fluid.molten_morgana, 0xFF6A4C93);
+
+        // J村 联动材料的流体只在安装了 J村 时才注册，因此这里也要判断：
+        // 未安装时它们的 FluidType 不在注册表里，直接取会抛异常。
+        // 对应的 4 个 mantle/fluid_texture/molten_*.json 已随代码提交，装了 J村 再跑 runData 会写出同样内容。
+        if (JerotesCompat.isJerotesLoaded()) {
+            this.molten(JerotesFluids.moltenSaya, 0xFF1F4D2E);
+            this.molten(JerotesFluids.moltenShoujing, 0xFF16131F);
+            this.molten(JerotesFluids.moltenEuthanasia, 0xFF8B0000);
+            this.molten(JerotesFluids.moltenQingfeng, 0xFF9BA3AB);
+        }
 
 
 

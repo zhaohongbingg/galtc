@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "galtc2:block/gal_core",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "galtc2:block/gal_core",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "galtc2:block/gal_core",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "galtc2:block/gal_core",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "galtc2:block/gal_core"
+    },
+    "facing=west": {
+      "model": "galtc2:block/gal_core",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

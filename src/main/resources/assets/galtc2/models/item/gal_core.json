@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "galtc2:block/geode/gal_core/cluster"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "jerotesvillage"
+    }
+  ],
+  "input": "galtc2:saya",
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_saya"
+  },
+  "temperature": 1200
+}

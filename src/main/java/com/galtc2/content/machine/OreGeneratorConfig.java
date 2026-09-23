@@ -154,7 +154,6 @@ public class OreGeneratorConfig {
                     { "item": "minecraft:lapis_ore",       "weight": 20, "minCount": 2, "maxCount": 4, "energyPerOperation": 30000 },
                     { "item": "minecraft:diamond_ore",     "weight": 5,  "minCount": 1, "maxCount": 1, "energyPerOperation": 200000 },
                     { "item": "minecraft:emerald_ore",     "weight": 3,  "minCount": 1, "maxCount": 1, "energyPerOperation": 300000 },
-                    { "item": "galtc2:gal_ore",            "weight": 10, "minCount": 1, "maxCount": 2, "energyPerOperation": 100000 },
                     { "item": "galtc2:juqing_ore",         "weight": 8,  "minCount": 1, "maxCount": 2, "energyPerOperation": 80000 },
                     { "item": "galtc2:seqi_ore",           "weight": 6,  "minCount": 1, "maxCount": 2, "energyPerOperation": 120000 },
                     { "item": "galtc2:feimeng_ore",        "weight": 10, "minCount": 1, "maxCount": 2, "energyPerOperation": 60000 },

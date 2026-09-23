@@ -1,0 +1,32 @@
+{
+  "condition": {
+    "modid": "jerotesvillage",
+    "type": "forge:mod_loaded"
+  },
+  "craftable": false,
+  "hidden": false,
+  "sortOrder": 2,
+  "tier": 5,
+  "color": "FF1f4d2e",
+  "fallbacks": [
+    "metal"
+  ],
+  "generator": {
+    "supported_stats": [
+      "tconstruct:head",
+      "tconstruct:handle",
+      "tconstruct:binding",
+      "tconstruct:repair_kit",
+      "tconstruct:armor_plating",
+      "tconstruct:plating_helmet",
+      "tconstruct:plating_chestplate",
+      "tconstruct:plating_leggings",
+      "tconstruct:plating_boots",
+      "tconstruct:plating_shield",
+      "tconstruct:maille",
+      "tconstruct:armor_maille",
+      "tconstruct:limb",
+      "tconstruct:grip"
+    ]
+  }
+}

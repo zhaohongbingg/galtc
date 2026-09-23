@@ -293,7 +293,39 @@
   "message.galtc.death_immunity":"Deceive the world, El Psy Congroo",
 
   "itemGroup.galtctap": "GalTC2",
-  "block.galtc2.ore_generator": "Ore Generator"
+  "block.galtc2.ore_generator": "Ore Generator",
+
+  "modifier.galtc2.scroll_cast": "Scroll Cast",
+  "modifier.galtc2.scroll_cast.flavor": "Imprint a flawless magic scroll into your tool.",
+  "modifier.galtc2.scroll_cast.description": "Hold the tool, put a spell-bearing Flawless Magic Scroll in your offhand and sneak to copy the spell into the tool (consumes the scroll). Melee spells trigger on hit; other spells cast on right-click.",
+  "modifier.galtc2.fire_apostle": "Fire Apostle",
+  "modifier.galtc2.fire_apostle.flavor": "Even flames bow.",
+  "modifier.galtc2.fire_apostle.description": "Each armor piece reduces fire damage taken by 20% and increases fire damage dealt by 30%.",
+
+  "item.galtc2.saya": "Saya Ingot",
+  "item.galtc2.molten_saya_bucket": "Molten Saya Bucket",
+  "fluid_type.galtc2.molten_saya": "Molten Saya",
+  "material.galtc2.saya": "Saya",
+  "material.galtc2.saya.encyclopedia": "A dark-green indescribable thing, said to come from Saya.",
+  "modifier.galtc2.saya": "Saya",
+  "modifier.galtc2.saya.flavor": "An indescribable touch.",
+  "modifier.galtc2.saya.description": "After a melee hit, summons a tentacle near the target to help attack (tentacle from J Village; requires J Village).",
+  "item.galtc2.shoujing": "Shoujing Ingot",
+  "item.galtc2.molten_shoujing_bucket": "Molten Shoujing Bucket",
+  "fluid_type.galtc2.molten_shoujing": "Molten Shoujing",
+  "material.galtc2.shoujing": "Shoujing",
+  "material.galtc2.shoujing.encyclopedia": "The power of Shoujing, balanced between offense and defense.",
+  "modifier.galtc2.shoujing": "Shoujing",
+  "modifier.galtc2.shoujing.flavor": "Offense and defense in one.",
+  "modifier.galtc2.shoujing.description": "Calls the Darisorder to fight for you when you attack or are hit (from J Village; requires J Village).",
+  "item.galtc2.euthanasia": "Euthanasia Ingot",
+  "item.galtc2.molten_euthanasia_bucket": "Molten Euthanasia Bucket",
+  "fluid_type.galtc2.molten_euthanasia": "Molten Euthanasia",
+  "material.galtc2.euthanasia": "Euthanasia",
+  "material.galtc2.euthanasia.encyclopedia": "Melee and ranged attacks alike bring down an unclean rain of blood.",
+  "modifier.galtc2.euthanasia": "Euthanasia",
+  "modifier.galtc2.euthanasia.flavor": "Unclean rain of blood.",
+  "modifier.galtc2.euthanasia.description": "Melee and arrow hits call down an unclean rain of blood on the target (spell from J Village; requires J Village)."
 }
 
 

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X ",
+    "X "
+  ],
+  "key": {
+    "X": {
+      "item": "galtc2:gal_crystal"
+    }
+  },
+  "result": {
+    "item": "galtc2:juqing_fragment"
+  }
+}

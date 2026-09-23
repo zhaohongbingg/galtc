@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABA",
+    "B B",
+    "ABA"
+  ],
+  "key": {
+    "A": {
+      "item": "galtc2:juqing_fragment"
+    },
+    "B": {
+      "item": "galtc2:seqi_fragment"
+    }
+  },
+  "result": {
+    "item": "galtc2:gal_core"
+  }
+}

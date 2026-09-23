@@ -38,7 +38,12 @@ public class IngotItemColor {
         Map.entry("badwoman", 0xFFF9C9D3),
         Map.entry("galaxy_railroad", 0xFF0A1128),
         Map.entry("ciallo", 0xFFB6CFA5),
-        Map.entry("tsukiyashiro_kisaki", 0xFFF2E7A1)
+        Map.entry("tsukiyashiro_kisaki", 0xFFF2E7A1),
+        Map.entry("saya", 0xFF1F4D2E),
+        Map.entry("shoujing", 0xFF16131F),
+        Map.entry("euthanasia", 0xFF8B0000),
+        Map.entry("qingfeng", 0xFF9BA3AB),
+        Map.entry("morgana", 0xFF6A4C93)
     );
 
     @SubscribeEvent
@@ -78,7 +83,12 @@ public class IngotItemColor {
             galtcItem.badwoman.get(),
             galtcItem.galaxy_railroad.get(),
             galtcItem.ciallo.get(),
-            galtcItem.tsukiyashiro_kisaki.get()
+            galtcItem.tsukiyashiro_kisaki.get(),
+            galtcItem.saya.get(),
+            galtcItem.shoujing.get(),
+            galtcItem.euthanasia.get(),
+            galtcItem.qingfeng.get(),
+            galtcItem.morgana.get()
         );
     }
 }
