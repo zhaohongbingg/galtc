@@ -64,12 +64,16 @@ public class OreGeneratorBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        if (level.isClientSide) return null;
-        return (lvl, pos, st, be) -> {
-            if (be instanceof OreGeneratorBlockEntity o) {
-                o.tickServer();
-            }
-        };
+        // ===== 矿石生成器暂时停用（注释保留，未删除）=====
+        // 停用点就在这里：不返回 ticker，方块实体就不会吸能、不推进进度、不产矿（已经放下的也不会再工作）。
+        // 恢复时：删掉下面那行 return null，把原 ticker 代码放开即可。
+        // if (level.isClientSide) return null;
+        // return (lvl, pos, st, be) -> {
+        //     if (be instanceof OreGeneratorBlockEntity o) {
+        //         o.tickServer();
+        //     }
+        // };
+        return null;
     }
 
     @Override

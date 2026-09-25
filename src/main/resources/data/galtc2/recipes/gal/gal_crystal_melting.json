@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:gal_crystal"
+  },
+  "result": {
+    "amount": 30,
+    "fluid": "galtc2:molten_juqing"
+  },
+  "byproducts": [
+    {
+      "amount": 30,
+      "fluid": "galtc2:molten_seqi"
+    },
+    {
+      "amount": 30,
+      "fluid": "galtc2:molten_feimeng"
+    },
+    {
+      "amount": 30,
+      "fluid": "galtc2:molten_guro"
+    }
+  ],
+  "temperature": 800,
+  "time": 10
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/refine_meror_metal"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "galtc2:molten_refine_meror"
+  },
+  "temperature": 1500,
+  "time": 648
+}

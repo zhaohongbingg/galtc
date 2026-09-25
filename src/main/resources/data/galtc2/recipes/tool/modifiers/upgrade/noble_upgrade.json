@@ -1,0 +1,17 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": false,
+  "inputs": [
+    {
+      "item": "jerotesvillage:ancient_second_rounder_noble_upgrade_smithing_template"
+    },
+    {
+      "tag": "forge:gems/lapis"
+    }
+  ],
+  "level": 1,
+  "result": "galtc2:noble_upgrade",
+  "tools": {
+    "tag": "tconstruct:modifiable"
+  }
+}

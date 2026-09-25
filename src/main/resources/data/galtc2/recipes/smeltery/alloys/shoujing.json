@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:alloy",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "jerotesvillage"
+    }
+  ],
+  "inputs": [
+    {
+      "amount": 90,
+      "fluid": "galtc2:molten_seqi"
+    },
+    {
+      "amount": 90,
+      "fluid": "galtc2:molten_meror"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_shoujing"
+  },
+  "temperature": 1500
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X ",
+    "XX"
+  ],
+  "key": {
+    "X": {
+      "item": "galtc2:gal_crystal"
+    }
+  },
+  "result": {
+    "item": "galtc2:guro_fragment",
+    "count": 3
+  }
+}

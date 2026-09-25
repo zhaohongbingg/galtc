@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "amount": 90,
+    "fluid": "galtc2:molten_refine_meror"
+  },
+  "output": "galtc2:refine_meror",
+  "temperature": 1500
+}

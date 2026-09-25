@@ -102,42 +102,29 @@ public class galtcItem {
             ITEMS.register("guro_fragment", () -> new Item(new Item.Properties()));//guro碎片
 
 
+    /**
+     * 创造栏的展示顺序（<b>只影响显示</b>：物品的注册顺序 = 上面字段的声明顺序，
+     * 也就是存档里的 id，改这里不会动到旧存档）。
+     * <ol>
+     *   <li>gal 材料锭：顺序与 materials.csv 一致</li>
+     *   <li>J村 联动材料锭：需要 jerotesvillage</li>
+     *   <li>其它材料锭：万花镜（流体/合金还没做）</li>
+     *   <li>Gal水晶 与 四种矿石碎片</li>
+     * </ol>
+     * 方块部分见 {@link galtctag}，接在这批物品后面。
+     */
     public static final List<RegistryObject<Item>> ALL_ITEMS = List.of(
-            sprb,
-            zeroone,
-            kagome,
-            aosora,
-            atri,
-            apeiria,
-            narcissus,
-            ca,
+            // ---- 1. gal 材料锭 ----
+            sprb, zeroone, kagome, aosora, atri, apeiria, narcissus, ca,
+            steinsgate, azarashi, nighttimesheep, oumunnbyou, kisaragikurenai, blacklily,
+            muramasa, shochou, izumi_hiyori, nishiki_asumi, qienidian, rewrite,
+            badwoman, galaxy_railroad, ciallo, tsukiyashiro_kisaki,
+            // ---- 2. J村 联动材料锭 ----
+            saya, shoujing, euthanasia, qingfeng, morgana,
+            // ---- 3. 其它材料锭 ----
             kaleidoscope,
-            steinsgate,
-            azarashi,
-            nighttimesheep,
-            oumunnbyou,
-            kisaragikurenai,
-            blacklily,
-            muramasa,
-            shochou,
-            izumi_hiyori,
-            nishiki_asumi,
-            qienidian,
-            rewrite,
-            badwoman,
-            galaxy_railroad,
-            ciallo,
-            tsukiyashiro_kisaki,
-            saya,
-            shoujing,
-            euthanasia,
-            qingfeng,
-            morgana,
-            gal_crystal,
-            juqing_fragment,
-            seqi_fragment,
-            feimeng_fragment,
-            guro_fragment
+            // ---- 4. Gal水晶 与四种碎片 ----
+            gal_crystal, juqing_fragment, seqi_fragment, feimeng_fragment, guro_fragment
     );
 
 

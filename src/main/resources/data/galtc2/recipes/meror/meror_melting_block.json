@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/meror_metal"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "galtc2:molten_meror"
+  },
+  "temperature": 1400,
+  "time": 648
+}

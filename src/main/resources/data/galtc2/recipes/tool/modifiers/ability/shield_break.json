@@ -1,0 +1,17 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": false,
+  "inputs": [
+    {
+      "item": "jerotesvillage:ominous_javelin"
+    }
+  ],
+  "level": 1,
+  "slots": {
+    "abilities": 1
+  },
+  "result": "galtc2:shield_break",
+  "tools": {
+    "tag": "tconstruct:modifiable/ranged"
+  }
+}

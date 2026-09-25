@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:fire_apostle_ingot"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_fire_apostle"
+  },
+  "temperature": 1550,
+  "time": 72
+}

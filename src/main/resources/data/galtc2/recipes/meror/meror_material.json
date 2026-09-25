@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:ingots/meror_metal"
+  },
+  "material": "galtc2:meror",
+  "needed": 1,
+  "value": 1
+}

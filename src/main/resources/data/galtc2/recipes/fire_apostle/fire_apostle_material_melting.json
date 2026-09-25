@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "galtc2:fire_apostle",
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_fire_apostle"
+  },
+  "temperature": 1550
+}

@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:alloy",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "jerotesvillage"
+    }
+  ],
+  "inputs": [
+    {
+      "amount": 90,
+      "fluid": "galtc2:molten_feimeng"
+    },
+    {
+      "amount": 90,
+      "fluid": "galtc2:molten_ancient_second_rounder"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_qingfeng"
+  },
+  "temperature": 1500
+}

@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:alloy",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "jerotesvillage"
+    }
+  ],
+  "inputs": [
+    {
+      "amount": 90,
+      "fluid": "galtc2:molten_juqing"
+    },
+    {
+      "amount": 90,
+      "fluid": "galtc2:molten_guro"
+    },
+    {
+      "amount": 90,
+      "fluid": "galtc2:molten_villager_metal"
+    },
+    {
+      "amount": 90,
+      "fluid": "tconstruct:meat_soup"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_saya"
+  },
+  "temperature": 1500
+}

@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "jerotesvillage:giant_monster_hair"
+  },
+  "material": "galtc2:giant_monster_hair",
+  "needed": 1,
+  "value": 1
+}

@@ -97,11 +97,11 @@ public class galtcWorldGenProvider extends DatapackBuiltinEntriesProvider {
     }
 
     public static void PlacedFeatures(BootstapContext<PlacedFeature> context) {
-        // 平均每 24 个区块一个，y = -58 ~ 30（和原版紫水晶晶洞同一档稀有度）
+        // 平均每 144 个区块一个（原版紫水晶晶洞是 24，这里是它的 1/6：再把上一版的 72 翻一倍），y = -58 ~ 30
         context.register(GAL_GEODE_PLACED, new PlacedFeature(
                 context.lookup(Registries.CONFIGURED_FEATURE).getOrThrow(GAL_GEODE_CONFIGURED),
                 List.of(
-                        RarityFilter.onAverageOnceEvery(24),
+                        RarityFilter.onAverageOnceEvery(144),
                         InSquarePlacement.spread(),
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-58), VerticalAnchor.absolute(30)),
                         BiomeFilter.biome()

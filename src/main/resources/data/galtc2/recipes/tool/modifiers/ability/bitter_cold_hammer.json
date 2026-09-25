@@ -1,0 +1,17 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": false,
+  "inputs": [
+    {
+      "item": "jerotesvillage:bitter_cold_hammer"
+    }
+  ],
+  "level": 1,
+  "slots": {
+    "abilities": 1
+  },
+  "result": "galtc2:bitter_cold_hammer",
+  "tools": {
+    "tag": "tconstruct:modifiable/melee"
+  }
+}

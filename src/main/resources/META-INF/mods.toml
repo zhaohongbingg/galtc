@@ -68,7 +68,9 @@ versionRange="[1.20.1-3.9.1.26,)"
 ordering="AFTER"
 side="BOTH"
 
-# J村(Jerotes Village) 软联动：可选依赖，未安装时 galtc2 照常运行
+# J村(Jerotes Village) 软联动：JV Tinkers 那套（联动合金 / 物品 / 流体 / 强化 / 创造栏 / 阵营事件）
+# 以及匠魂里的 J村 系材料，都只在检测到 J村 时注册（见 com.galtc2.jvt.Jvt#init）。
+# 未安装 J村 时 galtc2 照常运行，且不会出现任何 JV 内容。
 [[dependencies.${ mod_id }]]
 modId = "jerotesvillage"
 mandatory = false
@@ -76,4 +78,17 @@ versionRange = "[1.1.5.19,)"
 ordering = "AFTER"
 side = "BOTH"
 
+[[dependencies.${ mod_id }]]
+modId = "mantle"
+mandatory = true
+versionRange = "[1.11.69,)"
+ordering = "AFTER"
+side = "BOTH"
 
+# J村前置库（JV 部分引用 com.jerotes.jerotes.*；跟随 jerotesvillage 一起存在，这里只做顺序约束）
+[[dependencies.${ mod_id }]]
+modId = "jerotes"
+mandatory = false
+versionRange = "[1.3.2.1,)"
+ordering = "AFTER"
+side = "BOTH"

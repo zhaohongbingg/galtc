@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "jerotesvillage:fire_apostle_boots"
+  },
+  "result": {
+    "amount": 360,
+    "fluid": "galtc2:molten_fire_apostle"
+  },
+  "temperature": 1550,
+  "time": 288
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "jerotesvillage:mountain_realm_flag_spear_of_spear"
+  },
+  "result": {
+    "amount": 270,
+    "fluid": "galtc2:molten_mountain_realm"
+  },
+  "temperature": 1500,
+  "time": 216
+}

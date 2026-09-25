@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/serpon_alloy"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "galtc2:molten_serpon_alloy"
+  },
+  "temperature": 1350,
+  "time": 648
+}

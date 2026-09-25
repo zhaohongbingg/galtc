@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/villager_metal"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_villager_metal"
+  },
+  "temperature": 1200,
+  "time": 72
+}

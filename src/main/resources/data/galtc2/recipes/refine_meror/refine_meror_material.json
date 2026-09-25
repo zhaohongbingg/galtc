@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:ingots/refine_meror_metal"
+  },
+  "material": "galtc2:refine_meror",
+  "needed": 1,
+  "value": 1
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/qoaiku_metal"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "galtc2:molten_qoaiku_metal"
+  },
+  "temperature": 1300,
+  "time": 648
+}

@@ -1,0 +1,14 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": false,
+  "inputs": [
+    {
+      "item": "jerotesvillage:slavery_supervisor_hammer_whip"
+    }
+  ],
+  "level": 1,
+  "result": "galtc2:chain_bind",
+  "tools": {
+    "tag": "tconstruct:modifiable/melee"
+  }
+}

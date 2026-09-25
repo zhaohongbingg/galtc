@@ -34,7 +34,7 @@ public class galtcBlock {
         return registered;
     }
 
-    /** 矿石生成器 */
+    /** 矿石生成器（功能暂时停用：见 OreGeneratorBlock#getTicker，注册与资源都还在） */
     public static final RegistryObject<Block> ORE_GENERATOR =
             registerBlocks("ore_generator", OreGeneratorBlock::new);
 
@@ -118,6 +118,7 @@ public class galtcBlock {
     public static final List<RegistryObject<Block>> HAND_MODELED = List.of(
             ORE_GENERATOR,
             GAL_CORE, SMALL_GAL_CORE_BUD, MEDIUM_GAL_CORE_BUD, LARGE_GAL_CORE_BUD, BUDDING_GAL_CORE);
+    // 注：矿石生成器暂时停用时，它的 blockstate / 模型仍留在资源里（未删除），所以这里继续排除 datagen。
 
     public static void register() {
     }

@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:ingots/serpon_alloy"
+  },
+  "material": "galtc2:serpon_alloy",
+  "needed": 1,
+  "value": 1
+}

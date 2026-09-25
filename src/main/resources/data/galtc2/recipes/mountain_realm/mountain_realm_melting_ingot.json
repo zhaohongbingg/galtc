@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:mountain_realm_ingot"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_mountain_realm"
+  },
+  "temperature": 1500,
+  "time": 72
+}

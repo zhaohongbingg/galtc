@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "jerotesvillage:fire_apostle_helmet"
+  },
+  "result": {
+    "amount": 450,
+    "fluid": "galtc2:molten_fire_apostle"
+  },
+  "temperature": 1550,
+  "time": 360
+}

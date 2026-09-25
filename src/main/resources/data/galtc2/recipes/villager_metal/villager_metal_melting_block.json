@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/villager_metal"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "galtc2:molten_villager_metal"
+  },
+  "temperature": 1200,
+  "time": 648
+}

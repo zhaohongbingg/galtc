@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "amount": 90,
+      "fluid": "tconstruct:molten_copper"
+    },
+    {
+      "amount": 90,
+      "fluid": "tconstruct:molten_iron"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_villager_metal"
+  },
+  "temperature": 1200
+}

@@ -1,0 +1,14 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": false,
+  "inputs": [
+    {
+      "item": "jerotesvillage:bright_land_beast_horn"
+    }
+  ],
+  "level": 1,
+  "result": "galtc2:bright_land_beast_horn",
+  "tools": {
+    "tag": "tconstruct:modifiable/melee"
+  }
+}

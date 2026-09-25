@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "amount": 90,
+    "fluid": "galtc2:molten_villager_metal"
+  },
+  "output": "galtc2:villager_metal",
+  "temperature": 1200
+}

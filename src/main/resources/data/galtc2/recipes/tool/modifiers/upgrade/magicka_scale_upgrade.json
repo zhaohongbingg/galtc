@@ -1,0 +1,17 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": false,
+  "inputs": [
+    {
+      "item": "jerotesvillage:magicka_scale_upgrade_smithing_template"
+    },
+    {
+      "tag": "forge:gems/diamond"
+    }
+  ],
+  "level": 1,
+  "result": "galtc2:magicka_scale_upgrade",
+  "tools": {
+    "tag": "tconstruct:modifiable/armor"
+  }
+}

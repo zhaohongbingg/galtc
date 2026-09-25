@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:alloy",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "jerotesvillage"
+    }
+  ],
+  "inputs": [
+    {
+      "amount": 90,
+      "fluid": "galtc2:molten_juqing"
+    },
+    {
+      "amount": 90,
+      "fluid": "galtc2:molten_serpon_alloy"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_euthanasia"
+  },
+  "temperature": 1500
+}

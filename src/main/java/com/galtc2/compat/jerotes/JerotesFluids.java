@@ -28,7 +28,7 @@ public final class JerotesFluids {
     private static final FluidDeferredRegister FLUIDS = new FluidDeferredRegister(Galtc2.MODID);
 
     /** 4 个联动流体的属性一致（与改版前 galtc2Fluid 里的写法保持完全一致） */
-    private static final int TEMPERATURE = 1000;
+    private static final int TEMPERATURE = 1500;
     private static final int VISCOSITY = 1000;
     private static final int DENSITY = 1200;
 

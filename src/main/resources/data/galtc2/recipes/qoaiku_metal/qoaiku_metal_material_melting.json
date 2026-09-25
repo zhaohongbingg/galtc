@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "galtc2:qoaiku_metal",
+  "result": {
+    "amount": 90,
+    "fluid": "galtc2:molten_qoaiku_metal"
+  },
+  "temperature": 1300
+}

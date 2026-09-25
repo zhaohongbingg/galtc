@@ -1,0 +1,17 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": false,
+  "inputs": [
+    {
+      "item": "jerotesvillage:seawave_trident"
+    }
+  ],
+  "level": 1,
+  "slots": {
+    "abilities": 1
+  },
+  "result": "galtc2:seawave_trident",
+  "tools": {
+    "tag": "tconstruct:modifiable/melee"
+  }
+}

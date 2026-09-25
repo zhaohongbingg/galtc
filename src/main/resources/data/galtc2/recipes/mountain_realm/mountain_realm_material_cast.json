@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "amount": 90,
+    "fluid": "galtc2:molten_mountain_realm"
+  },
+  "output": "galtc2:mountain_realm",
+  "temperature": 1500
+}

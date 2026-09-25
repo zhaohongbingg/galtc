@@ -4,8 +4,10 @@ import com.galtc2.Register.*;
 import com.galtc2.client.tooltip.TooltipImageRegistry;
 import com.galtc2.compat.jerotes.JerotesCompat;
 
-import com.galtc2.content.machine.OreGeneratorConfig;
+// 暂时停用矿石生成器（注释保留，未删除）：恢复时放开本行与 commonSetup 里的配置加载
+// import com.galtc2.content.machine.OreGeneratorConfig;
 import com.galtc2.dataGen.*;
+import com.galtc2.jvt.Jvt;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.HolderLookup;
@@ -96,11 +98,14 @@ public class Galtc2 {
         galtc2Modifier.MODIFIERS.register(modEventBus);
         // J村(Jerotes Village) 软联动：未安装时自动跳过
         JerotesCompat.init(modEventBus);
+        // JV Tinkers（原 jvt 模组，已并入本模组，命名空间统一为 galtc2）
+        Jvt.init(modEventBus);
+        modEventBus.addListener(Jvt::commonSetup);
     }
     private void commonSetup(final FMLCommonSetupEvent event) {
         LOGGER.info("HELLO FROM COMMON SETUP");
-        // 加载矿石生成器配置
-        OreGeneratorConfig.load(FMLPaths.CONFIGDIR.get().toFile());
+        // 矿石生成器暂时停用（注释保留，未删除）：恢复时放开上面那行 import 与下面这行
+        // OreGeneratorConfig.load(FMLPaths.CONFIGDIR.get().toFile());
     }
 
     // Add the example block item to the building blocks tab

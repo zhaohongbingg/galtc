@@ -1,0 +1,17 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": false,
+  "inputs": [
+    {
+      "item": "jerotesvillage:firepower_pourer_chainsaw"
+    }
+  ],
+  "level": 1,
+  "slots": {
+    "abilities": 1
+  },
+  "result": "galtc2:chainsaw",
+  "tools": {
+    "tag": "tconstruct:modifiable/melee"
+  }
+}

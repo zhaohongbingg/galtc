@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "jerotesvillage:ancient_second_rounder_chestplate"
+  },
+  "result": {
+    "amount": 720,
+    "fluid": "galtc2:molten_ancient_second_rounder"
+  },
+  "temperature": 1450,
+  "time": 576
+}

@@ -51,90 +51,90 @@ public class galtc2Fluid {
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_BLACK, 0), 10, 0) {});
 
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_zeroone =
-            registerFluid(FLUIDS, "molten_zeroone", 800, 1500, 1800, 0,
+            registerFluid(FLUIDS, "molten_zeroone", 1500, 1500, 1800, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.METAL, 0), 12, 3.0f));
     // 低温精密流体 - kagome (网格结构)
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_kagome =
-            registerFluid(FLUIDS, "molten_kagome", 600, 1200, 2000, 0,
+            registerFluid(FLUIDS, "molten_kagome", 1500, 1200, 2000, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.DIAMOND, 0), 8, 2.5f));
     //  - aosora
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_aosora =
-            registerFluid(FLUIDS, "molten_aosora", 900, 800, 1400, 0,
+            registerFluid(FLUIDS, "molten_aosora", 1500, 800, 1400, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_LIGHT_BLUE, 10), 10, 3.5f));
     //  - arti
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_atri =
-            registerFluid(FLUIDS, "molten_atri", 700, 1000, 1600, 0,
+            registerFluid(FLUIDS, "molten_atri", 1500, 1000, 1600, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_PURPLE, 0), 9, 2.0f));
     //  - apeiria (无限)
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_apeiria =
-            registerFluid(FLUIDS, "molten_apeiria", 2200, 5000, 3500, 0,
+            registerFluid(FLUIDS, "molten_apeiria", 1500, 5000, 3500, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_MAGENTA, 0), 20, 8.0f));
     //  - narcissus (水仙)
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_narcissus =
-            registerFluid(FLUIDS, "molten_narcissus", 500, 600, 1200, 0,
+            registerFluid(FLUIDS, "molten_narcissus", 1500, 600, 1200, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_YELLOW, 0), 6, 1.5f));
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_ca =
-            registerFluid(FLUIDS, "molten_ca", 500, 600, 1200, 0,
+            registerFluid(FLUIDS, "molten_ca", 1500, 600, 1200, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_YELLOW, 0), 6, 1.5f));
 
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_steinsgate =
-                registerFluid(FLUIDS, "molten_steinsgate", 500, 600, 1200, 0,
+                registerFluid(FLUIDS, "molten_steinsgate", 1500, 600, 1200, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_YELLOW, 0), 6, 1.5f));
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_azarashi =
-                registerFluid(FLUIDS, "molten_azarashi", 500, 600, 1200, 0,
+                registerFluid(FLUIDS, "molten_azarashi", 1500, 600, 1200, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_YELLOW, 0), 6, 1.5f));
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_nighttimesheep =
-            registerFluid(FLUIDS, "molten_nighttimesheep", 500, 600, 1200, 0,
+            registerFluid(FLUIDS, "molten_nighttimesheep", 1500, 600, 1200, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_YELLOW, 0), 6, 1.5f));
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_oumunnbyou =
-            registerFluid(FLUIDS, "molten_oumunnbyou", 500, 600, 1200, 0,
+            registerFluid(FLUIDS, "molten_oumunnbyou", 1500, 600, 1200, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_YELLOW, 0), 6, 1.5f));
     public  static  final  FlowingFluidObject<ForgeFlowingFluid> molten_kisaragikurenai =
-            registerFluid(FLUIDS, "molten_kisaragikurenai", 500, 600, 1200, 0,
+            registerFluid(FLUIDS, "molten_kisaragikurenai", 1500, 600, 1200, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_YELLOW, 0), 6, 1.5f));
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_blacklily =
-            registerFluid(FLUIDS, "molten_blacklily", 500, 600, 1200, 0,
+            registerFluid(FLUIDS, "molten_blacklily", 1500, 600, 1200, 0,
 
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_YELLOW, 0), 6, 1.5f));
 public static final FlowingFluidObject<ForgeFlowingFluid> molten_muramasa =
-            registerFluid(FLUIDS, "molten_muramasa", 500, 600, 1200, 0,
+            registerFluid(FLUIDS, "molten_muramasa", 1500, 600, 1200, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_YELLOW, 0), 6, 1.5f));
 
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_shochou =
-            registerFluid(FLUIDS, "molten_shochou", 900, 1200, 1500, 0,
+            registerFluid(FLUIDS, "molten_shochou", 1500, 1200, 1500, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_BROWN, 0), 10, 2.0f));
 
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_izumi_hiyori =
-            registerFluid(FLUIDS, "molten_izumi_hiyori", 800, 1000, 1300, 0,
+            registerFluid(FLUIDS, "molten_izumi_hiyori", 1500, 1000, 1300, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_YELLOW, 0), 8, 1.5f));
 
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_tsukiyashiro_kisaki =
-            registerFluid(FLUIDS, "molten_tsukiyashiro_kisaki", 900, 1200, 1500, 0,
+            registerFluid(FLUIDS, "molten_tsukiyashiro_kisaki", 1500, 1200, 1500, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_YELLOW, 0), 10, 2.0f));
 
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_nishiki_asumi =
-            registerFluid(FLUIDS, "molten_nishiki_asumi", 900, 1200, 1500, 0,
+            registerFluid(FLUIDS, "molten_nishiki_asumi", 1500, 1200, 1500, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_ORANGE, 0), 10, 2.0f));
 
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_qienidian =
-            registerFluid(FLUIDS, "molten_qienidian", 800, 1000, 1300, 0,
+            registerFluid(FLUIDS, "molten_qienidian", 1500, 1000, 1300, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_LIGHT_BLUE, 0), 8, 1.5f));
 
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_rewrite =
-            registerFluid(FLUIDS, "molten_rewrite", 900, 1200, 1500, 0,
+            registerFluid(FLUIDS, "molten_rewrite", 1500, 1200, 1500, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_ORANGE, 0), 10, 2.0f));
 
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_badwoman =
-            registerFluid(FLUIDS, "molten_badwoman", 800, 1000, 1300, 0,
+            registerFluid(FLUIDS, "molten_badwoman", 1500, 1000, 1300, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_PINK, 0), 8, 1.5f));
 
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_galaxy_railroad =
-            registerFluid(FLUIDS, "molten_galaxy_railroad", 1000, 1200, 1500, 0,
+            registerFluid(FLUIDS, "molten_galaxy_railroad", 1500, 1200, 1500, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_BLUE, 0), 10, 2.0f));
 
     // Ciallo
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_ciallo =
-            registerFluid(FLUIDS, "molten_ciallo", 1000, 1000, 100, 0,
+            registerFluid(FLUIDS, "molten_ciallo", 1500, 1000, 100, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GREEN, 0), 10, 0) {});
 
     // 矿石碎片流体
@@ -153,7 +153,7 @@ public static final FlowingFluidObject<ForgeFlowingFluid> molten_muramasa =
 
     // 莫尔加那（暗紫）
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_morgana =
-            registerFluid(FLUIDS, "molten_morgana", 1000, 1000, 1200, 0,
+            registerFluid(FLUIDS, "molten_morgana", 1500, 1000, 1200, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_PURPLE, 0), 10, 2.0f));
 
     // 沙耶 / 勺景 / 腐姬 / 清枫 这 4 个 J村 联动材料的流体不在这里注册：

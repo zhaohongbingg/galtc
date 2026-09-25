@@ -1,0 +1,17 @@
+{
+  "default": [],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "galtc2:giant_monster_hair_armor"
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "level": 1,
+        "name": "galtc2:giant_monster_hair_melee"
+      }
+    ]
+  }
+}

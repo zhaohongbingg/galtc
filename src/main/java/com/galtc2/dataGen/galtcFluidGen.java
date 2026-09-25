@@ -4,6 +4,7 @@ import com.galtc2.Galtc2;
 import com.galtc2.Register.galtc2Fluid;
 import com.galtc2.compat.jerotes.JerotesCompat;
 import com.galtc2.compat.jerotes.JerotesFluids;
+import com.galtc2.jvt.Register.JvtFluid;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -64,6 +65,16 @@ public class galtcFluidGen extends AbstractFluidTextureProvider {
 
 
 
+
+        // ---- JV Tinkers（原 jvt 模组）的熔融金属 ----
+        this.molten(JvtFluid.molten_villager_metal, 0xFFB06F35);
+        this.molten(JvtFluid.molten_qoaiku_metal, 0xFF10AB86);
+        this.molten(JvtFluid.molten_serpon_alloy, 0xFFD08405);
+        this.molten(JvtFluid.molten_meror, 0xFFC47D89);
+        this.molten(JvtFluid.molten_refine_meror, 0xFFCA949D);
+        this.molten(JvtFluid.molten_ancient_second_rounder, 0xFF5E9BB0);
+        this.molten(JvtFluid.molten_fire_apostle, 0xFFE86A2A);
+        this.molten(JvtFluid.molten_mountain_realm, 0xFFC9A227);
     }
     public FluidTexture.Builder texture(FluidObject<?> fluid, String id) {
         return this.texture(fluid).textures(Galtc2.loc("fluid/material/" + id), false, false);

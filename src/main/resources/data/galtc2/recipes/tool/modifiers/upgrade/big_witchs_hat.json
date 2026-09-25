@@ -1,0 +1,17 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": false,
+  "inputs": [
+    {
+      "item": "jerotesvillage:big_witchs_hat"
+    }
+  ],
+  "level": 1,
+  "slots": {
+    "upgrades": 1
+  },
+  "result": "galtc2:big_witchs_hat",
+  "tools": {
+    "tag": "tconstruct:modifiable/armor"
+  }
+}

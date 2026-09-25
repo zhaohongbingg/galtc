@@ -1,0 +1,17 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": false,
+  "inputs": [
+    {
+      "item": "jerotesvillage:hag_eye"
+    }
+  ],
+  "level": 1,
+  "slots": {
+    "abilities": 1
+  },
+  "result": "galtc2:hag_eye",
+  "tools": {
+    "tag": "tconstruct:modifiable"
+  }
+}
