@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "galtc2:ancient_second_rounder_block"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "galtc2:blocks/ancient_second_rounder_block"
+}

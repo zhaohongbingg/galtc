@@ -7,12 +7,13 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
+import slimeknights.mantle.registration.object.MetalItemObject;
 
 /**
  * JV Tinkers 页的物品列表。
  * <p>
- * 这里只列 JV 自己的 3 个锭 —— 熔融金属桶统一放在 galtc 页的「溶液桶」段，
- * 两个页面都扫注册表会重复，所以本页不再列桶。
+ * 这里只列 JV 自己的 3 种金属 —— 每种按「锭 → 金属块 → 粒」三件套展开。
+ * 熔融金属桶统一放在 galtc 页的「溶液桶」段，两个页面都扫注册表会重复，所以本页不再列桶。
  */
 public class JvtCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS =
@@ -22,11 +23,13 @@ public class JvtCreativeTabs {
     public static final RegistryObject<CreativeModeTab> JVT_TAB = CREATIVE_TABS.register("jvt",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.jvt"))
-                    .icon(() -> new ItemStack(JvtItem.ancient_second_rounder_ingot.get()))
+                    .icon(() -> new ItemStack(JvtMetal.ancient_second_rounder.getIngot()))
                     .displayItems((params, output) -> {
-                        output.accept(JvtItem.ancient_second_rounder_ingot.get());
-                        output.accept(JvtItem.fire_apostle_ingot.get());
-                        output.accept(JvtItem.mountain_realm_ingot.get());
+                        for (MetalItemObject metal : JvtMetal.ALL_METALS) {
+                            output.accept(metal.getIngot());
+                            output.accept(metal.get());
+                            output.accept(metal.getNugget());
+                        }
                     })
                     .build());
 

@@ -4,7 +4,7 @@
   "amount_per_item": 1,
   "inputs": [
     {
-      "item": "galtc2:kaleidoscope_ingot"
+      "item": "galtc2:kaleidoscope"
     },
     {
       "item":"minecraft:nether_star"
@@ -15,7 +15,7 @@
     "max": 5
   },
   "needed_per_level": 4,
-  "result": "galtc2:kaleidoscope_ingot",
+  "result": "galtc2:kaleidoscope",
   "tools":{
     "tag": "tconstruct:modifiable/durability"
   }

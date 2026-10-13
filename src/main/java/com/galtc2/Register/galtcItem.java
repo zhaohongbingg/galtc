@@ -25,6 +25,17 @@ public class galtcItem {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, Galtc2.MODID);
 
+    /**
+     * 万花镜。
+     * <p>
+     * 它不是匠魂材料，只作强化材料使用（强化配方见
+     * {@code data/galtc2/recipes/tool/modifiers/ability/kaleidoscope.json}），
+     * 所以既没有熔融流体，也不进 {@link galtcMetal} 的三件套 ——
+     * 这里保持普通的单物品注册，id 就是 {@code galtc2:kaleidoscope}。
+     */
+    public static final RegistryObject<Item> kaleidoscope =
+            ITEMS.register("kaleidoscope", () -> new Item(new Item.Properties()));
+
     // 挖晶簇掉的水晶
     public static final RegistryObject<Item> gal_crystal =
             ITEMS.register("gal_crystal", () -> new Item(new Item.Properties()));
@@ -48,6 +59,8 @@ public class galtcItem {
      * 创造栏把它们排在前面，见 {@link galtctag}。
      */
     public static final List<RegistryObject<Item>> ALL_ITEMS = List.of(
+            // ---- 强化材料：万花镜 ----
+            kaleidoscope,
             // ---- Gal水晶 与四种碎片 ----
             gal_crystal, juqing_fragment, seqi_fragment, feimeng_fragment, guro_fragment
     );

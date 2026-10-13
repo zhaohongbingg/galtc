@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "galtc2:item/nugget",
+    "layer0": "galtc2:item/mountain_realm_nugget",
     "layer1": "galtc2:item/nugget_highlight"
   }
 }

@@ -44,18 +44,21 @@ public class galtcMetal {
      */
     public static final BlockDeferredRegister BLOCKS = new BlockDeferredRegister(Galtc2.MODID);
 
+    // 下面三个成员与 TConstruct TinkerModule 里的同名成员一一对应，
+    // 做完 galtc2 主材料后被 jvt 的 JvtMetal 复用，所以保持 public。
+
     /** 与 {@code TinkerModule#ITEM_PROPS} 等价：三件套共用的物品属性模板。 */
-    private static final Item.Properties ITEM_PROPS = new Item.Properties();
+    public static final Item.Properties ITEM_PROPS = new Item.Properties();
 
     /** 与 {@code TinkerModule#BLOCK_ITEM} 等价：金属块的 BlockItem 工厂。 */
-    private static final Function<Block, ? extends BlockItem> BLOCK_ITEM =
+    public static final Function<Block, ? extends BlockItem> BLOCK_ITEM =
             block -> new BlockItem(block, ITEM_PROPS);
 
     /**
      * 与 {@code TinkerModule#metalBuilder} 等价：
      * 金属音效 + 铁琴音高 + 需要正确工具 + 硬度 5.0，和匠魂自家金属块手感一致。
      */
-    private static BlockBehaviour.Properties metalBuilder(MapColor color) {
+    public static BlockBehaviour.Properties metalBuilder(MapColor color) {
         return BlockBehaviour.Properties.of()
                 .sound(SoundType.METAL)
                 .mapColor(color)
@@ -155,9 +158,9 @@ public class galtcMetal {
     /** 莫尔加那（暗紫，J村 联动） */
     public static final MetalItemObject morgana =
             BLOCKS.registerMetal("morgana", metalBuilder(MapColor.COLOR_PURPLE), BLOCK_ITEM, ITEM_PROPS);
-    /** 万花镜（深蓝，暂无熔融流体） */
-    public static final MetalItemObject kaleidoscope =
-            BLOCKS.registerMetal("kaleidoscope", metalBuilder(MapColor.COLOR_BLUE), BLOCK_ITEM, ITEM_PROPS);
+
+    // 注：万花镜(kaleidoscope) 不在这里。它不是匠魂材料，只作强化材料使用，
+    // 因此保持普通物品注册（见 galtcItem#kaleidoscope），没有块与粒。
 
     /**
      * 创造栏与着色都按这个顺序遍历（与上面字段声明顺序一致）。
@@ -169,8 +172,7 @@ public class galtcMetal {
             steinsgate, azarashi, nighttimesheep, oumunnbyou, kisaragikurenai, blacklily,
             muramasa, shochou, izumi_hiyori, nishiki_asumi, qienidian, rewrite,
             badwoman, galaxy_railroad, ciallo, tsukiyashiro_kisaki,
-            saya, shoujing, euthanasia, qingfeng, morgana,
-            kaleidoscope
+            saya, shoujing, euthanasia, qingfeng, morgana
     );
 
     public static void register() {

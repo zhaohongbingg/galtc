@@ -1,5 +1,6 @@
 package com.galtc2.client;
 
+import com.galtc2.Register.galtcItem;
 import com.galtc2.Register.galtcMetal;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.item.ItemColor;
@@ -93,12 +94,15 @@ public class IngotItemColor {
         ItemColor colorProvider = (stack, tintIndex) ->
                 tintIndex == 0 ? COLOR_MAP.getOrDefault(materialKey(stack.getItem().getDescriptionId()), WHITE) : WHITE;
 
-        List<Item> items = new ArrayList<>(galtcMetal.ALL_METALS.size() * 3);
+        List<Item> items = new ArrayList<>(galtcMetal.ALL_METALS.size() * 3 + 1);
         for (MetalItemObject metal : galtcMetal.ALL_METALS) {
             items.add(metal.getIngot());
             items.add(metal.getNugget());
             items.add(metal.get().asItem());
         }
+        // 万花镜不在三件套里（它不是匠魂材料），但贴图同样靠 tintindex 0 上色，
+        // materialKey 对没有形态后缀的 id 会原样返回，所以直接加进来即可。
+        items.add(galtcItem.kaleidoscope.get());
         event.register(colorProvider, items.toArray(new Item[0]));
     }
 

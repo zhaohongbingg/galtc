@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "galtc2:kaleidoscope_block"
+          "name": "galtc2:mountain_realm_block"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "galtc2:blocks/kaleidoscope_block"
+  "random_sequence": "galtc2:blocks/mountain_realm_block"
 }

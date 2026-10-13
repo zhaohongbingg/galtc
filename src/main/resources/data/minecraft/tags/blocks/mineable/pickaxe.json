@@ -13,7 +13,6 @@
     "galtc2:galaxy_railroad_block",
     "galtc2:izumi_hiyori_block",
     "galtc2:kagome_block",
-    "galtc2:kaleidoscope_block",
     "galtc2:kisaragikurenai_block",
     "galtc2:morgana_block",
     "galtc2:muramasa_block",
@@ -30,6 +29,9 @@
     "galtc2:sprb_block",
     "galtc2:steinsgate_block",
     "galtc2:tsukiyashiro_kisaki_block",
-    "galtc2:zeroone_block"
+    "galtc2:zeroone_block",
+    "galtc2:ancient_second_rounder_block",
+    "galtc2:fire_apostle_block",
+    "galtc2:mountain_realm_block"
   ]
 }

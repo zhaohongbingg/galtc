@@ -4,7 +4,7 @@ import com.galtc2.Galtc2;
 import com.galtc2.compat.jerotes.JerotesCompat;
 import com.galtc2.jvt.Register.JvtCreativeTabs;
 import com.galtc2.jvt.Register.JvtFluid;
-import com.galtc2.jvt.Register.JvtItem;
+import com.galtc2.jvt.Register.JvtMetal;
 import com.galtc2.jvt.Register.JvtModifier;
 import com.galtc2.jvt.event.NobleFactionEvents;
 import com.mojang.logging.LogUtils;
@@ -48,7 +48,8 @@ public final class Jvt {
             return;
         }
         JvtFluid.FLUIDS.register(modEventBus);
-        JvtItem.ITEMS.register(modEventBus);
+        // 3 种自有金属（金属块 / 锭 / 粒）：BlockDeferredRegister 自带 block 与 item 两张注册表
+        JvtMetal.BLOCKS.register(modEventBus);
         JvtModifier.MODIFIERS.register(modEventBus);
         JvtCreativeTabs.CREATIVE_TABS.register(modEventBus);
         // 贵族强化的阵营判定：不能靠 @Mod.EventBusSubscriber（那样没装 J村 也会被 Forge 加载本类），
