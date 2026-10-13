@@ -23,10 +23,16 @@ import com.galtc2.jvt.modifiers.PurpleSandHagEyeModifier;
 import com.galtc2.jvt.modifiers.QoaikuMetalModifier;
 import com.galtc2.jvt.modifiers.ScalyBearScaleModifier;
 import com.galtc2.jvt.modifiers.SeawaveTridentModifier;
+import com.galtc2.jvt.modifiers.SerponAlloyArmorModifier;
+import com.galtc2.jvt.modifiers.SerponAlloyMeleeModifier;
 import com.galtc2.jvt.modifiers.SerponAlloyModifier;
+import com.galtc2.jvt.modifiers.SerponPowerhouseArmorModifier;
+import com.galtc2.jvt.modifiers.SerponPowerhouseMeleeModifier;
 import com.galtc2.jvt.modifiers.SerponPowerhouseModifier;
 import com.galtc2.jvt.modifiers.ShieldBreakModifier;
 import com.galtc2.jvt.modifiers.TestModifier;
+import com.galtc2.jvt.modifiers.VillagerMetalArmorModifier;
+import com.galtc2.jvt.modifiers.VillagerMetalMeleeModifier;
 import com.galtc2.jvt.modifiers.VillagerMetalModifier;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
@@ -81,9 +87,15 @@ public class JvtModifier {
     /** 鳞熊鳞片·特性: 对友好生物造成的伤害 +20%(每级)。 */
     public static final StaticModifier<ScalyBearScaleModifier> scalyBearScale =
             MODIFIERS.register("scaly_bear_scale", ScalyBearScaleModifier::new);
-    /** 村民金属·特性(村民之力): 附近每只村民 +5% 攻击/防御。 */
+    /** 村民金属·特性(村民之力): 附近每只村民 +5% 攻击/防御。原词条保留注册，供旧存档里的工具继续生效。 */
     public static final StaticModifier<VillagerMetalModifier> villagerMetal =
             MODIFIERS.register("villager_metal", VillagerMetalModifier::new);
+    /** 村民金属·乡勇(攻击侧): 附近每只村民 +5% 近战伤害。 */
+    public static final StaticModifier<VillagerMetalMeleeModifier> villagerMetalMelee =
+            MODIFIERS.register("villager_metal_melee", VillagerMetalMeleeModifier::new);
+    /** 村民金属·庇护(防御侧): 附近每只村民 -5% 承伤(封顶 80%)。 */
+    public static final StaticModifier<VillagerMetalArmorModifier> villagerMetalArmor =
+            MODIFIERS.register("villager_metal_armor", VillagerMetalArmorModifier::new);
 
     /** 奴制监督者·捆缚: 近战命中几率捆住目标。 */
     public static final StaticModifier<ChainBindModifier> chainBind =
@@ -129,13 +141,25 @@ public class JvtModifier {
     public static final StaticModifier<SeawaveTridentModifier> seawaveTrident =
             MODIFIERS.register("seawave_trident", SeawaveTridentModifier::new);
 
-    /** 蛇龙合金·特性: 火系承伤-10%/输出+15%(每件)。 */
+    /** 蛇龙合金·特性: 火系承伤-10%/输出+15%(每件)。原词条保留注册。 */
     public static final StaticModifier<SerponAlloyModifier> serponAlloy =
             MODIFIERS.register("serpon_alloy", SerponAlloyModifier::new);
+    /** 蛇龙合金·龙炎(攻击侧): 只提升火系输出。 */
+    public static final StaticModifier<SerponAlloyMeleeModifier> serponAlloyMelee =
+            MODIFIERS.register("serpon_alloy_melee", SerponAlloyMeleeModifier::new);
+    /** 蛇龙合金·龙鳞(防御侧): 只降低火系承伤。 */
+    public static final StaticModifier<SerponAlloyArmorModifier> serponAlloyArmor =
+            MODIFIERS.register("serpon_alloy_armor", SerponAlloyArmorModifier::new);
 
-    /** 蛇龙强者强化: 前置蛇龙合金, 火系承伤-15%/输出+20%(每件)。 */
+    /** 蛇龙强者强化: 前置蛇龙合金, 火系承伤-15%/输出+20%(每件)。原词条保留注册。 */
     public static final StaticModifier<SerponPowerhouseModifier> serponPowerhouse =
             MODIFIERS.register("serpon_powerhouse", SerponPowerhouseModifier::new);
+    /** 蛇龙强者·极炎(攻击侧): 只提升火系输出。 */
+    public static final StaticModifier<SerponPowerhouseMeleeModifier> serponPowerhouseMelee =
+            MODIFIERS.register("serpon_powerhouse_melee", SerponPowerhouseMeleeModifier::new);
+    /** 蛇龙强者·极御(防御侧): 只降低火系承伤。 */
+    public static final StaticModifier<SerponPowerhouseArmorModifier> serponPowerhouseArmor =
+            MODIFIERS.register("serpon_powerhouse_armor", SerponPowerhouseArmorModifier::new);
 
     /** 旱火野火盾牌(能力槽): 蓄力施放蛇龙火舌法术。 */
     public static final StaticModifier<DroughtWildfireShieldModifier> droughtWildfireShield =

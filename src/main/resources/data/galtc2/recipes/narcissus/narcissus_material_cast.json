@@ -4,6 +4,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_narcissus"
   },
-  "output": "galtc2:narcissus",
+  "output": "galtc2:narcissus_ingot",
   "temperature": 1500
 }

@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:material",
   "ingredient": {
-    "item": "galtc2:izumi_hiyori"
+    "item": "galtc2:izumi_hiyori_ingot"
   },
   "material": "galtc2:izumi_hiyori",
   "needed": 1,

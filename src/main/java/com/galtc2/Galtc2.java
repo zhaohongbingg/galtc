@@ -3,6 +3,7 @@ package com.galtc2;
 import com.galtc2.Register.*;
 import com.galtc2.client.tooltip.TooltipImageRegistry;
 import com.galtc2.compat.jerotes.JerotesCompat;
+import com.galtc2.compat.meetyourfight.MeetYourFightCompat;
 
 // 暂时停用矿石生成器（注释保留，未删除）：恢复时放开本行与 commonSetup 里的配置加载
 // import com.galtc2.content.machine.OreGeneratorConfig;
@@ -89,6 +90,9 @@ public class Galtc2 {
         galtc2Fluid.FLUIDS.register(modEventBus);
         galtcItem.ITEMS.register(modEventBus);
         galtcBlock.BLOCKS.register(modEventBus);
+        // 材料金属三件套（金属块 / 锭 / 粒）：BlockDeferredRegister 自带 block 与 item 两个注册表，
+        // 这一行就把两边都挂上了。
+        galtcMetal.BLOCKS.register(modEventBus);
         galtcBlockEntity.BLOCK_ENTITIES.register(modEventBus);
         galtc2Effects.EFFECTS.register(modEventBus);
         galtctag.CREATIVE_MODE_TAB_DEFERRED_REGISTER.register(modEventBus);
@@ -98,6 +102,8 @@ public class Galtc2 {
         galtc2Modifier.MODIFIERS.register(modEventBus);
         // J村(Jerotes Village) 软联动：未安装时自动跳过
         JerotesCompat.init(modEventBus);
+        // 迎战(Meet Your Fight) 软联动：未安装时自动跳过
+        MeetYourFightCompat.init(modEventBus);
         // JV Tinkers（原 jvt 模组，已并入本模组，命名空间统一为 galtc2）
         Jvt.init(modEventBus);
         modEventBus.addListener(Jvt::commonSetup);

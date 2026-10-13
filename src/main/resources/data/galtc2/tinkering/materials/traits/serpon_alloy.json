@@ -1,8 +1,17 @@
 {
-  "default": [
-    {
-      "level": 1,
-      "name": "galtc2:serpon_alloy"
-    }
-  ]
+  "default": [],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:serpon_alloy_armor",
+        "level": 1
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "name": "galtc2:serpon_alloy_melee",
+        "level": 1
+      }
+    ]
+  }
 }

@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:melting",
   "ingredient": {
-    "item": "galtc2:apeiria"
+    "item": "galtc2:apeiria_ingot"
   },
   "result": {
     "amount": 90,

@@ -7,6 +7,6 @@
     }
   ],
   "fluid": {"amount": 90, "fluid": "galtc2:molten_shoujing"},
-  "output": "galtc2:shoujing",
+  "output": "galtc2:shoujing_ingot",
   "temperature": 1500
 }

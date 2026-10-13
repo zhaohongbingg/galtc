@@ -6,7 +6,7 @@
       "modid": "jerotesvillage"
     }
   ],
-  "ingredient": {"item": "galtc2:shoujing"},
+  "ingredient": {"item": "galtc2:shoujing_ingot"},
   "material": "galtc2:shoujing",
   "needed": 1,
   "value": 1

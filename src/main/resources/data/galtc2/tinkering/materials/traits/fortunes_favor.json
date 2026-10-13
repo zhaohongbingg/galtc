@@ -1,0 +1,25 @@
+{
+  "default": [],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "galtc2:holy_warrior"
+      },
+      {
+        "level": 1,
+        "name": "galtc2:kin_bond"
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "level": 1,
+        "name": "galtc2:moon_cleave"
+      },
+      {
+        "level": 1,
+        "name": "galtc2:kin_bond"
+      }
+    ]
+  }
+}

@@ -6,7 +6,7 @@
       "modid": "jerotesvillage"
     }
   ],
-  "ingredient": {"item": "galtc2:euthanasia"},
+  "ingredient": {"item": "galtc2:euthanasia_ingot"},
   "material": "galtc2:euthanasia",
   "needed": 1,
   "value": 1

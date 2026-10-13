@@ -1,15 +1,31 @@
 package com.galtc2.client;
 
-import com.galtc2.Register.galtcItem;
+import com.galtc2.Register.galtcMetal;
+import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.item.ItemColor;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import slimeknights.mantle.registration.object.MetalItemObject;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
+/**
+ * 材料金属的着色：金属块 / 锭 / 粒共用一张灰度贴图，颜色由这里按材料名查表决定。
+ * <p>
+ * 三种形态的 tintindex 都是 0（锭/粒在 {@code item/generated} 的 layer0，
+ * 金属块在 {@code models/block/<名>_block.json} 的每个面上），
+ * 所以同一套配色能直接套给三件套。
+ * <p>
+ * 形态名与材料名的对应靠「去掉后缀」得到 —— 翻译键分别是
+ * {@code item.galtc2.<名>_ingot}、{@code item.galtc2.<名>_nugget}、
+ * {@code block.galtc2.<名>_block}（金属块的物品是 BlockItem，翻译键走 {@code block.} 前缀）。
+ */
 @Mod.EventBusSubscriber(modid = "galtc2", bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class IngotItemColor {
 
@@ -46,49 +62,56 @@ public class IngotItemColor {
         Map.entry("morgana", 0xFF6A4C93)
     );
 
+    /** 三件套的 id 后缀，顺序无关（只会命中一个）。 */
+    private static final String[] FORM_SUFFIXES = {"_ingot", "_nugget", "_block"};
+
+    private static final int WHITE = 0xFFFFFFFF;
+
+    /**
+     * 从翻译键还原材料名。
+     * <pre>
+     *   item.galtc2.narcissus_ingot   -> narcissus
+     *   item.galtc2.narcissus_nugget  -> narcissus
+     *   block.galtc2.narcissus_block  -> narcissus
+     * </pre>
+     * 取最后一段是为了同时兼容 {@code item.} 与 {@code block.} 两种前缀。
+     */
+    private static String materialKey(String descriptionId) {
+        int dot = descriptionId.lastIndexOf('.');
+        String path = dot >= 0 ? descriptionId.substring(dot + 1) : descriptionId;
+        for (String suffix : FORM_SUFFIXES) {
+            if (path.endsWith(suffix)) {
+                return path.substring(0, path.length() - suffix.length());
+            }
+        }
+        return path;
+    }
+
+    /** 物品栏 / 手持：锭、粒，以及金属块的 BlockItem。 */
     @SubscribeEvent
     public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
-        ItemColor colorProvider = (stack, tintIndex) -> {
-            if (tintIndex == 0) {
-                String name = stack.getItem().getDescriptionId();
-                // 从 descriptionId 提取物品名: item.galtc2.xxx -> xxx
-                String key = name.replace("item.galtc2.", "");
-                return COLOR_MAP.getOrDefault(key, 0xFFFFFFFF);
-            }
-            return 0xFFFFFFFF;
-        };
+        ItemColor colorProvider = (stack, tintIndex) ->
+                tintIndex == 0 ? COLOR_MAP.getOrDefault(materialKey(stack.getItem().getDescriptionId()), WHITE) : WHITE;
 
-        event.register(colorProvider,
-            galtcItem.sprb.get(),
-            galtcItem.zeroone.get(),
-            galtcItem.kagome.get(),
-            galtcItem.aosora.get(),
-            galtcItem.atri.get(),
-            galtcItem.apeiria.get(),
-            galtcItem.narcissus.get(),
-            galtcItem.ca.get(),
-            galtcItem.kaleidoscope.get(),
-            galtcItem.steinsgate.get(),
-            galtcItem.azarashi.get(),
-            galtcItem.nighttimesheep.get(),
-            galtcItem.oumunnbyou.get(),
-            galtcItem.kisaragikurenai.get(),
-            galtcItem.blacklily.get(),
-            galtcItem.muramasa.get(),
-            galtcItem.shochou.get(),
-            galtcItem.izumi_hiyori.get(),
-            galtcItem.nishiki_asumi.get(),
-            galtcItem.qienidian.get(),
-            galtcItem.rewrite.get(),
-            galtcItem.badwoman.get(),
-            galtcItem.galaxy_railroad.get(),
-            galtcItem.ciallo.get(),
-            galtcItem.tsukiyashiro_kisaki.get(),
-            galtcItem.saya.get(),
-            galtcItem.shoujing.get(),
-            galtcItem.euthanasia.get(),
-            galtcItem.qingfeng.get(),
-            galtcItem.morgana.get()
-        );
+        List<Item> items = new ArrayList<>(galtcMetal.ALL_METALS.size() * 3);
+        for (MetalItemObject metal : galtcMetal.ALL_METALS) {
+            items.add(metal.getIngot());
+            items.add(metal.getNugget());
+            items.add(metal.get().asItem());
+        }
+        event.register(colorProvider, items.toArray(new Item[0]));
+    }
+
+    /** 世界里的金属块：颜色来自方块模型面上写的 tintindex 0。 */
+    @SubscribeEvent
+    public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
+        BlockColor blockColor = (state, level, pos, tintIndex) ->
+                tintIndex == 0 ? COLOR_MAP.getOrDefault(materialKey(state.getBlock().getDescriptionId()), WHITE) : WHITE;
+
+        List<Block> blocks = new ArrayList<>(galtcMetal.ALL_METALS.size());
+        for (MetalItemObject metal : galtcMetal.ALL_METALS) {
+            blocks.add(metal.get());
+        }
+        event.register(blockColor, blocks.toArray(new Block[0]));
     }
 }

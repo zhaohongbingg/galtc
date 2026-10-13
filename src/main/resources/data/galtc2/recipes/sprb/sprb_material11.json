@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:material",
   "ingredient": {
-    "item": "galtc2:sprb"
+    "item": "galtc2:sprb_ingot"
   },
   "material": "galtc2:sprb",
   "needed": 1,

@@ -6,7 +6,7 @@
       "modid": "jerotesvillage"
     }
   ],
-  "ingredient": {"item": "galtc2:qingfeng"},
+  "ingredient": {"item": "galtc2:qingfeng_ingot"},
   "result": {"amount": 90, "fluid": "galtc2:molten_qingfeng"},
   "temperature": 1500,
   "time": 72

@@ -4,6 +4,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_blacklily"
   },
-  "output": "galtc2:blacklily",
+  "output": "galtc2:blacklily_ingot",
   "temperature": 1500
 }

@@ -4,6 +4,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_ciallo"
   },
-  "output": "galtc2:ciallo",
+  "output": "galtc2:ciallo_ingot",
   "temperature": 1500
 }

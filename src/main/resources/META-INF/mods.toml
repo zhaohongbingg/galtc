@@ -85,6 +85,15 @@ versionRange = "[1.11.69,)"
 ordering = "AFTER"
 side = "BOTH"
 
+# 迎战(Meet Your Fight) 软联动：CF 项目 409371。和 J村 一样只做顺序约束，
+# 未安装迎战 时 galtc2 照常运行，联动内容全部跳过（见 com.galtc2.compat.meetyourfight.MeetYourFightCompat#init）。
+[[dependencies.${ mod_id }]]
+modId = "meetyourfight"
+mandatory = false
+versionRange = "[1.20.1-1.6.2,)"
+ordering = "AFTER"
+side = "BOTH"
+
 # J村前置库（JV 部分引用 com.jerotes.jerotes.*；跟随 jerotesvillage 一起存在，这里只做顺序约束）
 [[dependencies.${ mod_id }]]
 modId = "jerotes"

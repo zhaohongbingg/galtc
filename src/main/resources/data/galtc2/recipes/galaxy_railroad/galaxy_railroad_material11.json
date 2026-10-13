@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:material",
   "ingredient": {
-    "item": "galtc2:galaxy_railroad"
+    "item": "galtc2:galaxy_railroad_ingot"
   },
   "material": "galtc2:galaxy_railroad",
   "needed": 1,

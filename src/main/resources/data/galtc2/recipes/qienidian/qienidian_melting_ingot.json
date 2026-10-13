@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:melting",
   "ingredient": {
-    "item": "galtc2:qienidian"
+    "item": "galtc2:qienidian_ingot"
   },
   "result": {
     "amount": 90,

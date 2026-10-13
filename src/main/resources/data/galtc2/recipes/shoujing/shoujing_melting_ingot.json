@@ -6,7 +6,7 @@
       "modid": "jerotesvillage"
     }
   ],
-  "ingredient": {"item": "galtc2:shoujing"},
+  "ingredient": {"item": "galtc2:shoujing_ingot"},
   "result": {"amount": 90, "fluid": "galtc2:molten_shoujing"},
   "temperature": 1500,
   "time": 72

@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:material",
   "ingredient": {
-    "item": "galtc2:qienidian"
+    "item": "galtc2:qienidian_ingot"
   },
   "material": "galtc2:qienidian",
   "needed": 1,

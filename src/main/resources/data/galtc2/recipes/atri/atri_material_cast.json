@@ -4,6 +4,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_atri"
   },
-  "output": "galtc2:atri",
+  "output": "galtc2:atri_ingot",
   "temperature": 1500
 }

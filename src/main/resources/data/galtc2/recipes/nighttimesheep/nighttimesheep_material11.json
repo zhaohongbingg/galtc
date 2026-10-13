@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:material",
   "ingredient": {
-    "item": "galtc2:nighttimesheep"
+    "item": "galtc2:nighttimesheep_ingot"
   },
   "material": "galtc2:nighttimesheep",
   "needed": 1,

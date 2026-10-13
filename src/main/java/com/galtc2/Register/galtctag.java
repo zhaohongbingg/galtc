@@ -9,6 +9,7 @@ import net.minecraft.world.item.ItemStack;
 
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
+import slimeknights.mantle.registration.object.MetalItemObject;
 
 
 
@@ -18,14 +19,21 @@ public class galtctag {
 
     public static final RegistryObject<CreativeModeTab> galtctab =
             CREATIVE_MODE_TAB_DEFERRED_REGISTER.register("galtc2",()-> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(galtcItem.sprb.get()))
+                    .icon(() -> new ItemStack(galtcMetal.sprb.getIngot()))
                     .title(Component.translatable("itemGroup.galtctab"))
                     .displayItems((pParameters,pOutput)->{
-                        // ---- 1. 锭 / Gal水晶 / 碎片（顺序见 galtcItem.ALL_ITEMS）----
+                        // ---- 1. 材料金属三件套：锭 -> 金属块 -> 粒（顺序见 galtcMetal.ALL_METALS）----
+                        for (MetalItemObject metal : galtcMetal.ALL_METALS) {
+                            pOutput.accept(metal.getIngot());
+                            pOutput.accept(metal.get());
+                            pOutput.accept(metal.getNugget());
+                        }
+
+                        // ---- 2. Gal水晶 / 矿石碎片（顺序见 galtcItem.ALL_ITEMS）----
                         galtcItem.ALL_ITEMS.forEach(item->
                                 pOutput.accept(item.get()));
 
-                        // ---- 2. 方块：水晶块 -> 矿石生成器 -> 晶簇 -> 晶芽 -> 母岩 ----
+                        // ---- 3. 方块：水晶块 -> 矿石生成器 -> 晶簇 -> 晶芽 -> 母岩 ----
                         pOutput.accept(galtcBlock.GAL_CRYSTAL_BLOCK.get());
                         // 矿石生成器暂时停用（注释保留，未删除）
                         // pOutput.accept(galtcBlock.ORE_GENERATOR.get());

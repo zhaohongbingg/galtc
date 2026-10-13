@@ -149,6 +149,17 @@ tasks.withType(Copy).configureEach {
 
 repositories {
     mavenLocal()
+    // 离线兜底仓库：本机访问不了 cfa2.cursemaven.com（TLS 连接被重置），Gradle 联网取不到 curse 包，
+    // 于是把官方 jar 按 Maven 目录结构放进项目内的 maven-repo/
+    // （curse/maven/<名字>-<项目ID>/<文件ID>/ 下放 jar + 手写的最小 pom），
+    // curse.maven 坐标就能在这里离线解析到。用法和 jvt(D:\game\mc\jvt) 的 maven-repo 一样。
+    maven {
+        name 'offlineCurseMirror'
+        url "$projectDir/maven-repo"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
     flatDir {
         dirs 'libs'
     }
@@ -195,6 +206,20 @@ dependencies {
     // 若在某机器上缓存缺失，可参照 jvt/build.gradle 的 repository 配置补上。
     implementation fg.deobf("curse.maven:jerotes-village-1004844:8616193")
     implementation fg.deobf("curse.maven:jerotes-warehouse-1249728:8621401")
+
+    // 迎战(Meet Your Fight) 软联动：和 J村 一样的注册方式 —— 只做编译期/开发期依赖，发布时不是前置，
+    // 运行期通过 ModList 判断（源码见 com/galtc2/compat/meetyourfight/，未装迎战 时全部跳过）。
+    // CF 项目 409371 / 文件 8955468 = meetyourfight-1.20.1-1.6.2.jar。
+    // 本机访问不了 cfa2.cursemaven.com（TLS 连接被重置），Gradle 联网取不到包，
+    // 所以这个文件放在项目内的离线兜底仓库 maven-repo/ 里（见上面的 repositories）。
+    // 缺文件时重下 https://edge.forgecdn.net/files/8955/468/meetyourfight-1.20.1-1.6.2.jar，
+    // 放到 maven-repo/curse/maven/meetyourfight-409371/8955468/（jar + 同名最小 pom）。
+    implementation fg.deobf("curse.maven:meetyourfight-409371:8955468")
+    // 迎战 的强制前置 Curios（项目 309927 / 文件 6418456 = curios-forge-5.14.1+1.20.1.jar）。
+    // 不放进开发环境的话，一进游戏就会因为「缺少强制前置 curios」直接崩，所以同样离线兜底：
+    // 缺文件时重下 https://edge.forgecdn.net/files/6418/456/curios-forge-5.14.1+1.20.1.jar，
+    // 放到 maven-repo/curse/maven/curios-309927/6418456/（jar + 同名最小 pom）。
+    implementation fg.deobf("curse.maven:curios-309927:6418456")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }

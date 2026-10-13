@@ -1,8 +1,17 @@
 {
-  "default": [
-    {
-      "level": 1,
-      "name": "galtc2:fire_apostle"
-    }
-  ]
+  "default": [],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:fire_apostle_armor",
+        "level": 1
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "name": "galtc2:fire_apostle_melee",
+        "level": 1
+      }
+    ]
+  }
 }

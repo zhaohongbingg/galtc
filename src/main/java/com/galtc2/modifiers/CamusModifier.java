@@ -29,8 +29,14 @@ public class CamusModifier extends Modifier implements MeleeHitModifierHook, OnA
     private static final Map<UUID, Long> CURSED_ENTITIES = new ConcurrentHashMap<>();
     private static final long CURSE_DURATION = 200; // 10秒
 
+    /** 全局治疗监听只挂一次（拆出 _melee / _armor 后会创建多个实例，避免重复注册） */
+    private static boolean listenerRegistered = false;
+
     public CamusModifier() {
-        MinecraftForge.EVENT_BUS.register(this);
+        if (!listenerRegistered) {
+            listenerRegistered = true;
+            MinecraftForge.EVENT_BUS.register(this);
+        }
     }
 
     @Override

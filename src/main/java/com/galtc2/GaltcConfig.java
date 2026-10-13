@@ -84,6 +84,11 @@ public class GaltcConfig {
         public final ForgeConfigSpec.IntValue STARRY_TRAVEL_CHUNKS_PER_DAMAGE;
         public final ForgeConfigSpec.IntValue STARRY_TRAVEL_CHUNKS_PER_ARMOR;
 
+        // 水仙(narcissus) 破限配置
+        public final ForgeConfigSpec.BooleanValue NARCISSUS_BREAK_ENABLED;
+        public final ForgeConfigSpec.BooleanValue NARCISSUS_BREAK_RESET_COOLDOWN;
+        public final ForgeConfigSpec.DoubleValue NARCISSUS_MAX_EXTRA_DAMAGE;
+
         public Common(ForgeConfigSpec.Builder builder) {
 
             this.HIT_THRESHOLD = builder
@@ -123,6 +128,21 @@ public class GaltcConfig {
             this.STARRY_TRAVEL_CHUNKS_PER_ARMOR = builder
                     .comment("星空列车：每多少区块增加1点护甲值和韧性")
                     .defineInRange("starryTravelChunksPerArmor", 5, 1, 100);
+
+            // 水仙(narcissus) 破限配置
+            this.NARCISSUS_BREAK_ENABLED = builder
+                    .comment("水仙：额外伤害是否走破限通道。")
+                    .comment("开启后，被其他模组的单次伤害上限（如 Boss 硬封顶）或减伤砍掉的差额会被补回，")
+                    .comment("使额外伤害稳定打出「目标最大生命值百分比」的数值。")
+                    .define("narcissusBreakEnabled", true);
+            this.NARCISSUS_BREAK_RESET_COOLDOWN = builder
+                    .comment("水仙：造成额外伤害前是否复位目标的受击冷却。")
+                    .comment("主手那一刀会把目标的受击无敌时间顶满，不复位的话额外伤害会被原版直接丢弃，")
+                    .comment("连伤害事件都不会触发。只影响水仙自己这一下，不改动其他来源的受击节奏。")
+                    .define("narcissusBreakResetCooldown", true);
+            this.NARCISSUS_MAX_EXTRA_DAMAGE = builder
+                    .comment("水仙：单次额外伤害的上限（0 表示不限制）")
+                    .defineInRange("narcissusMaxExtraDamage", 1000.0, 0.0, Double.MAX_VALUE);
 
         }
 

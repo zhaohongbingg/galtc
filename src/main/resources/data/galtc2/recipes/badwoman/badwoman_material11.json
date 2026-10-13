@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:material",
   "ingredient": {
-    "item": "galtc2:badwoman"
+    "item": "galtc2:badwoman_ingot"
   },
   "material": "galtc2:badwoman",
   "needed": 1,

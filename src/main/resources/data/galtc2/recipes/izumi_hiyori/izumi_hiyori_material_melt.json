@@ -1,6 +1,6 @@
 {
   "type": "tconstruct:material_melting",
-  "input": "galtc2:izumi_hiyori",
+  "input": "galtc2:izumi_hiyori_ingot",
   "result": {
     "amount": 90,
     "fluid": "galtc2:molten_izumi_hiyori"

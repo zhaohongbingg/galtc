@@ -7,6 +7,6 @@
     "fluid": "galtc2:molten_galaxy_railroad",
     "amount": 90
   },
-  "result": "galtc2:galaxy_railroad",
+  "result": "galtc2:galaxy_railroad_ingot",
   "cooling_time": 60
 }

@@ -1,5 +1,17 @@
 {
-  "default": [
-    {"name": "galtc2:shoujing", "level": 1}
-  ]
+  "default": [],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:shoujing_armor",
+        "level": 1
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "name": "galtc2:shoujing_melee",
+        "level": 1
+      }
+    ]
+  }
 }

@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:material",
   "ingredient": {
-    "item": "galtc2:shochou"
+    "item": "galtc2:shochou_ingot"
   },
   "material": "galtc2:shochou",
   "needed": 1,

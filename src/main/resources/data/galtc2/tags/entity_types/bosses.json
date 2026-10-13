@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "galboss:reizein_tohka",
+      "required": false
+    },
+    {
+      "id": "galboss:onabuta_ikuko",
+      "required": false
+    },
+    {
+      "id": "galboss:tadasugawa_rei",
+      "required": false
+    }
+  ]
+}

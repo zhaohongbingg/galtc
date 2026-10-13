@@ -1,0 +1,11 @@
+{
+  "default": [],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "galtc2:rose_wraith"
+      }
+    ]
+  }
+}

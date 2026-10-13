@@ -1,8 +1,17 @@
 {
-  "default": [
-    {
-      "level": 1,
-      "name": "galtc2:villager_metal"
-    }
-  ]
+  "default": [],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:villager_metal_armor",
+        "level": 1
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "name": "galtc2:villager_metal_melee",
+        "level": 1
+      }
+    ]
+  }
 }

@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:melting",
   "ingredient": {
-    "item": "galtc2:badwoman"
+    "item": "galtc2:badwoman_ingot"
   },
   "result": {
     "fluid": "galtc2:molten_badwoman",

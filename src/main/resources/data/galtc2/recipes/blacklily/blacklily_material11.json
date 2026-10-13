@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:material",
   "ingredient": {
-    "item": "galtc2:blacklily"
+    "item": "galtc2:blacklily_ingot"
   },
   "material": "galtc2:blacklily",
   "needed": 1,

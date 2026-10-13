@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:material",
   "ingredient": {
-    "item": "galtc2:kagome"
+    "item": "galtc2:kagome_ingot"
   },
   "material": "galtc2:kagome",
   "needed": 1,

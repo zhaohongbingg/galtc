@@ -1,6 +1,6 @@
 {
   "type": "tconstruct:material_melting",
-  "input": "galtc2:atri",
+  "input": "galtc2:atri_ingot",
   "result": {
     "amount": 90,
     "fluid": "galtc2:molten_atri"

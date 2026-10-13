@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": false,
+  "inputs": [
+    {
+      "item": "meetyourfight:phantoplasm"
+    },
+    {
+      "item": "meetyourfight:fortunes_favor"
+    },
+    {
+      "item": "meetyourfight:mossy_tooth"
+    },
+    {
+      "item": "meetyourfight:violet_bloom"
+    }
+  ],
+  "level": 1,
+  "result": "galtc2:klaroro",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/melee"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "meetyourfight"
+    }
+  ]
+}

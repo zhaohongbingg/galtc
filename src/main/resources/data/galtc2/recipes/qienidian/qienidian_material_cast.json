@@ -4,6 +4,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_qienidian"
   },
-  "output": "galtc2:qienidian",
+  "output": "galtc2:qienidian_ingot",
   "temperature": 1500
 }

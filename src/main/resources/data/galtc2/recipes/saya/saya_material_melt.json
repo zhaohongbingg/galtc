@@ -6,7 +6,7 @@
       "modid": "jerotesvillage"
     }
   ],
-  "input": "galtc2:saya",
+  "input": "galtc2:saya_ingot",
   "result": {
     "amount": 90,
     "fluid": "galtc2:molten_saya"

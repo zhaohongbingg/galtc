@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:melting",
   "ingredient": {
-    "item": "galtc2:izumi_hiyori"
+    "item": "galtc2:izumi_hiyori_ingot"
   },
   "result": {
     "fluid": "galtc2:molten_izumi_hiyori",

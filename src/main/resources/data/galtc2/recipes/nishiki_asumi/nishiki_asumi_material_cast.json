@@ -4,6 +4,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_nishiki_asumi"
   },
-  "output": "galtc2:nishiki_asumi",
+  "output": "galtc2:nishiki_asumi_ingot",
   "temperature": 1500
 }

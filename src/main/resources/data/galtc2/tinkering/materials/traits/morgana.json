@@ -1,5 +1,17 @@
 {
-  "default": [
-    {"name": "galtc2:morgana", "level": 1}
-  ]
+  "default": [],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:morgana_armor",
+        "level": 1
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "name": "galtc2:morgana_melee",
+        "level": 1
+      }
+    ]
+  }
 }

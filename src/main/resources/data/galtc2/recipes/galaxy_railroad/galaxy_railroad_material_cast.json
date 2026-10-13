@@ -4,6 +4,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_galaxy_railroad"
   },
-  "output": "galtc2:galaxy_railroad",
+  "output": "galtc2:galaxy_railroad_ingot",
   "temperature": 1500
 }

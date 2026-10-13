@@ -1,8 +1,17 @@
 {
-  "default": [
-    {
-      "name": "galtc2:saya",
-      "level": 1
-    }
-  ]
+  "default": [],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:saya_armor",
+        "level": 1
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "name": "galtc2:saya_melee",
+        "level": 1
+      }
+    ]
+  }
 }

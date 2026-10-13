@@ -4,5 +4,5 @@
   "cast_consumed": true,
   "cooling_time": 72,
   "fluid": {"amount": 90, "fluid": "galtc2:molten_morgana"},
-  "result": "galtc2:morgana"
+  "result": "galtc2:morgana_ingot"
 }

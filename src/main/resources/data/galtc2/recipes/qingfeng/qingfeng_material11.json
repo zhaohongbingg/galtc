@@ -6,7 +6,7 @@
       "modid": "jerotesvillage"
     }
   ],
-  "ingredient": {"item": "galtc2:qingfeng"},
+  "ingredient": {"item": "galtc2:qingfeng_ingot"},
   "material": "galtc2:qingfeng",
   "needed": 1,
   "value": 1

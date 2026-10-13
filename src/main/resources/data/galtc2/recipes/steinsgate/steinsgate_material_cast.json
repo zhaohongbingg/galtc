@@ -4,6 +4,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_steinsgate"
   },
-  "output": "galtc2:steinsgate",
+  "output": "galtc2:steinsgate_ingot",
   "temperature": 1500
 }

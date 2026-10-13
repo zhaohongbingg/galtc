@@ -4,6 +4,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_sprb"
   },
-  "output": "galtc2:sprb",
+  "output": "galtc2:sprb_ingot",
   "temperature": 1500
 }

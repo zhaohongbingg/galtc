@@ -31,6 +31,17 @@ public final class JerotesEvents {
             EquipmentSlot.FEET, EquipmentSlot.LEGS, EquipmentSlot.CHEST, EquipmentSlot.HEAD
     };
 
+    /**
+     * 火系亲和加成的扫描范围：手部 + 护甲。
+     * <p>
+     * 攻防拆条后，攻击侧的 {@code *_melee} 由材料挂到武器件（{@code melee_harvest} 组），
+     * 所以必须把手持槽位也纳入扫描，否则武器上的火系加成读不到。
+     */
+    private static final EquipmentSlot[] FIRE_AFFINITY_SLOTS = {
+            EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND,
+            EquipmentSlot.FEET, EquipmentSlot.LEGS, EquipmentSlot.CHEST, EquipmentSlot.HEAD
+    };
+
     /** 清枫虫群额外撕咬的间隔（tick）：与 J村 原版虫群「每 5 tick 咬一口」对齐 */
     private static final int BITE_INTERVAL = 5;
 
@@ -46,7 +57,7 @@ public final class JerotesEvents {
             return;
         }
         float bonus = 0.0f;
-        for (EquipmentSlot slot : ARMOR_SLOTS) {
+        for (EquipmentSlot slot : FIRE_AFFINITY_SLOTS) {
             ItemStack stack = attacker.getItemBySlot(slot);
             if (stack.isEmpty()) {
                 continue;

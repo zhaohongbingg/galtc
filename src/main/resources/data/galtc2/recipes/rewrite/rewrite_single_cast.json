@@ -8,6 +8,6 @@
     "fluid": "galtc2:molten_rewrite",
     "amount": 90
   },
-  "result": "galtc2:rewrite",
+  "result": "galtc2:rewrite_ingot",
   "cooling_time": 60
 }

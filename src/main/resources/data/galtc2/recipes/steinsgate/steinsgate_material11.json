@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:material",
   "ingredient": {
-    "item": "galtc2:steinsgate"
+    "item": "galtc2:steinsgate_ingot"
   },
   "material": "galtc2:steinsgate",
   "needed": 1,

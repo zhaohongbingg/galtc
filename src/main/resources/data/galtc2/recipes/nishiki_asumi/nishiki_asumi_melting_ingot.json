@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:melting",
   "ingredient": {
-    "item": "galtc2:nishiki_asumi"
+    "item": "galtc2:nishiki_asumi_ingot"
   },
   "result": {
     "amount": 90,

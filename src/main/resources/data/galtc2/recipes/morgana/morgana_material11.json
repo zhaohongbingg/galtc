@@ -1,6 +1,6 @@
 {
   "type": "tconstruct:material",
-  "ingredient": {"item": "galtc2:morgana"},
+  "ingredient": {"item": "galtc2:morgana_ingot"},
   "material": "galtc2:morgana",
   "needed": 1,
   "value": 1

@@ -4,6 +4,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_zeroone"
   },
-  "output": "galtc2:zeroone",
+  "output": "galtc2:zeroone_ingot",
   "temperature": 1500
 }

@@ -10,82 +10,20 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
 
+/**
+ * 非金属类的物品注册位。
+ * <p>
+ * <b>30 种材料锭已经迁移到 {@link galtcMetal}</b>：那边用匠魂官方的
+ * {@code BlockDeferredRegister#registerMetal} 注册，一种材料一次拿到
+ * 「金属块 / 锭 / 粒」三件套，id 也从 {@code galtc2:<名>} 变成了 {@code galtc2:<名>_ingot}。
+ * 这里只留水晶与矿石碎片这类零散物品。
+ * <p>
+ * 方块物品（Gal 水晶块、晶簇等）由 {@link galtcBlock#registerBlocks} 注册进本类的
+ * {@link #ITEMS}，所以这个注册器仍然要挂到 mod 事件总线上。
+ */
 public class galtcItem {
-    public static final DeferredRegister<Item> ITEMS=
+    public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, Galtc2.MODID);
-//夏日锭
-    public  static  final   RegistryObject<Item> sprb =
-            ITEMS.register("sprb",()->new Item(new Item.Properties()));
-
-    //零一锭
-    public static final RegistryObject<Item> zeroone =
-            ITEMS.register("zeroone",()->new Item(new Item.Properties()));
-    public static  final RegistryObject<Item> kagome =
-            ITEMS.register("kagome",()->new Item(new Item.Properties()));//笼女
-    public  static  final RegistryObject<Item> aosora=
-            ITEMS.register("aosora",()->new Item(new Item.Properties()));//苍彼
-    public static final RegistryObject<Item> atri=
-            ITEMS.register("atri",()->new Item(new Item.Properties()));//arti
-    public static final RegistryObject<Item> apeiria=
-            ITEMS.register("apeiria",()->new Item(new Item.Properties()));//艾佩莉雅
-    public  static  final  RegistryObject<Item> narcissus=
-            ITEMS.register("narcissus",()->new Item(new Item.Properties()));//水仙
-    public  static  final  RegistryObject<Item> ca =
-            ITEMS.register("ca",()->new Item(new Item.Properties())); //CA(水葬）
-
-    public static  final RegistryObject<Item> kaleidoscope=
-            ITEMS.register("kaleidoscope",()->new Item(new Item.Properties()));//kaleidoscope
-
-    public static  final RegistryObject<Item> steinsgate=
-            ITEMS.register("steinsgate",()->new Item(new Item.Properties()));//steinsGate
-    public static  final RegistryObject<Item> azarashi=
-            ITEMS.register("azarashi",()->new Item(new Item.Properties()));//azarashi
-    public static  final RegistryObject<Item> nighttimesheep=
-            ITEMS.register("nighttimesheep",()->new Item(new Item.Properties()));//夜时羊
-    public static  final RegistryObject<Item> oumunnbyou=
-                ITEMS.register("oumunnbyou",()->new Item(new Item.Properties()));//生命的备件
-    public static  final RegistryObject<Item> kisaragikurenai=
-            ITEMS.register("kisaragikurenai",()->new Item(new Item.Properties()));//入木三分
-    public static  final RegistryObject<Item> blacklily=
-            ITEMS.register("blacklily",()->new Item(new Item.Properties()));//黑百合
-    public static  final RegistryObject<Item> muramasa=
-            ITEMS.register("muramasa",()->new Item(new Item.Properties()));//村正
-    public static final RegistryObject<Item> shochou =
-            ITEMS.register("shochou",()->new Item(new Item.Properties()));//所长
-    public static final RegistryObject<Item> izumi_hiyori =
-            ITEMS.register("izumi_hiyori",()->new Item(new Item.Properties()));//泉ひより
-    public static final RegistryObject<Item> nishiki_asumi =
-            ITEMS.register("nishiki_asumi",()->new Item(new Item.Properties()));//锦明日海
-    public static final RegistryObject<Item> qienidian =
-            ITEMS.register("qienidian",()->new Item(new Item.Properties()));//奇恩异典
-    public static final RegistryObject<Item> rewrite =
-            ITEMS.register("rewrite",()->new Item(new Item.Properties()));//罚抄
-    public static final RegistryObject<Item> badwoman =
-            ITEMS.register("badwoman",()->new Item(new Item.Properties()));//坏女人
-    public static final RegistryObject<Item> galaxy_railroad =
-            ITEMS.register("galaxy_railroad",()->new Item(new Item.Properties()));//银河铁道之夜
-
-    // Ciallo
-    public static final RegistryObject<Item> ciallo =
-            ITEMS.register("ciallo", () -> new Item(new Item.Properties()));
-
-    // 月社妃
-    public static final RegistryObject<Item> tsukiyashiro_kisaki =
-            ITEMS.register("tsukiyashiro_kisaki", () -> new Item(new Item.Properties()));
-
-    // 沙耶
-    public static final RegistryObject<Item> saya =
-            ITEMS.register("saya", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> shoujing =
-            ITEMS.register("shoujing", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> euthanasia =
-            ITEMS.register("euthanasia", () -> new Item(new Item.Properties()));
-    // 清枫
-    public static final RegistryObject<Item> qingfeng =
-            ITEMS.register("qingfeng", () -> new Item(new Item.Properties()));
-    // 莫尔加那
-    public static final RegistryObject<Item> morgana =
-            ITEMS.register("morgana", () -> new Item(new Item.Properties()));
 
     // 挖晶簇掉的水晶
     public static final RegistryObject<Item> gal_crystal =
@@ -105,34 +43,16 @@ public class galtcItem {
     /**
      * 创造栏的展示顺序（<b>只影响显示</b>：物品的注册顺序 = 上面字段的声明顺序，
      * 也就是存档里的 id，改这里不会动到旧存档）。
-     * <ol>
-     *   <li>gal 材料锭：顺序与 materials.csv 一致</li>
-     *   <li>J村 联动材料锭：需要 jerotesvillage</li>
-     *   <li>其它材料锭：万花镜（流体/合金还没做）</li>
-     *   <li>Gal水晶 与 四种矿石碎片</li>
-     * </ol>
-     * 方块部分见 {@link galtctag}，接在这批物品后面。
+     * <p>
+     * 材料金属三件套不在这里，见 {@link galtcMetal#ALL_METALS} ——
+     * 创造栏把它们排在前面，见 {@link galtctag}。
      */
     public static final List<RegistryObject<Item>> ALL_ITEMS = List.of(
-            // ---- 1. gal 材料锭 ----
-            sprb, zeroone, kagome, aosora, atri, apeiria, narcissus, ca,
-            steinsgate, azarashi, nighttimesheep, oumunnbyou, kisaragikurenai, blacklily,
-            muramasa, shochou, izumi_hiyori, nishiki_asumi, qienidian, rewrite,
-            badwoman, galaxy_railroad, ciallo, tsukiyashiro_kisaki,
-            // ---- 2. J村 联动材料锭 ----
-            saya, shoujing, euthanasia, qingfeng, morgana,
-            // ---- 3. 其它材料锭 ----
-            kaleidoscope,
-            // ---- 4. Gal水晶 与四种碎片 ----
+            // ---- Gal水晶 与四种碎片 ----
             gal_crystal, juqing_fragment, seqi_fragment, feimeng_fragment, guro_fragment
     );
 
 
-
-
-
-
-
-    public static void register(){
+    public static void register() {
     }
 }

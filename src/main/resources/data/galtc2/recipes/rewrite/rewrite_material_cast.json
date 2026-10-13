@@ -4,6 +4,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_rewrite"
   },
-  "output": "galtc2:rewrite",
+  "output": "galtc2:rewrite_ingot",
   "temperature": 1500
 }

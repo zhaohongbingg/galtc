@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:melting",
   "ingredient": {
-    "item": "galtc2:narcissus"
+    "item": "galtc2:narcissus_ingot"
   },
   "result": {
     "amount": 90,

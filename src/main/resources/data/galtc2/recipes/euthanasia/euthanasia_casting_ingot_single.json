@@ -10,5 +10,5 @@
   "cast_consumed": true,
   "cooling_time": 72,
   "fluid": {"amount": 90, "fluid": "galtc2:molten_euthanasia"},
-  "result": "galtc2:euthanasia"
+  "result": "galtc2:euthanasia_ingot"
 }

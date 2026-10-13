@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:material",
   "ingredient": {
-    "item": "galtc2:muramasa"
+    "item": "galtc2:muramasa_ingot"
   },
   "material": "galtc2:muramasa",
   "needed": 1,

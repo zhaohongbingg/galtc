@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:melting",
   "ingredient": {
-    "item": "galtc2:tsukiyashiro_kisaki"
+    "item": "galtc2:tsukiyashiro_kisaki_ingot"
   },
   "result": {
     "amount": 90,

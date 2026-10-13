@@ -4,6 +4,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_shochou"
   },
-  "output": "galtc2:shochou",
+  "output": "galtc2:shochou_ingot",
   "temperature": 1500
 }

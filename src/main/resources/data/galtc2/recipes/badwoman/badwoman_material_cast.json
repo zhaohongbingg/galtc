@@ -4,6 +4,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_badwoman"
   },
-  "output": "galtc2:badwoman",
+  "output": "galtc2:badwoman_ingot",
   "temperature": 1500
 }

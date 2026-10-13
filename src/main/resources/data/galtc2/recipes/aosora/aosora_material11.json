@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:material",
   "ingredient": {
-    "item": "galtc2:aosora"
+    "item": "galtc2:aosora_ingot"
   },
   "material": "galtc2:aosora",
   "needed": 1,

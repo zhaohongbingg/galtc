@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:melting",
   "ingredient": {
-    "item": "galtc2:steinsgate"
+    "item": "galtc2:steinsgate_ingot"
   },
   "result": {
     "amount": 90,
