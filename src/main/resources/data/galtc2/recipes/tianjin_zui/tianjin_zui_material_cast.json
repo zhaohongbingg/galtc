@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "amount": 90,
+    "fluid": "galtc2:molten_tianjin_zui"
+  },
+  "output": "galtc2:tianjin_zui",
+  "temperature": 1300
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:nuggets/meror_metal"
+  },
+  "result": {
+    "amount": 10,
+    "fluid": "galtc2:molten_meror"
+  },
+  "temperature": 1400,
+  "time": 8
+}

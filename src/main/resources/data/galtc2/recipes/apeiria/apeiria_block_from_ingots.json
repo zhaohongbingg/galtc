@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "galtc2:apeiria_block",
+  "key": {
+    "#": {
+      "item": "galtc2:apeiria_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "galtc2:apeiria_block"
+  },
+  "show_notification": true
+}

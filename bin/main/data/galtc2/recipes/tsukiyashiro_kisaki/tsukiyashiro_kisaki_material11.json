@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "item": "galtc2:tsukiyashiro_kisaki"
-  },
-  "material": "galtc2:tsukiyashiro_kisaki",
-  "needed": 1,
-  "value": 1
-}

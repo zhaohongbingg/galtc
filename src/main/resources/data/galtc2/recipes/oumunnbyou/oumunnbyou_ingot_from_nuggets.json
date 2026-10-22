@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "galtc2:oumunnbyou_ingot",
+  "key": {
+    "#": {
+      "item": "galtc2:oumunnbyou_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "galtc2:oumunnbyou_ingot"
+  },
+  "show_notification": true
+}

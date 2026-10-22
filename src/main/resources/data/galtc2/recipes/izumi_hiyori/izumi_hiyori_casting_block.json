@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cooling_time": 162,
+  "fluid": {
+    "amount": 810,
+    "fluid": "galtc2:molten_izumi_hiyori"
+  },
+  "result": "galtc2:izumi_hiyori_block"
+}

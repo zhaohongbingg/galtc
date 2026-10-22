@@ -10,6 +10,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_saya"
   },
-  "output": "galtc2:saya_ingot",
+  "output": "galtc2:saya",
   "temperature": 1500
 }

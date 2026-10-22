@@ -27,11 +27,11 @@ import java.util.List;
 
 /**
  * 镇山(mountain_realm) 材料特性。
- * 复刻 J村 镇山套：
- * - 头盔：使直视的目标获得震慑(ABACK)；
- * - 胸甲：近战攻击把小型生物击飞；
- * - 护腿：疾跑时给附近生物虚弱；
- * - 全套：清除自身缓慢与虚弱。
+ * 复刻 J村 镇山套，但不再区分部位：身上任意一件带该特性的护甲即可获得全部效果
+ * - 使直视的目标获得震慑(ABACK)；
+ * - 近战攻击把小型生物击飞；
+ * - 疾跑时给附近生物虚弱；
+ * - 清除自身缓慢与虚弱。
  */
 public class MountainRealmModifier extends Modifier implements InventoryTickModifierHook, MeleeHitModifierHook {
 
@@ -49,17 +49,19 @@ public class MountainRealmModifier extends Modifier implements InventoryTickModi
         if (world.isClientSide || !isCorrectSlot || !holder.isAlive()) {
             return;
         }
-        if (countPieces(holder) >= 4) {
-            holder.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
-            holder.removeEffect(MobEffects.WEAKNESS);
+        // 不限制部位：任意一件带该特性的护甲即可
+        if (countPieces(holder) <= 0) {
+            return;
         }
-        if (has(holder, EquipmentSlot.HEAD) && holder instanceof Player player) {
+        holder.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
+        holder.removeEffect(MobEffects.WEAKNESS);
+        if (holder instanceof Player player) {
             Entity target = Main.getTargetedEntity(player, 32.0);
             if (target instanceof LivingEntity living && !AttackFind.FindCanNotAttack(player, living)) {
                 living.addEffect(new MobEffectInstance(JerotesMobEffects.ABACK.get(), 5, 0), player);
             }
         }
-        if (has(holder, EquipmentSlot.LEGS) && holder.isSprinting() && holder.tickCount % 5 == 0) {
+        if (holder.isSprinting() && holder.tickCount % 5 == 0) {
             List<LivingEntity> nearby = holder.level().getEntitiesOfClass(LivingEntity.class, holder.getBoundingBox().inflate(6.0));
             for (LivingEntity living : nearby) {
                 if (living == holder || !living.isAlive() || AttackFind.FindCanNotAttack(holder, living)) {
@@ -74,7 +76,7 @@ public class MountainRealmModifier extends Modifier implements InventoryTickModi
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         LivingEntity target = context.getLivingTarget();
         LivingEntity attacker = context.getAttacker();
-        if (target == null || !target.isAlive() || !has(attacker, EquipmentSlot.CHEST)) {
+        if (target == null || attacker == null || !target.isAlive() || countPieces(attacker) <= 0) {
             return;
         }
         if (EntityAndItemFind.isNoSpecialKnockback(target.getType())) {

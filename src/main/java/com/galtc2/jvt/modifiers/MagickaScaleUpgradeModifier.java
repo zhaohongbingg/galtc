@@ -22,16 +22,15 @@ import slimeknights.tconstruct.library.modifiers.hook.build.ValidateModifierHook
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InventoryTickModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
-import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 /**
  * 魔鳞升级(magicka_scale_upgrade)
  * 仿照"贵族强化"：前置部件含鳞熊鳞片，在匠魂站用魔鳞升级模板+钻石把护甲强化为魔鳞效果。
- * 效果复刻 J村 魔鳞套：
- * - 每件护甲降低 23% 火焰/冰冻/闪电/溺水伤害(加算)；
- * - 穿满 4 件：减免 25% 魔法伤害(生命≤50% 时再减 15%)、免疫挤压/窒息/荆棘伤害；
- * - 穿满 4 件且生命≤50% 时获得速度。
+ * 效果按强化等级结算：
+ * - 每级降低 23% 火焰/冰冻/闪电/溺水伤害(加算)；
+ * - 4 级：减免 25% 魔法伤害(生命≤50% 时再减 15%)、免疫挤压/窒息/荆棘伤害；
+ * - 4 级且生命≤50% 时获得速度。
  */
 public class MagickaScaleUpgradeModifier extends Modifier implements ValidateModifierHook, ModifyDamageModifierHook, InventoryTickModifierHook {
 
@@ -55,7 +54,7 @@ public class MagickaScaleUpgradeModifier extends Modifier implements ValidateMod
                 return null;
             }
         }
-        return Component.translatable("modifier.jvt.magicka_scale_upgrade.requirements");
+        return Component.translatable("modifier.galtc2.magicka_scale_upgrade.requirements");
     }
 
     @Override
@@ -64,13 +63,16 @@ public class MagickaScaleUpgradeModifier extends Modifier implements ValidateMod
             return amount;
         }
         EquipmentSlot firstSlot = null;
-        int pieces = 0;
+        int maxLevel = 0;
         for (EquipmentSlot slot : ARMOR_SLOTS) {
             IToolStackView armor = context.getToolInSlot(slot);
-            if (armor != null && !armor.isBroken() && armor.getModifierLevel(this) > 0) {
-                pieces++;
-                if (firstSlot == null) {
-                    firstSlot = slot;
+            if (armor != null && !armor.isBroken()) {
+                int level = armor.getModifierLevel(this);
+                if (level > 0) {
+                    if (firstSlot == null) {
+                        firstSlot = slot;
+                    }
+                    maxLevel = Math.max(maxLevel, level);
                 }
             }
         }
@@ -79,16 +81,16 @@ public class MagickaScaleUpgradeModifier extends Modifier implements ValidateMod
         }
         LivingEntity entity = context.getEntity();
 
-        // 全套免疫挤压/窒息/荆棘
-        if (pieces >= 4 && (source.is(DamageTypes.CRAMMING) || source.is(DamageTypes.IN_WALL) || source.is(DamageTypes.THORNS))) {
+        // 4 级免疫挤压/窒息/荆棘
+        if (maxLevel >= 4 && (source.is(DamageTypes.CRAMMING) || source.is(DamageTypes.IN_WALL) || source.is(DamageTypes.THORNS))) {
             return 0;
         }
-        // 每件 -23% 元素(火/冰/雷/溺水)
+        // 每级 -23% 元素(火/冰/雷/溺水)
         if (AttackFind.isFireDamage(source) || AttackFind.isColdDamage(source) || AttackFind.isLightningDamage(source) || AttackFind.isWaterDamage(source)) {
-            amount *= Math.max(0.0f, 1.0f - ELEMENTAL_REDUCTION * pieces);
+            amount *= Math.max(0.0f, 1.0f - ELEMENTAL_REDUCTION * maxLevel);
         }
-        // 全套 -25%(半血再 -15%) 魔法
-        if (pieces >= 4 && AttackFind.MagicResistance(source)) {
+        // 4 级 -25%(半血再 -15%) 魔法
+        if (maxLevel >= 4 && AttackFind.MagicResistance(source)) {
             float reduction = MAGIC_REDUCTION + (entity.getHealth() <= entity.getMaxHealth() / 2.0f ? LOW_HEALTH_MAGIC_REDUCTION : 0.0f);
             amount *= Math.max(0.0f, 1.0f - reduction);
         }
@@ -100,19 +102,9 @@ public class MagickaScaleUpgradeModifier extends Modifier implements ValidateMod
         if (world.isClientSide || !isCorrectSlot || !holder.isAlive()) {
             return;
         }
-        if (countPieces(holder) >= 4 && holder.getHealth() <= holder.getMaxHealth() / 2.0f) {
+        // 4 级且生命 ≤50% 时获得速度
+        if (modifier.getLevel() >= 4 && holder.getHealth() <= holder.getMaxHealth() / 2.0f) {
             holder.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 25, 1, false, false), holder);
         }
-    }
-
-    /** 统计穿戴中含此强化的护甲件数 */
-    private int countPieces(LivingEntity holder) {
-        int count = 0;
-        for (EquipmentSlot slot : ARMOR_SLOTS) {
-            if (ModifierUtil.getModifierLevel(holder.getItemBySlot(slot), this.getId()) > 0) {
-                count++;
-            }
-        }
-        return count;
     }
 }

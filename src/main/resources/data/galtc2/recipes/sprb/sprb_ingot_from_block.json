@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "galtc2:sprb_ingot",
+  "ingredients": [
+    {
+      "item": "galtc2:sprb_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "galtc2:sprb_ingot"
+  }
+}

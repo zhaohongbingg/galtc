@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:narcissus_nugget"
+  },
+  "result": {
+    "amount": 10,
+    "fluid": "galtc2:molten_narcissus"
+  },
+  "temperature": 1500,
+  "time": 22
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "galtc2:qienidian_block",
+  "key": {
+    "#": {
+      "item": "galtc2:qienidian_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "galtc2:qienidian_block"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:mountain_realm_nugget"
+  },
+  "result": {
+    "amount": 10,
+    "fluid": "galtc2:molten_mountain_realm"
+  },
+  "temperature": 1500,
+  "time": 22,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "jerotesvillage"
+    }
+  ]
+}

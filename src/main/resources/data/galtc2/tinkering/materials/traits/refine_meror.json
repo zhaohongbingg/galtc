@@ -1,8 +1,11 @@
 {
-  "default": [
-    {
-      "level": 1,
-      "name": "galtc2:meror_standard"
-    }
-  ]
+  "default": [],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:meror_standard",
+        "level": 1
+      }
+    ]
+  }
 }

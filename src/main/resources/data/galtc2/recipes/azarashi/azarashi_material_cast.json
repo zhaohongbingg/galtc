@@ -4,6 +4,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_azarashi"
   },
-  "output": "galtc2:azarashi_ingot",
+  "output": "galtc2:azarashi",
   "temperature": 1500
 }

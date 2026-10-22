@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "relicward:resonant_plate"
+  },
+  "material": "galtc2:resonant_plate",
+  "needed": 1,
+  "value": 1,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "relicward"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 package com.galtc2.jvt.Register;
 
 import com.galtc2.jvt.Jvt;
+import com.galtc2.jvt.modifiers.AncientSecondRounderArmorModifier;
 import com.galtc2.jvt.modifiers.AncientSecondRounderModifier;
 import com.galtc2.jvt.modifiers.BigWitchHatModifier;
 import com.galtc2.jvt.modifiers.BitterColdHammerModifier;
@@ -8,7 +9,6 @@ import com.galtc2.jvt.modifiers.BrightLandBeastHornModifier;
 import com.galtc2.jvt.modifiers.BrightLandHeartModifier;
 import com.galtc2.jvt.modifiers.ChainBindModifier;
 import com.galtc2.jvt.modifiers.ChainsawModifier;
-import com.galtc2.jvt.modifiers.CrazyAxeModifier;
 import com.galtc2.jvt.modifiers.DroughtWildfireShieldModifier;
 import com.galtc2.jvt.modifiers.FirepowerModifier;
 import com.galtc2.jvt.modifiers.GiantMonsterHairArmorModifier;
@@ -21,6 +21,7 @@ import com.galtc2.jvt.modifiers.MountainRealmModifier;
 import com.galtc2.jvt.modifiers.NobleUpgradeModifier;
 import com.galtc2.jvt.modifiers.PurpleSandHagEyeModifier;
 import com.galtc2.jvt.modifiers.QoaikuMetalModifier;
+import com.galtc2.jvt.modifiers.ScalyBearScaleArmorModifier;
 import com.galtc2.jvt.modifiers.ScalyBearScaleModifier;
 import com.galtc2.jvt.modifiers.SeawaveTridentModifier;
 import com.galtc2.jvt.modifiers.SerponAlloyArmorModifier;
@@ -28,8 +29,6 @@ import com.galtc2.jvt.modifiers.SerponAlloyMeleeModifier;
 import com.galtc2.jvt.modifiers.SerponAlloyModifier;
 import com.galtc2.jvt.modifiers.SerponPowerhouseArmorModifier;
 import com.galtc2.jvt.modifiers.SerponPowerhouseMeleeModifier;
-import com.galtc2.jvt.modifiers.SerponPowerhouseModifier;
-import com.galtc2.jvt.modifiers.ShieldBreakModifier;
 import com.galtc2.jvt.modifiers.TestModifier;
 import com.galtc2.jvt.modifiers.VillagerMetalArmorModifier;
 import com.galtc2.jvt.modifiers.VillagerMetalMeleeModifier;
@@ -45,12 +44,8 @@ public class JvtModifier {
     /** 贵族强化的 ID，供 {@code NobleFactionEvents} 的阵营判定使用。 */
     public static final ModifierId NOBLE_UPGRADE = new ModifierId(Jvt.MODID, "noble_upgrade");
 
-    /** 四个武器能力强化的 ID，用于互斥判定。 */
-    public static final ModifierId SHIELD_BREAK = new ModifierId(Jvt.MODID, "shield_break");
+    /** 互为排斥的武器能力强化 ID（火力倾泻 / 苦寒之锤 已改为兼容，不再参与判定）。 */
     public static final ModifierId CHAINSAW = new ModifierId(Jvt.MODID, "chainsaw");
-    public static final ModifierId FIREPOWER = new ModifierId(Jvt.MODID, "firepower");
-    public static final ModifierId CRAZY_AXE = new ModifierId(Jvt.MODID, "crazy_axe");
-    public static final ModifierId BITTER_COLD_HAMMER = new ModifierId(Jvt.MODID, "bitter_cold_hammer");
     public static final ModifierId SEAWAVE_TRIDENT = new ModifierId(Jvt.MODID, "seawave_trident");
     public static final ModifierId DROUGHT_WILDFIRE_SHIELD = new ModifierId(Jvt.MODID, "drought_wildfire_shield");
 
@@ -97,13 +92,9 @@ public class JvtModifier {
     public static final StaticModifier<VillagerMetalArmorModifier> villagerMetalArmor =
             MODIFIERS.register("villager_metal_armor", VillagerMetalArmorModifier::new);
 
-    /** 奴制监督者·捆缚: 近战命中几率捆住目标。 */
+    /** 奴制监督者·捆缚: 近战命中几率给目标施加麻醉。 */
     public static final StaticModifier<ChainBindModifier> chainBind =
             MODIFIERS.register("chain_bind", ChainBindModifier::new);
-
-    /** 不祥标枪·破盾: 弹射物命中停用目标盾牌。 */
-    public static final StaticModifier<ShieldBreakModifier> shieldBreak =
-            MODIFIERS.register("shield_break", ShieldBreakModifier::new);
 
     /** 火力倾泻者·链锯: 长按范围劈砍并造成流血。 */
     public static final StaticModifier<ChainsawModifier> chainsaw =
@@ -113,11 +104,7 @@ public class JvtModifier {
     public static final StaticModifier<FirepowerModifier> firepower =
             MODIFIERS.register("firepower", FirepowerModifier::new);
 
-    /** 疯狂之斧: 长按旋风, 范围绞杀+吸血+拆方块, 释放后冷却。 */
-    public static final StaticModifier<CrazyAxeModifier> crazyAxe =
-            MODIFIERS.register("crazy_axe", CrazyAxeModifier::new);
-
-    /** 苦寒之锤: 命中冰冻+破盾, 下落猛击追加伤害与范围击退。 */
+    /** 苦寒之锤: 按下落高度追加近战伤害。 */
     public static final StaticModifier<BitterColdHammerModifier> bitterColdHammer =
             MODIFIERS.register("bitter_cold_hammer", BitterColdHammerModifier::new);
 
@@ -151,9 +138,6 @@ public class JvtModifier {
     public static final StaticModifier<SerponAlloyArmorModifier> serponAlloyArmor =
             MODIFIERS.register("serpon_alloy_armor", SerponAlloyArmorModifier::new);
 
-    /** 蛇龙强者强化: 前置蛇龙合金, 火系承伤-15%/输出+20%(每件)。原词条保留注册。 */
-    public static final StaticModifier<SerponPowerhouseModifier> serponPowerhouse =
-            MODIFIERS.register("serpon_powerhouse", SerponPowerhouseModifier::new);
     /** 蛇龙强者·极炎(攻击侧): 只提升火系输出。 */
     public static final StaticModifier<SerponPowerhouseMeleeModifier> serponPowerhouseMelee =
             MODIFIERS.register("serpon_powerhouse_melee", SerponPowerhouseMeleeModifier::new);
@@ -181,6 +165,14 @@ public class JvtModifier {
     /** 古二轮金属·特性: 复魂尸杀手(对沉降类生物追加伤害)。 */
     public static final StaticModifier<AncientSecondRounderModifier> ancientSecondRounder =
             MODIFIERS.register("ancient_second_rounder", AncientSecondRounderModifier::new);
+
+    /** 古二轮金属·防御特性: 复魂尸/沉降类伤害减免 25%。 */
+    public static final StaticModifier<AncientSecondRounderArmorModifier> ancientSecondRounderArmor =
+            MODIFIERS.register("ancient_second_rounder_armor", AncientSecondRounderArmorModifier::new);
+
+    /** 鳞熊鳞片·防御特性: 中立生物伤害减免 20%。 */
+    public static final StaticModifier<ScalyBearScaleArmorModifier> scalyBearScaleArmor =
+            MODIFIERS.register("scaly_bear_scale_armor", ScalyBearScaleArmorModifier::new);
 
     public static void register() {
     }

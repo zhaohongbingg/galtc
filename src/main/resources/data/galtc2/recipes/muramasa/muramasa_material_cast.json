@@ -4,6 +4,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_muramasa"
   },
-  "output": "galtc2:muramasa_ingot",
+  "output": "galtc2:muramasa",
   "temperature": 1500
 }

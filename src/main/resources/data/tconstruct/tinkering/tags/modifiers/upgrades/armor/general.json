@@ -1,7 +1,8 @@
 {
   "values": [
-    "galtc2:big_witchs_hat",
-    "galtc2:magicka_scale_upgrade",
-    "galtc2:serpon_powerhouse"
+    {
+      "id": "galtc2:big_witchs_hat",
+      "required": false
+    }
   ]
 }

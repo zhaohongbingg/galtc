@@ -1,6 +1,6 @@
 {
   "type": "tconstruct:material_fluid",
   "fluid": {"amount": 90, "fluid": "galtc2:molten_morgana"},
-  "output": "galtc2:morgana_ingot",
+  "output": "galtc2:morgana",
   "temperature": 1500
 }

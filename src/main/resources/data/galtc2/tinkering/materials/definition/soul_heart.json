@@ -1,0 +1,10 @@
+{
+  "condition": {
+    "modid": "bosses_of_mass_destruction",
+    "type": "forge:mod_loaded"
+  },
+  "craftable": true,
+  "tier": 3,
+  "sortOrder": 70,
+  "hidden": false
+}

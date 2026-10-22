@@ -4,5 +4,13 @@
       "level": 1,
       "name": "galtc2:ancient_second_rounder"
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:ancient_second_rounder_armor",
+        "level": 1
+      }
+    ]
+  }
 }

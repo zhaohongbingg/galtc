@@ -1,6 +1,6 @@
 {
   "type": "tconstruct:material_melting",
-  "input": "galtc2:ciallo_ingot",
+  "input": "galtc2:ciallo",
   "result": {
     "amount": 90,
     "fluid": "galtc2:molten_ciallo"

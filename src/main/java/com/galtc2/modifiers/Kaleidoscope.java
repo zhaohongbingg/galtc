@@ -17,7 +17,7 @@ public class Kaleidoscope extends BaseModifiers{
     @Override
     public void addToolStats(IToolContext context, ModifierEntry modifier, ModifierStatsBuilder builder) {
      int level = modifier.getLevel();
-     float multiplier = (float) Math.pow(3, level);
+     float multiplier = (float) Math.pow(1.3, level);
         ToolStats.ATTACK_DAMAGE.multiplyAll(builder, multiplier);
         ToolStats.ATTACK_SPEED.multiplyAll(builder, multiplier);
         ToolStats.PROJECTILE_DAMAGE.multiplyAll(builder, multiplier);

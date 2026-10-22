@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cooling_time": 194,
+  "fluid": {
+    "amount": 810,
+    "fluid": "galtc2:molten_ca"
+  },
+  "result": "galtc2:ca_block"
+}

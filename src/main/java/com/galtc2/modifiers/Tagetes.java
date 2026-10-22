@@ -14,13 +14,14 @@ public class Tagetes extends BaseModifiers{
     }
     @Override
     public float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
-        LivingEntity enemy=context.getLivingTarget();
-        LivingEntity player=context.getPlayerAttacker();
-        double rate=1-(player.getHealth()/player.getMaxHealth());
-        double facor=1+rate+modifier.getLevel()*0.15;
-        return (float) (damage*facor);
-
-
+        // 攻击者可能是任意生物（生物拿工具打人也算），不能用 getPlayerAttacker()，否则玩家以外会拿到 null
+        LivingEntity attacker = context.getAttacker();
+        if (attacker == null || attacker.getMaxHealth() <= 0) {
+            return damage;
+        }
+        double rate = 1 - (attacker.getHealth() / attacker.getMaxHealth());
+        double factor = 1 + rate + modifier.getLevel() * 0.15;
+        return (float) (damage * factor);
     }
 
 }

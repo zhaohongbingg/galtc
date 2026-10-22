@@ -60,7 +60,8 @@ public class IngotItemColor {
         Map.entry("shoujing", 0xFF16131F),
         Map.entry("euthanasia", 0xFF8B0000),
         Map.entry("qingfeng", 0xFF9BA3AB),
-        Map.entry("morgana", 0xFF6A4C93)
+        Map.entry("morgana", 0xFF6A4C93),
+        Map.entry("tianjin_zui", 0xFF9E8A9D)
     );
 
     /** 三件套的 id 后缀，顺序无关（只会命中一个）。 */

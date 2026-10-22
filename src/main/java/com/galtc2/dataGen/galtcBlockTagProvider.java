@@ -19,13 +19,13 @@ public class galtcBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(galtcBlock.GAL_CRYSTAL_BLOCK.get())
-                .add(galtcBlock.GAL_CORE.get())
-                .add(galtcBlock.SMALL_GAL_CORE_BUD.get())
-                .add(galtcBlock.MEDIUM_GAL_CORE_BUD.get())
-                .add(galtcBlock.LARGE_GAL_CORE_BUD.get())
-                .add(galtcBlock.BUDDING_GAL_CORE.get());
+        // mineable/pickaxe 由手写文件 src/main/resources/data/minecraft/tags/blocks/mineable/pickaxe.json 维护。
+        // 这里不能再生成同名文件：generated 目录在 sourceSet 里排在 main 之后，会把手写版本整个盖掉，
+        // 导致 33 个材料金属块丢失"镐可挖"标签（挖不动/不掉落）。
+        // 新增方块时如果它 requiresCorrectToolForDrops()，记得同步加进那个手写文件
+        // （ore_generator 就是漏加过，镐子挖不掉落）。只有联动模组在场才注册的方块
+        // （ancient_second_rounder / fire_apostle / mountain_realm）写成 {"id": ..., "required": false}，
+        // 免得没装联动模组时刷 "missing following references" 报错。
 
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(galtcBlock.GAL_CRYSTAL_BLOCK.get());

@@ -4,5 +4,13 @@
       "name": "galtc2:ciallo",
       "level": 1
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:ciallo_armor",
+        "level": 1
+      }
+    ]
+  }
 }

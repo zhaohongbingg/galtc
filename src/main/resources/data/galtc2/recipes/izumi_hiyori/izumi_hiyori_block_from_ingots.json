@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "galtc2:izumi_hiyori_block",
+  "key": {
+    "#": {
+      "item": "galtc2:izumi_hiyori_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "galtc2:izumi_hiyori_block"
+  },
+  "show_notification": true
+}

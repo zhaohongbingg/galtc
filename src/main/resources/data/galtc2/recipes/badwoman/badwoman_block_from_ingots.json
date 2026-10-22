@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "galtc2:badwoman_block",
+  "key": {
+    "#": {
+      "item": "galtc2:badwoman_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "galtc2:badwoman_block"
+  },
+  "show_notification": true
+}

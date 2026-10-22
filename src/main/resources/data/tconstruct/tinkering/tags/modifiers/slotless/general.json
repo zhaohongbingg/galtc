@@ -1,9 +1,30 @@
 {
   "values": [
-    "galtc2:chain_bind",
-    "galtc2:noble_upgrade",
-    "galtc2:magicka_scale_upgrade",
-    "galtc2:bright_land_beast_horn",
-    "galtc2:bright_land_heart"
+    {
+      "id": "galtc2:chain_bind",
+      "required": false
+    },
+    {
+      "id": "galtc2:noble_upgrade",
+      "required": false
+    },
+    {
+      "id": "galtc2:magicka_scale_upgrade",
+      "required": false
+    },
+    {
+      "id": "galtc2:bright_land_beast_horn",
+      "required": false
+    },
+    {
+      "id": "galtc2:bright_land_heart",
+      "required": false
+    },
+    "galtc2:kaleidoscope",
+    {
+      "id": "galtc2:scroll_cast",
+      "required": false
+    },
+    "galtc2:super_lucky"
   ]
 }

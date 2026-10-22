@@ -129,13 +129,17 @@ minecraft {
         }
     }
 }
-mixin {
-    add sourceSets.main, "galtc2.refmap.json"
-    config 'galtc2.mixins.json'
-
-    debug.verbose = true
-    debug.export = true
-}
+// 本项目目前没有任何 mixin 类（com.galtc2.Mixins 为空），因此不再声明 mixin 配置：
+// 之前的空配置会让启动时通过 --mixin.config 去类路径上找 galtc2.mixins.json，
+// 一旦该资源没被加载到（IDE 输出目录不同步/构建产物不一致）就直接
+// MixinInitialisationError 崩在游戏启动前。
+// 以后真要写 mixin 时，再把下面几行放回来并新增 galtc2.mixins.json：
+// mixin {
+//     add sourceSets.main, "galtc2.refmap.json"
+//     config 'galtc2.mixins.json'
+//     debug.verbose = true
+//     debug.export = true
+// }
 
 
 
@@ -154,10 +158,12 @@ repositories {
     // （curse/maven/<名字>-<项目ID>/<文件ID>/ 下放 jar + 手写的最小 pom），
     // curse.maven 坐标就能在这里离线解析到。用法和 jvt(D:\game\mc\jvt) 的 maven-repo 一样。
     maven {
-        name 'offlineCurseMirror'
+        name 'offlineMirror'
         url "$projectDir/maven-repo"
         content {
+            // 离线兜底仓库：curse 的包按坐标放，GeckoLib 用它自己的 maven 坐标
             includeGroup "curse.maven"
+            includeGroup "software.bernie.geckolib"
         }
     }
     flatDir {
@@ -221,6 +227,40 @@ dependencies {
     // 放到 maven-repo/curse/maven/curios-309927/6418456/（jar + 同名最小 pom）。
     implementation fg.deobf("curse.maven:curios-309927:6418456")
 
+    // 祸乱鬼魅(Bosses of Mass Destruction, 简称 BOMD) 软联动：只做编译期/开发期依赖，
+    // 发布时不是前置，运行期通过 ModList 判断（源码见 com/galtc2/compat/bomd/，未装时全部跳过）。
+    // CF 项目 941573 / 文件 5067728 = BOMD-Forge-1.20.1-1.1.2.jar（modid: bosses_of_mass_destruction）。
+    // 和 迎战 一样，本机访问不了 cfa2.cursemaven.com，所以文件放在项目内的离线兜底仓库 maven-repo/ 里。
+    // 缺文件时重下 https://edge.forgecdn.net/files/5067/728/BOMD-Forge-1.20.1-1.1.2.jar，
+    // 放到 maven-repo/curse/maven/bosses_of_mass_destruction-941573/5067728/（jar + 同名最小 pom）。
+    implementation fg.deobf("curse.maven:bosses_of_mass_destruction-941573:5067728")
+
+    // 祸乱鬼魅 的强制前置（它 mods.toml 里写的是 mandatory=true，缺一个就直接崩）：
+    //   cerbons_api  —— BOMD 作者自己的共享代码库，CF 项目 955605 / 文件 5050080 = 1.1.0
+    //   cloth_config —— 配置界面 / 配置 API，CF 项目 348521 / 文件 5729105 = 11.1.136
+    //   geckolib     —— 模型动画库，用 4.8.4（与整合包内实际运行的版本一致）
+    // 和 迎战 的 curios 一样，这三份也走项目内的离线兜底仓库（见上面的 repositories）。
+    implementation fg.deobf("curse.maven:cerbons_api-955605:5050080")
+    implementation fg.deobf("curse.maven:cloth-config-348521:5729105")
+    implementation fg.deobf("software.bernie.geckolib:geckolib-forge-1.20.1:4.8.4")
+
+    // 遗境守望(Relic Ward, modid: relicward) 软联动：只做编译期/开发期依赖，
+    // 发布时不是前置，运行期通过 ModList 判断（源码见 com/galtc2/compat/relicward/，未装时全部跳过）。
+    // CF 项目 1694157 / 文件 8871420 = relicward-1.0.0.jar（包名 cn.suiyi.relicward，
+    // 作者 taisuiyileba，协议 MIT，强制前置 curios —— 上面的 迎战 已经把 curios 带进来了）。
+    // 和 迎战 / 祸乱鬼魅 一样，本机访问不了 cfa2.cursemaven.com，所以文件放在项目内的离线兜底仓库。
+    // 缺文件时重下 https://edge.forgecdn.net/files/8871/420/relicward-1.0.0.jar，
+    // 放到 maven-repo/curse/maven/relicward-1694157/8871420/（jar + 同名最小 pom）。
+    implementation fg.deobf("curse.maven:relicward-1694157:8871420")
+
+    // AutoJS：把运行中的游戏实例暴露成 MCP 端点（eval_js / 命令 / 物品标签查询），
+    // 只在开发环境跑，发布包里不带。前置 Rhino 一并放 libs/，runClient 时会自动加载。
+    // 两个 jar 都是 reobf 过的 Forge mod，必须走上面的 flatDir 仓库（files(...) 形式不会被 fg.deobf 处理）。
+    // 注意：只有用 Gradle 的 runClient 任务启动才会加载（IDEA 的 Application 配置读的是旧的
+    // legacyClassPath 文件，不含 runtimeOnly 依赖）。
+    runtimeOnly fg.deobf('autojs:AutoJS-forge-1.20.1:1.0.0')
+    runtimeOnly fg.deobf('rhino:rhino-forge:2001.2.2-build.17')
+
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
@@ -255,7 +295,6 @@ tasks.named('jar', Jar).configure {
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : mod_authors,
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "MixinConfigs": "galtc2.mixins.json",
         ])
     }
 

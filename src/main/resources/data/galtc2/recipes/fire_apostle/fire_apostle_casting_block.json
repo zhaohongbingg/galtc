@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cooling_time": 194,
+  "fluid": {
+    "amount": 810,
+    "fluid": "galtc2:molten_fire_apostle"
+  },
+  "result": "galtc2:fire_apostle_block",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "jerotesvillage"
+    }
+  ]
+}

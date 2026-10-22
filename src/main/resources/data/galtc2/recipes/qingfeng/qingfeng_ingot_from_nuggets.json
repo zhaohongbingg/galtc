@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "galtc2:qingfeng_ingot",
+  "key": {
+    "#": {
+      "item": "galtc2:qingfeng_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "galtc2:qingfeng_ingot"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "galtc2:nighttimesheep_ingot",
+  "key": {
+    "#": {
+      "item": "galtc2:nighttimesheep_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "galtc2:nighttimesheep_ingot"
+  },
+  "show_notification": true
+}

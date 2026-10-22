@@ -23,9 +23,10 @@ nishiki_asumi,锦明日海,Nishiki Asumi,永不饥饿基于最大生命值的额
 qienidian,奇恩异典,Qienidian,What color is your attribute?,#b4b9dd,否,5,1200,7,8,下界合金,galtc2:qien+galtc2:yidian(盔甲)
 rewrite,罚抄,Rewrite,获得攻击对象的护甲值和血量,#e9ad86,否,5,1400,12,7,下界合金,galtc2:rewrite
 badwoman,坏女人,Bad Woman,心之壁与奏了,#f9c9d3,否,5,2400,7,8,下界合金,galtc2:zoulezoule+galtc2:heartwall(盔甲)
-galaxy_railroad,银河铁道之夜,Galaxy Railroad,星空下的旅程,#0a1128,否,5,1200,7,8,下界合金,galtc2:camus+galtc2:wonderful+galtc2:starry_travel+galtc2:starry_travel_armor(盔甲)
+galaxy_railroad,银河铁道之夜,Galaxy Railroad,离出生点越远伤害与护甲越高（每5区块+1）；晴天命中或受击附带禁疗；摔落超72格伤害翻倍,#0a1128,否,5,1200,7,8,下界合金,galtc2:camus+galtc2:wonderful+galtc2:starry_travel+galtc2:starry_travel_armor(盔甲)
 ciallo,丛雨丸,Congyumaru,Ciallo~,#b6cfa5,否,5,1200,7,8,下界合金,galtc2:ciallo
 tsukiyashiro_kisaki,月社妃,Tsukiyashiro Kisaki,穿着越久减伤越高的防具但火焰是代价,#f2e7a1,否,5,1400,12,7,下界合金,galtc2:kisaki(盔甲)+galtc2:kisaki_likes+galtc2:kisaki_hates
 saya,沙耶,Saya,不可名状的深绿色触手,#1f4d2e,否,5,1000,7,6,下界合金,galtc2:saya(触手需J村)
 qingfeng,清枫,Qingfeng,偏灰的锭，命中召唤疫病虫群，存在时间随等阶延长,#9ba3ab,是,5,1000,7,6,下界合金,galtc2:qingfeng(虫群需J村)
 morgana,莫尔加那,Morgana,命中挂随机debuff（MC+所有模组的有害效果），受击反咒攻击者,#6a4c93,是,5,1000,7,6,下界合金,galtc2:morgana
+resonant_plate,钟铸铜板,Resonant Plate,右键蓄力震击（伤害随蓄力与等级成长）与大伤减免的青铜板,#cd7f32,是,4,1450,3.5,6,下界合金,galtc2:echo_slam(攻击)+galtc2:bell_ward(盔甲)

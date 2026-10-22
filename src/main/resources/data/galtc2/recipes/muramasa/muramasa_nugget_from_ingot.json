@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "galtc2:muramasa_nugget",
+  "ingredients": [
+    {
+      "item": "galtc2:muramasa_ingot"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "galtc2:muramasa_nugget"
+  }
+}

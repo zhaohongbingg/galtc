@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "galtc2:muramasa_ingot",
+  "key": {
+    "#": {
+      "item": "galtc2:muramasa_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "galtc2:muramasa_ingot"
+  },
+  "show_notification": true
+}

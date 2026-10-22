@@ -6,7 +6,7 @@
       "modid": "jerotesvillage"
     }
   ],
-  "input": "galtc2:qingfeng_ingot",
+  "input": "galtc2:qingfeng",
   "result": {"amount": 90, "fluid": "galtc2:molten_qingfeng"},
   "temperature": 1500
 }

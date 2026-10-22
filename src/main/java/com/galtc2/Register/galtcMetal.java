@@ -158,6 +158,9 @@ public class galtcMetal {
     /** 莫尔加那（暗紫，J村 联动） */
     public static final MetalItemObject morgana =
             BLOCKS.registerMetal("morgana", metalBuilder(MapColor.COLOR_PURPLE), BLOCK_ITEM, ITEM_PROPS);
+    /** 天津罪（灰紫；禁飞材料，见 TianjinZuiModifier） */
+    public static final MetalItemObject tianjin_zui =
+            BLOCKS.registerMetal("tianjin_zui", metalBuilder(MapColor.COLOR_PURPLE), BLOCK_ITEM, ITEM_PROPS);
 
     // 注：万花镜(kaleidoscope) 不在这里。它不是匠魂材料，只作强化材料使用，
     // 因此保持普通物品注册（见 galtcItem#kaleidoscope），没有块与粒。
@@ -172,7 +175,7 @@ public class galtcMetal {
             steinsgate, azarashi, nighttimesheep, oumunnbyou, kisaragikurenai, blacklily,
             muramasa, shochou, izumi_hiyori, nishiki_asumi, qienidian, rewrite,
             badwoman, galaxy_railroad, ciallo, tsukiyashiro_kisaki,
-            saya, shoujing, euthanasia, qingfeng, morgana
+            saya, shoujing, euthanasia, qingfeng, morgana, tianjin_zui
     );
 
     public static void register() {

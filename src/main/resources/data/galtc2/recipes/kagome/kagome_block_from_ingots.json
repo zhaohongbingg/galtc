@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "galtc2:kagome_block",
+  "key": {
+    "#": {
+      "item": "galtc2:kagome_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "galtc2:kagome_block"
+  },
+  "show_notification": true
+}

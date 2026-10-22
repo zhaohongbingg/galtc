@@ -4,5 +4,13 @@
       "name": "galtc2:narcissus",
       "level": 1
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:narcissus_armor",
+        "level": 1
+      }
+    ]
+  }
 }

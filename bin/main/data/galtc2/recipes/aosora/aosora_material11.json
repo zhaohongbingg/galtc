@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "item": "galtc2:aosora"
-  },
-  "material": "galtc2:aosora",
-  "needed": 1,
-  "value": 1
-}

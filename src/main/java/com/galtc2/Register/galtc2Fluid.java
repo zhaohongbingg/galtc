@@ -156,6 +156,11 @@ public static final FlowingFluidObject<ForgeFlowingFluid> molten_muramasa =
             registerFluid(FLUIDS, "molten_morgana", 1500, 1000, 1200, 0,
                     supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_PURPLE, 0), 10, 2.0f));
 
+    // 天津罪（禁飞；青灰）
+    public static final FlowingFluidObject<ForgeFlowingFluid> molten_tianjin_zui =
+            registerFluid(FLUIDS, "molten_tianjin_zui", 1500, 1000, 1500, 0,
+                    supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_LIGHT_GRAY, 0), 10, 2.5f));
+
     // 沙耶 / 勺景 / 腐姬 / 清枫 这 4 个 J村 联动材料的流体不在这里注册：
     // 未安装 J村 时它们不应该存在，因此挪到了 J村 存在才挂到事件总线上的
     // com.galtc2.compat.jerotes.JerotesFluids 里（由 JerotesCompat.init 触发注册）。

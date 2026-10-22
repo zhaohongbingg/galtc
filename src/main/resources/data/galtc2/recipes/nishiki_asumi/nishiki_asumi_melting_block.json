@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:nishiki_asumi_block"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "galtc2:molten_nishiki_asumi"
+  },
+  "temperature": 1500,
+  "time": 194
+}

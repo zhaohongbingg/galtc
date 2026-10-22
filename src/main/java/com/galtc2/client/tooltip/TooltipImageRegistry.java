@@ -35,6 +35,7 @@ import java.util.Optional;
  * {
  *   "items": ["galtc2:ciallo"],                         // 也可以写单个的 "item"
  *   "texture": "galtc2:textures/gui/tooltip/xxx.png",   // 完整纹理路径
+ *   "color": "FF9E8A9D",                                // 可省略，默认白色（原样输出）
  *   "position": "top"                                   // 可省略，默认 bottom（图片在文字下面）
  * }
  * </pre>
@@ -129,8 +130,9 @@ public class TooltipImageRegistry extends SimpleJsonResourceReloadListener {
                 // 缩得比较狠的用线性过滤，否则降采样会出斑点；接近 1:1 的保持 NEAREST 更锐利
                 boolean smooth = natural[0] >= shown[0] * 2 || natural[1] >= shown[1] * 2;
                 boolean top = "top".equalsIgnoreCase(GsonHelper.getAsString(json, "position", "bottom"));
+                int color = parseColor(GsonHelper.getAsString(json, "color", "FFFFFFFF"), id);
                 TooltipImageComponent component = new TooltipImageComponent(texture,
-                        boxWidth, boxHeight, shown[0], shown[1], smooth);
+                        boxWidth, boxHeight, shown[0], shown[1], smooth, color);
                 for (Item item : parseItems(json)) {
                     BY_ITEM.put(item, new Entry(component, top));
                 }
@@ -205,6 +207,27 @@ public class TooltipImageRegistry extends SimpleJsonResourceReloadListener {
         } catch (IOException e) {
             LOGGER.error("[galtc2] 读取提示框图片 {} 的纹理尺寸失败（{}）：{}", configId, texture, e.toString());
             return null;
+        }
+    }
+
+    /**
+     * 解析 {@code color}：染色用的 ARGB 十六进制。
+     * <p>
+     * 接受 {@code "FF9E8A9D"}（带 alpha）、{@code "9E8A9D"}（不带，自动补满不透明）
+     * 以及带 {@code #} 前缀的写法；缺省或写坏时用白色，也就是原样输出不染色。
+     * <p>
+     * 用法：素材做成<b>灰度</b>图，各材料只改这里的颜色 —— 一张图配 N 种颜色，
+     * 不用给每个材料单独画一张彩色图。和锭/粒/块走 {@code IngotItemColor} 是同一个思路。
+     */
+    private static int parseColor(String raw, ResourceLocation configId) {
+        String hex = raw.startsWith("#") ? raw.substring(1) : raw;
+        try {
+            long value = Long.parseLong(hex, 16);
+            // 只写了 RGB 时补上不透明的 alpha
+            return hex.length() <= 6 ? (int) (value | 0xFF000000L) : (int) value;
+        } catch (NumberFormatException e) {
+            LOGGER.warn("[galtc2] 提示框图片 {} 的颜色 {} 不是合法的十六进制，改用白色。", configId, raw);
+            return TooltipImageComponent.WHITE;
         }
     }
 

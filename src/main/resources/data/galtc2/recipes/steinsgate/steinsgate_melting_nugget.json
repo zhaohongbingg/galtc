@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:steinsgate_nugget"
+  },
+  "result": {
+    "amount": 10,
+    "fluid": "galtc2:molten_steinsgate"
+  },
+  "temperature": 1500,
+  "time": 22
+}

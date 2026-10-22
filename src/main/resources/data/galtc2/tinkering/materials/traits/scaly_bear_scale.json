@@ -4,5 +4,13 @@
       "level": 1,
       "name": "galtc2:scaly_bear_scale"
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:scaly_bear_scale_armor",
+        "level": 1
+      }
+    ]
+  }
 }

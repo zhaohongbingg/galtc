@@ -37,7 +37,6 @@ public class AIArmor extends BaseModifiers {
 
     private static final String hitcount = "hitcount";
     private static final ResourceLocation HIT_COUNT = ResourceLocation.fromNamespaceAndPath("galtc2", "hit_count");
-    private static final int HIT_THRESHOLD = GaltcConfig.COMMON.HIT_THRESHOLD.get();
     private static final ResourceLocation ARMOR_BONUS =
             ResourceLocation.fromNamespaceAndPath("galtc2", "armor_bonus");
 
@@ -52,14 +51,17 @@ public class AIArmor extends BaseModifiers {
 
         ModDataNBT data = tool.getPersistentData();
 
+        // 每次实时读配置，改完配置无需重启即可生效
+        int threshold = Math.max(1, GaltcConfig.COMMON.HIT_THRESHOLD.get());
+
         int count = data.getInt(HIT_COUNT) + 1;
 
-        if (count >= HIT_THRESHOLD) {
+        if (count >= threshold) {
 
             int armorBonus = data.getInt(ARMOR_BONUS);
             data.putInt(ARMOR_BONUS, armorBonus + 1);
 
-            count -= HIT_THRESHOLD;
+            count -= threshold;
         }
 
         data.putInt(HIT_COUNT, count);

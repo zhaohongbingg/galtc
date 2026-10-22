@@ -6,7 +6,7 @@
       "modid": "jerotesvillage"
     }
   ],
-  "input": "galtc2:euthanasia_ingot",
+  "input": "galtc2:euthanasia",
   "result": {"amount": 90, "fluid": "galtc2:molten_euthanasia"},
   "temperature": 1500
 }

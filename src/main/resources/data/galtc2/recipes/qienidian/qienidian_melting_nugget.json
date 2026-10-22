@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:qienidian_nugget"
+  },
+  "result": {
+    "amount": 10,
+    "fluid": "galtc2:molten_qienidian"
+  },
+  "temperature": 1500,
+  "time": 22
+}

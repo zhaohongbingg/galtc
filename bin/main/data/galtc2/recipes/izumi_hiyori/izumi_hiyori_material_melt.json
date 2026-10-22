@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "galtc2:izumi_hiyori",
-  "result": {
-    "amount": 90,
-    "fluid": "galtc2:molten_izumi_hiyori"
-  },
-  "temperature": 800
-}

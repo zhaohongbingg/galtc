@@ -4,5 +4,13 @@
       "name": "galtc2:kisaragikurenai",
       "level": 1
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:kisaragikurenai_armor",
+        "level": 1
+      }
+    ]
+  }
 }

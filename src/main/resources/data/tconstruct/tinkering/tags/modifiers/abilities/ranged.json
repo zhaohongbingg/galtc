@@ -1,6 +1,8 @@
 {
   "values": [
-    "galtc2:shield_break",
-    "galtc2:firepower"
+    {
+      "id": "galtc2:firepower",
+      "required": false
+    }
   ]
 }

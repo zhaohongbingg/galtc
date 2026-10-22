@@ -4,5 +4,13 @@
       "name": "galtc2:valuation",
       "level": 1
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:ca_armor",
+        "level": 1
+      }
+    ]
+  }
 }

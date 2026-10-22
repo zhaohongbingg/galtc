@@ -2,8 +2,11 @@ package com.galtc2;
 
 import com.galtc2.Register.*;
 import com.galtc2.client.tooltip.TooltipImageRegistry;
+import com.galtc2.compat.bomd.BomdCompat;
+import com.galtc2.compat.bomd.client.BlazingEyeLaserRenderer;
 import com.galtc2.compat.jerotes.JerotesCompat;
 import com.galtc2.compat.meetyourfight.MeetYourFightCompat;
+import com.galtc2.compat.relicward.RelicWardCompat;
 
 // 暂时停用矿石生成器（注释保留，未删除）：恢复时放开本行与 commonSetup 里的配置加载
 // import com.galtc2.content.machine.OreGeneratorConfig;
@@ -104,6 +107,10 @@ public class Galtc2 {
         JerotesCompat.init(modEventBus);
         // 迎战(Meet Your Fight) 软联动：未安装时自动跳过
         MeetYourFightCompat.init(modEventBus);
+        // 祸乱鬼魅(Bosses of Mass Destruction) 软联动：未安装时自动跳过
+        BomdCompat.init(modEventBus);
+        // 遗境守望(Relic Ward) 软联动：未安装时自动跳过
+        RelicWardCompat.init(modEventBus);
         // JV Tinkers（原 jvt 模组，已并入本模组，命名空间统一为 galtc2）
         Jvt.init(modEventBus);
         modEventBus.addListener(Jvt::commonSetup);
@@ -135,6 +142,12 @@ public class Galtc2 {
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+            // 祸乱鬼魅 联动：祐天寺美汐的实心光束（照 BOMD 的下界铁掌激光画）。
+            // 这个类引用了 BOMD / cerbons_api 的类型，所以必须等确认装了 BOMD 之后再触碰它
+            // —— import 语句本身不会触发类加载，只有走到下面这行才会。
+            if (BomdCompat.isLoaded()) {
+                BlazingEyeLaserRenderer.register();
+            }
         }
 
         /** 提示框自定义图片：读 assets/<modid>/tooltip_images/*.json，随资源包重载刷新 */

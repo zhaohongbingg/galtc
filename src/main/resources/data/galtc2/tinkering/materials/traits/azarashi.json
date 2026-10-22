@@ -4,5 +4,13 @@
       "name": "galtc2:azarashi",
       "level": 1
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:azarashi_armor",
+        "level": 1
+      }
+    ]
+  }
 }

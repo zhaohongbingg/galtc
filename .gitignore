@@ -119,3 +119,15 @@ run/
 
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
+
+# Build output / runtime site (not source)
+bin/
+run-data/
+maven-repo/
+/src/generated/resources/.cache/
+*.log.gz
+*.code-workspace
+
+# Python caches (tools/autojs)
+__pycache__/
+*.pyc

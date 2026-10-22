@@ -32,13 +32,19 @@ import java.util.Set;
  * @param imageWidth  图片实际绘制的宽（已按原图比例缩好）
  * @param imageHeight 图片实际绘制的高
  * @param smooth      原图比绘制尺寸大 2 倍以上时用线性过滤（降采样更平滑），接近 1:1 时用 NEAREST（更锐利）
+ * @param color       染色（ARGB）；{@link #WHITE} 表示原样输出。
+ *                    配合一张<b>灰度素材</b>使用，就能让全部材料共用同一张图、只靠这里换色
+ *                    —— 和锭/粒/块走 {@code IngotItemColor} 是同一个思路。
  */
 public record TooltipImageComponent(ResourceLocation texture, int width, int height,
                                     int imageWidth, int imageHeight,
-                                    boolean smooth) implements ClientTooltipComponent, TooltipComponent {
+                                    boolean smooth, int color) implements ClientTooltipComponent, TooltipComponent {
 
     /** 图片四周的留白，避免贴着提示框边框 */
     public static final int PADDING = 4;
+
+    /** 不染色（原样输出） */
+    public static final int WHITE = 0xFFFFFFFF;
 
     /** 已经设置过采样方式的纹理，避免每帧重复设置（会触发纹理重新上传） */
     private static final Set<ResourceLocation> FILTERED = new HashSet<>();
@@ -67,6 +73,19 @@ public record TooltipImageComponent(ResourceLocation texture, int width, int hei
         // 在画布里居中：整张贴图 1:1 画上去，UV 取满（0..1）
         int left = x + PADDING + (width - imageWidth) / 2;
         int top = y + PADDING + (height - imageHeight) / 2;
+
+        boolean tinted = color != WHITE;
+        if (tinted) {
+            // 灰度素材 × color：setColor 之后这次的 blit 会被乘上这个颜色
+            graphics.setColor(((color >> 16) & 0xFF) / 255.0F,
+                    ((color >> 8) & 0xFF) / 255.0F,
+                    (color & 0xFF) / 255.0F,
+                    ((color >>> 24) & 0xFF) / 255.0F);
+        }
         graphics.blit(texture, left, top, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
+        if (tinted) {
+            // 恢复，别把后面同帧渲染的东西也染了
+            graphics.setColor(1.0F, 1.0F, 1.0F, 1.0F);
+        }
     }
 }

@@ -12,5 +12,13 @@
       "name": "galtc2:rosmarinus",
       "level": 1
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:blacklily_armor",
+        "level": 1
+      }
+    ]
+  }
 }

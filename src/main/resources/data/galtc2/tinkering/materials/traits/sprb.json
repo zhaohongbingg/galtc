@@ -1,8 +1,16 @@
 {
   "default": [
     {
-      "name":  "galtc2:sprb",
+      "name": "galtc2:sprb",
       "level": 1
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:sprb_armor",
+        "level": 1
+      }
+    ]
+  }
 }

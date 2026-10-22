@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "galtc2:tsukiyashiro_kisaki_block",
+  "key": {
+    "#": {
+      "item": "galtc2:tsukiyashiro_kisaki_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "galtc2:tsukiyashiro_kisaki_block"
+  },
+  "show_notification": true
+}

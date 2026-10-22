@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "item": "galtc2:nighttimesheep"
-  },
-  "material": "galtc2:nighttimesheep",
-  "needed": 1,
-  "value": 1
-}

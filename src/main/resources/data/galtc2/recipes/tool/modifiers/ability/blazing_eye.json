@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": false,
+  "inputs": [
+    {
+      "item": "bosses_of_mass_destruction:blazing_eye"
+    }
+  ],
+  "level": 1,
+  "result": "galtc2:blazing_eye",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/melee"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "bosses_of_mass_destruction"
+    }
+  ]
+}

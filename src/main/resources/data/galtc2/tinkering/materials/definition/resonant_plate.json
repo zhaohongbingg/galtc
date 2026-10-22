@@ -1,0 +1,10 @@
+{
+  "condition": {
+    "modid": "relicward",
+    "type": "forge:mod_loaded"
+  },
+  "craftable": true,
+  "tier": 4,
+  "sortOrder": 71,
+  "hidden": false
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "galtc2:tianjin_zui_block",
+  "key": {
+    "#": {
+      "item": "galtc2:tianjin_zui_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "galtc2:tianjin_zui_block"
+  },
+  "show_notification": true
+}

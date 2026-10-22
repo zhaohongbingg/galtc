@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "galtc2:shoujing_ingot",
+  "key": {
+    "#": {
+      "item": "galtc2:shoujing_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "galtc2:shoujing_ingot"
+  },
+  "show_notification": true
+}

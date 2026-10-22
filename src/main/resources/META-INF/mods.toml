@@ -101,3 +101,23 @@ mandatory = false
 versionRange = "[1.3.2.1,)"
 ordering = "AFTER"
 side = "BOTH"
+
+# 群毁之主(Bosses of Mass Destruction) 软联动：只做顺序约束，未安装时 galtc2 照常运行，
+# 联动强化 / 匠魂材料 全部跳过（见 com.galtc2.compat.bomd.BomdCompat#init）。
+# 注意：BomD 自带 cerbons_api / geckolib / cloth_config 前置，这些都不是 galtc2 的前置。
+[[dependencies.${ mod_id }]]
+modId = "bosses_of_mass_destruction"
+mandatory = false
+versionRange = "[1.0.0,)"
+ordering = "AFTER"
+side = "BOTH"
+
+# 遗境守望(Relic Ward) 软联动：只做顺序约束，未安装时 galtc2 照常运行，
+# 联动强化 / 匠魂材料 全部跳过（见 com.galtc2.compat.relicward.RelicWardCompat#init）。
+# 注意：RelicWard 自带 curios 前置，不是 galtc2 的前置。
+[[dependencies.${ mod_id }]]
+modId = "relicward"
+mandatory = false
+versionRange = "[1.0.0,)"
+ordering = "AFTER"
+side = "BOTH"

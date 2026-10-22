@@ -4,5 +4,13 @@
       "name": "galtc2:nighttimesheep",
       "level": 1
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:nighttimesheep_armor",
+        "level": 1
+      }
+    ]
+  }
 }

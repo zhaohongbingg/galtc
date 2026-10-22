@@ -1,6 +1,12 @@
 {
   "values": [
-    "galtc2:hag_eye",
-    "galtc2:purple_sand_hag_eye"
+    {
+      "id": "galtc2:hag_eye",
+      "required": false
+    },
+    {
+      "id": "galtc2:purple_sand_hag_eye",
+      "required": false
+    }
   ]
 }

@@ -19,6 +19,7 @@
     "galtc2:narcissus_block",
     "galtc2:nighttimesheep_block",
     "galtc2:nishiki_asumi_block",
+    "galtc2:ore_generator",
     "galtc2:oumunnbyou_block",
     "galtc2:qienidian_block",
     "galtc2:qingfeng_block",
@@ -28,10 +29,17 @@
     "galtc2:shoujing_block",
     "galtc2:sprb_block",
     "galtc2:steinsgate_block",
+    "galtc2:tianjin_zui_block",
     "galtc2:tsukiyashiro_kisaki_block",
     "galtc2:zeroone_block",
-    "galtc2:ancient_second_rounder_block",
-    "galtc2:fire_apostle_block",
-    "galtc2:mountain_realm_block"
+    { "id": "galtc2:ancient_second_rounder_block", "required": false },
+    { "id": "galtc2:fire_apostle_block", "required": false },
+    { "id": "galtc2:mountain_realm_block", "required": false },
+    "galtc2:gal_crystal_block",
+    "galtc2:gal_core",
+    "galtc2:small_gal_core_bud",
+    "galtc2:medium_gal_core_bud",
+    "galtc2:large_gal_core_bud",
+    "galtc2:budding_gal_core"
   ]
 }

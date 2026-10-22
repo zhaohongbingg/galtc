@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:ca_block"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "galtc2:molten_ca"
+  },
+  "temperature": 1500,
+  "time": 194
+}

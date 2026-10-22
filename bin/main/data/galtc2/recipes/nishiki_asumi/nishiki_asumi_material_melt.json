@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "galtc2:nishiki_asumi",
-  "result": {
-    "amount": 90,
-    "fluid": "galtc2:molten_nishiki_asumi"
-  },
-  "temperature": 900
-}

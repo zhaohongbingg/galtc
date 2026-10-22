@@ -24,8 +24,6 @@ import java.util.List;
 public class AIDefense extends BaseModifiers{
     public static final ResourceLocation KEY = Galtc2.loc("ai_defense");
 
-    private static final double IMMUNE_TICKS = GaltcConfig.COMMON.IMMUNE_TICKS.get();  // 30秒
-
 
 
     @Override
@@ -41,8 +39,11 @@ public class AIDefense extends BaseModifiers{
         String id = source.getMsgId();
         long gameTime = ctx.getEntity().level().getGameTime();
 
+        // 每次实时读配置，改完配置无需重启即可生效
+        double immuneTicks = GaltcConfig.COMMON.IMMUNE_TICKS.get();
+
         // ✔ 在免疫时间内且伤害类型相同 → 免疫
-        if (lastId.equals(id) && gameTime - lastTime <= IMMUNE_TICKS) {
+        if (lastId.equals(id) && gameTime - lastTime <= immuneTicks) {
             return 0f;
         }
 
@@ -64,8 +65,11 @@ public class AIDefense extends BaseModifiers{
         long lastTime = tag.getLong("time");
         long gameTime = player.level().getGameTime();
 
-        if (!lastId.isEmpty() && gameTime - lastTime <= IMMUNE_TICKS) {
-            double remainingTicks = IMMUNE_TICKS - (gameTime - lastTime);
+        // 每次实时读配置，提示里的剩余时间才和实际免疫判定一致
+        double immuneTicks = GaltcConfig.COMMON.IMMUNE_TICKS.get();
+
+        if (!lastId.isEmpty() && gameTime - lastTime <= immuneTicks) {
+            double remainingTicks = immuneTicks - (gameTime - lastTime);
             double seconds = remainingTicks / 20;
 
             tooltip.add(Component.literal("免疫伤害: " + lastId + " 剩余 " + seconds + " 秒")

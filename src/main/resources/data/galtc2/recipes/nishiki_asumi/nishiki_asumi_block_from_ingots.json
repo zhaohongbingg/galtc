@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "galtc2:nishiki_asumi_block",
+  "key": {
+    "#": {
+      "item": "galtc2:nishiki_asumi_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "galtc2:nishiki_asumi_block"
+  },
+  "show_notification": true
+}

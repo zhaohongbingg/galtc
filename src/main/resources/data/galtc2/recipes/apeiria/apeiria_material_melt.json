@@ -1,6 +1,6 @@
 {
   "type": "tconstruct:material_melting",
-  "input": "galtc2:apeiria_ingot",
+  "input": "galtc2:apeiria",
   "result": {
     "amount": 90,
     "fluid": "galtc2:molten_apeiria"

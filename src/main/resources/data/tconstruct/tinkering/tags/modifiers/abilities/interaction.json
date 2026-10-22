@@ -1,6 +1,20 @@
 {
   "values": [
-    "galtc2:seawave_trident",
-    "galtc2:drought_wildfire_shield"
+    {
+      "id": "galtc2:seawave_trident",
+      "required": false
+    },
+    {
+      "id": "galtc2:drought_wildfire_shield",
+      "required": false
+    },
+    {
+      "id": "galtc2:ancient_anima",
+      "required": false
+    },
+    {
+      "id": "galtc2:blazing_eye",
+      "required": false
+    }
   ]
 }

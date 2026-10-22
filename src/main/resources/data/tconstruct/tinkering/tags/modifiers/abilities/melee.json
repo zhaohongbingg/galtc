@@ -1,7 +1,16 @@
 {
   "values": [
-    "galtc2:chainsaw",
-    "galtc2:crazy_axe",
-    "galtc2:bitter_cold_hammer"
+    {
+      "id": "galtc2:chainsaw",
+      "required": false
+    },
+    {
+      "id": "galtc2:bitter_cold_hammer",
+      "required": false
+    },
+    {
+      "id": "galtc2:klaroro",
+      "required": false
+    }
   ]
 }

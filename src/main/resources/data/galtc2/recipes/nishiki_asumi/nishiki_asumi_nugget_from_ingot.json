@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "galtc2:nishiki_asumi_nugget",
+  "ingredients": [
+    {
+      "item": "galtc2:nishiki_asumi_ingot"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "galtc2:nishiki_asumi_nugget"
+  }
+}

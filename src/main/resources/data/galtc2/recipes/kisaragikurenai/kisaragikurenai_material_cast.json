@@ -4,6 +4,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_kisaragikurenai"
   },
-  "output": "galtc2:kisaragikurenai_ingot",
+  "output": "galtc2:kisaragikurenai",
   "temperature": 1500
 }

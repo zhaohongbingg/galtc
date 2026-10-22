@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/nugget"
+  },
+  "cooling_time": 20,
+  "fluid": {
+    "amount": 10,
+    "fluid": "galtc2:molten_fire_apostle"
+  },
+  "result": "galtc2:fire_apostle_nugget",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "jerotesvillage"
+    }
+  ]
+}

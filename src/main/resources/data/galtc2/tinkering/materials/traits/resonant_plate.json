@@ -1,0 +1,17 @@
+{
+  "default": [],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "galtc2:bell_ward"
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "level": 1,
+        "name": "galtc2:echo_slam"
+      }
+    ]
+  }
+}

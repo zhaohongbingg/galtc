@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "galtc2:galaxy_railroad_ingot",
+  "key": {
+    "#": {
+      "item": "galtc2:galaxy_railroad_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "galtc2:galaxy_railroad_ingot"
+  },
+  "show_notification": true
+}

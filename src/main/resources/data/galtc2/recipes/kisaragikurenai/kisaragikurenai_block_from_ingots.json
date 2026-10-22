@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "galtc2:kisaragikurenai_block",
+  "key": {
+    "#": {
+      "item": "galtc2:kisaragikurenai_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "galtc2:kisaragikurenai_block"
+  },
+  "show_notification": true
+}

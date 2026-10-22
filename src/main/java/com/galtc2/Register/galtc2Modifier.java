@@ -2,6 +2,7 @@ package com.galtc2.Register;
 
 import com.galtc2.Galtc2;
 import com.galtc2.modifiers.*;
+import com.galtc2.modifiers.armor.*;
 
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
@@ -101,7 +102,26 @@ public class galtc2Modifier {
     public static final StaticModifier<MorganaMeleeModifier> morgana_melee = MODIFIERS.register("morgana_melee", MorganaMeleeModifier::new);
     public static final StaticModifier<MorganaArmorModifier> morgana_armor = MODIFIERS.register("morgana_armor", MorganaArmorModifier::new);
 
+    /** 天津罪：手持/穿戴时展开禁飞领域（材料特性）。 */
+    public static final StaticModifier<TianjinZuiModifier> tianjin_zui = MODIFIERS.register("tianjin_zui", TianjinZuiModifier::new);
 
+    /** 天津罪·其二：领域内生物无法生成（材料特性，逻辑见 TianjinZuiSpawnBanEvents）。 */
+    public static final StaticModifier<TianjinZuiSpawnBanModifier> tianjin_zui_no_spawn =
+            MODIFIERS.register("tianjin_zui_no_spawn", TianjinZuiSpawnBanModifier::new);
+
+    // 防御特性（护甲侧）：与同名材料的工具特性镜像，只在护甲部件上生效
+    public static final StaticModifier<SprbArmor> sprb_armor = MODIFIERS.register("sprb_armor", SprbArmor::new);
+    public static final StaticModifier<ZeroOneArmor> zeroone_armor = MODIFIERS.register("zeroone_armor", ZeroOneArmor::new);
+    public static final StaticModifier<NarcissusArmor> narcissus_armor = MODIFIERS.register("narcissus_armor", NarcissusArmor::new);
+    public static final StaticModifier<CaArmor> ca_armor = MODIFIERS.register("ca_armor", CaArmor::new);
+    public static final StaticModifier<AzarashiArmor> azarashi_armor = MODIFIERS.register("azarashi_armor", AzarashiArmor::new);
+    public static final StaticModifier<NightTimeSheepArmor> nighttimesheep_armor =
+            MODIFIERS.register("nighttimesheep_armor", NightTimeSheepArmor::new);
+    public static final StaticModifier<KisaragiKurenaiArmor> kisaragikurenai_armor =
+            MODIFIERS.register("kisaragikurenai_armor", KisaragiKurenaiArmor::new);
+    public static final StaticModifier<BlackLilyArmor> blacklily_armor = MODIFIERS.register("blacklily_armor", BlackLilyArmor::new);
+    public static final StaticModifier<ShochouArmor> shochou_armor = MODIFIERS.register("shochou_armor", ShochouArmor::new);
+    public static final StaticModifier<CialloArmor> ciallo_armor = MODIFIERS.register("ciallo_armor", CialloArmor::new);
 
    public static void register(){}
 

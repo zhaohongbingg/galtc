@@ -21,10 +21,7 @@ public final class JerotesModifiers {
     /** 火焰使徒：每件护甲降低火系承伤、提升自身火系输出（复用 J村 火系判定）。原词条保留注册。 */
     public static final StaticModifier<FireApostleModifier> fireApostle =
             MODIFIERS.register("fire_apostle", FireApostleModifier::new);
-    /** 火焰使徒·炎征(攻击侧): 只提升火系输出。 */
-    public static final StaticModifier<FireApostleMeleeModifier> fireApostleMelee =
-            MODIFIERS.register("fire_apostle_melee", FireApostleMeleeModifier::new);
-    /** 火焰使徒·炎护(防御侧): 只降低火系承伤。 */
+    /** 火焰使徒·炎护(防御侧): 只降低火系承伤。近战侧复用了蛇龙合金的"龙炎"，不再单独注册。 */
     public static final StaticModifier<FireApostleArmorModifier> fireApostleArmor =
             MODIFIERS.register("fire_apostle_armor", FireApostleArmorModifier::new);
 

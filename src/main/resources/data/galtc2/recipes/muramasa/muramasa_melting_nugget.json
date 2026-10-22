@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:muramasa_nugget"
+  },
+  "result": {
+    "amount": 10,
+    "fluid": "galtc2:molten_muramasa"
+  },
+  "temperature": 1500,
+  "time": 22
+}

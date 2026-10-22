@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:fire_apostle_block"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "galtc2:molten_fire_apostle"
+  },
+  "temperature": 1550,
+  "time": 194,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "jerotesvillage"
+    }
+  ]
+}

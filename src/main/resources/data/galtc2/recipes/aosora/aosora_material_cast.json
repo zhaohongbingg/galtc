@@ -4,6 +4,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_aosora"
   },
-  "output": "galtc2:aosora_ingot",
+  "output": "galtc2:aosora",
   "temperature": 1500
 }

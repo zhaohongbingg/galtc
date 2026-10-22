@@ -1,0 +1,12 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "galtc2:tianjin_zui"
+    },
+    {
+      "level": 1,
+      "name": "galtc2:tianjin_zui_no_spawn"
+    }
+  ]
+}

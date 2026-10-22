@@ -1,0 +1,17 @@
+{
+  "default": [],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "galtc2:soul_heart"
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "level": 1,
+        "name": "galtc2:soul_heart"
+      }
+    ]
+  }
+}

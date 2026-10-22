@@ -96,8 +96,9 @@ public class GaltcConfig {
                     .defineInRange("hitthreshold", 50, 10, 1000);
             this.ATTACK_THRESHOLD = builder
                     .comment("低于多少攻击力，夜羊生效")
-                    .comment("计算公式为：damage*(ATTACK_THRESHOLD-damage)")
-                    .defineInRange("attackthreshold", 50.0, 18, 100);
+                    .comment("计算公式为：max(damage, damage*(ATTACK_THRESHOLD-damage))")
+                    .comment("即攻击力越低加成越高，阈值一半处最高；接近阈值时保底不降低原伤害")
+                    .defineInRange("attackthreshold", 18.0, 18, 100);
             this.IMMUNE_TICKS=builder
                     .comment("受到攻击后的免疫时间,按tick算，1s=20tick")
                     .defineInRange("immuneticks", 600.0, 100, 10000);

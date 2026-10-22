@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "item": "galtc2:nishiki_asumi"
-  },
-  "material": "galtc2:nishiki_asumi",
-  "needed": 1,
-  "value": 1
-}

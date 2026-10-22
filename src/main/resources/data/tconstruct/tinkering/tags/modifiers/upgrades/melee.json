@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "galtc2:void_thorn",
+      "required": false
+    },
+    {
+      "id": "galtc2:obsidian_heart",
+      "required": false
+    }
+  ]
+}

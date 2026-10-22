@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "galtc2:tsukiyashiro_kisaki_nugget",
+  "ingredients": [
+    {
+      "item": "galtc2:tsukiyashiro_kisaki_ingot"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "galtc2:tsukiyashiro_kisaki_nugget"
+  }
+}

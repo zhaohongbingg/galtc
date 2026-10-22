@@ -4,6 +4,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_nighttimesheep"
   },
-  "output": "galtc2:nighttimesheep_ingot",
+  "output": "galtc2:nighttimesheep",
   "temperature": 1500
 }

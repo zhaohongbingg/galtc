@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:tsukiyashiro_kisaki_nugget"
+  },
+  "result": {
+    "amount": 10,
+    "fluid": "galtc2:molten_tsukiyashiro_kisaki"
+  },
+  "temperature": 1500,
+  "time": 22
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "galtc2:shochou_block",
+  "key": {
+    "#": {
+      "item": "galtc2:shochou_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "galtc2:shochou_block"
+  },
+  "show_notification": true
+}

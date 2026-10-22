@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "galtc2:tianjin_zui_nugget",
+  "ingredients": [
+    {
+      "item": "galtc2:tianjin_zui_ingot"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "galtc2:tianjin_zui_nugget"
+  }
+}

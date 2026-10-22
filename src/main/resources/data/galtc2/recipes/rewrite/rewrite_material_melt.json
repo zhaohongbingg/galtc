@@ -1,6 +1,6 @@
 {
   "type": "tconstruct:material_melting",
-  "input": "galtc2:rewrite_ingot",
+  "input": "galtc2:rewrite",
   "result": {
     "amount": 90,
     "fluid": "galtc2:molten_rewrite"

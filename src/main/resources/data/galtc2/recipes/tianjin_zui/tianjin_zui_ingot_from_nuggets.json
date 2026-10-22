@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "galtc2:tianjin_zui_ingot",
+  "key": {
+    "#": {
+      "item": "galtc2:tianjin_zui_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "galtc2:tianjin_zui_ingot"
+  },
+  "show_notification": true
+}

@@ -1,16 +1,9 @@
 package com.galtc2.jvt.modifiers;
 
-import com.jerotes.jerotes.util.Main;
-import com.jerotes.jerotesvillage.entity.Other.MagicAboutMob.AnimatedChainEntity;
-import com.jerotes.jerotesvillage.init.JerotesVillageEntityType;
-import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
+import com.jerotes.jerotes.init.JerotesMobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.scores.PlayerTeam;
-import net.minecraft.world.scores.Team;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
@@ -21,11 +14,14 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 /**
  * 奴制监督者·捆缚(chain_bind)
- * 复刻 J村 奴制监督者锤鞭：近战命中后 40% 几率，把生命值不高于自身 2 倍的生物用 {@link AnimatedChainEntity} 捆住。
+ * 近战命中后 40% 几率给目标施加 J村 的麻醉状态(jerotes:anesthetized)，
+ * 效果等级与持续时间随强化等级提升，累积到阈值后由 J村 自身转为麻醉定身。
  */
 public class ChainBindModifier extends Modifier implements MeleeHitModifierHook {
 
     private static final float CHANCE = 0.4f;
+    /** 每级麻醉持续时间（tick），1 级 = 10 秒 */
+    private static final int DURATION_PER_LEVEL = 200;
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
@@ -36,38 +32,25 @@ public class ChainBindModifier extends Modifier implements MeleeHitModifierHook 
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         LivingEntity target = context.getLivingTarget();
         LivingEntity attacker = context.getAttacker();
-        if (target == null || !target.isAlive()) {
+        if (target == null || attacker == null || !target.isAlive()) {
             return;
         }
         Level level = context.getLevel();
-        if (!(level instanceof ServerLevel serverLevel)) {
+        if (level.isClientSide()) {
             return;
         }
-        if (serverLevel.getRandom().nextFloat() > CHANCE) {
-            return;
-        }
-        if (target.getHealth() > attacker.getHealth() * 2.0f) {
-            return;
-        }
-        if (!Main.mobSizeSmall(target) && !Main.mobSizeMedium(target) && !Main.mobSizeLarge(target)) {
-            return;
-        }
-        if (target instanceof AnimatedChainEntity) {
+        if (level.getRandom().nextFloat() > CHANCE) {
             return;
         }
 
-        AnimatedChainEntity chain = JerotesVillageEntityType.ANIMATED_CHAIN.get()
-                .spawn(serverLevel, BlockPos.containing(target.getX(), target.getY(), target.getZ()), MobSpawnType.MOB_SUMMONED);
-        if (chain != null) {
-            chain.setOwner(attacker);
-            chain.setPrisoner(target);
-            chain.setSize(Main.mobWidth(target));
-            Team team = attacker.getTeam();
-            if (team instanceof PlayerTeam playerTeam) {
-                serverLevel.getScoreboard().addPlayerToTeam(chain.getStringUUID(), playerTeam);
-            }
-            chain.setTarget(target);
-        }
-        serverLevel.gameEvent(GameEvent.ENTITY_PLACE, BlockPos.containing(attacker.getX(), attacker.getY(), attacker.getZ()), GameEvent.Context.of(attacker));
+        int modLevel = modifier.getLevel();
+        // 效果等级从 0（麻醉 I）起算，与 J村 麻醉投团的麻醉值档位一致
+        target.addEffect(new MobEffectInstance(
+                JerotesMobEffects.ANESTHETIZED.get(),
+                DURATION_PER_LEVEL * modLevel,
+                Math.max(0, modLevel - 1),
+                false,
+                true,
+                true));
     }
 }

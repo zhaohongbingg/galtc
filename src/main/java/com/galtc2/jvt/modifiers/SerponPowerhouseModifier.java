@@ -45,6 +45,6 @@ public class SerponPowerhouseModifier extends FireAffinityModifier implements Va
                 return null;
             }
         }
-        return Component.translatable("modifier.jvt.serpon_powerhouse.requirements");
+        return Component.translatable("modifier.galtc2.serpon_powerhouse.requirements");
     }
 }

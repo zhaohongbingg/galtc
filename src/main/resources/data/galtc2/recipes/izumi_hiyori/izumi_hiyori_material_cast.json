@@ -4,6 +4,6 @@
     "amount": 90,
     "fluid": "galtc2:molten_izumi_hiyori"
   },
-  "output": "galtc2:izumi_hiyori_ingot",
+  "output": "galtc2:izumi_hiyori",
   "temperature": 1500
 }

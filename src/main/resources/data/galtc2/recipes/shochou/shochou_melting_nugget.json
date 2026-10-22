@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "galtc2:shochou_nugget"
+  },
+  "result": {
+    "amount": 10,
+    "fluid": "galtc2:molten_shochou"
+  },
+  "temperature": 1500,
+  "time": 22
+}

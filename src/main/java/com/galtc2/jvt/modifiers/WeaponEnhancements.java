@@ -11,13 +11,9 @@ public final class WeaponEnhancements {
     private WeaponEnhancements() {
     }
 
-    /** 互为排斥的能力强化 */
+    /** 互为排斥的能力强化（疯狂旋风 / 不祥破盾 已删除，不再参与判定） */
     private static final ModifierId[] GROUP = {
-            JvtModifier.SHIELD_BREAK,
             JvtModifier.CHAINSAW,
-            JvtModifier.FIREPOWER,
-            JvtModifier.CRAZY_AXE,
-            JvtModifier.BITTER_COLD_HAMMER,
             JvtModifier.SEAWAVE_TRIDENT,
             JvtModifier.DROUGHT_WILDFIRE_SHIELD
     };
@@ -29,7 +25,7 @@ public final class WeaponEnhancements {
     public static Component validateExclusive(IToolStackView tool, ModifierEntry self) {
         for (ModifierId id : GROUP) {
             if (!id.equals(self.getId()) && tool.getModifierLevel(id) > 0) {
-                return Component.translatable("modifier.jvt.incompatible");
+                return Component.translatable("modifier.galtc2.incompatible");
             }
         }
         return null;
