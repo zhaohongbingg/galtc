@@ -11,6 +11,12 @@
         "name": "galtc2:narcissus_armor",
         "level": 1
       }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:narcissus",
+        "level": 1
+      }
     ]
   }
 }

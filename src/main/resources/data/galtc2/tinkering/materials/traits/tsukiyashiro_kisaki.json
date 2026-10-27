@@ -35,6 +35,12 @@
         "name": "galtc2:kisaki_hates",
         "level": 1
       }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:kisaki_likes",
+        "level": 1
+      }
     ]
   }
 }

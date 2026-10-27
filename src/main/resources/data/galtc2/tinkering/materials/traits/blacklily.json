@@ -19,6 +19,12 @@
         "name": "galtc2:blacklily_armor",
         "level": 1
       }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:rosmarinus",
+        "level": 1
+      }
     ]
   }
 }

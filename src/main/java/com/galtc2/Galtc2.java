@@ -2,9 +2,11 @@ package com.galtc2;
 
 import com.galtc2.Register.*;
 import com.galtc2.client.tooltip.TooltipImageRegistry;
+import com.galtc2.compat.aetherbedrock.AetherBedrockCompat;
 import com.galtc2.compat.bomd.BomdCompat;
 import com.galtc2.compat.bomd.client.BlazingEyeLaserRenderer;
 import com.galtc2.compat.jerotes.JerotesCompat;
+import com.galtc2.compat.littlemaid.LittleMaidCompat;
 import com.galtc2.compat.meetyourfight.MeetYourFightCompat;
 import com.galtc2.compat.relicward.RelicWardCompat;
 
@@ -111,6 +113,10 @@ public class Galtc2 {
         BomdCompat.init(modEventBus);
         // 遗境守望(Relic Ward) 软联动：未安装时自动跳过
         RelicWardCompat.init(modEventBus);
+        // 车万女仆(Touhou Little Maid) 软联动：未安装时自动跳过
+        LittleMaidCompat.init(modEventBus);
+        // 天境基石生物重制(Aether Bedrock Mobs Reborn) 软联动：未安装时自动跳过
+        AetherBedrockCompat.init(modEventBus);
         // JV Tinkers（原 jvt 模组，已并入本模组，命名空间统一为 galtc2）
         Jvt.init(modEventBus);
         modEventBus.addListener(Jvt::commonSetup);

@@ -12,6 +12,12 @@
         "level": 1,
         "name": "galtc2:soul_heart"
       }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:soul_heart",
+        "level": 1
+      }
     ]
   }
 }

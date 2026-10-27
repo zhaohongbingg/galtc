@@ -11,6 +11,12 @@
         "name": "galtc2:scaly_bear_scale_armor",
         "level": 1
       }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:scaly_bear_scale",
+        "level": 1
+      }
     ]
   }
 }

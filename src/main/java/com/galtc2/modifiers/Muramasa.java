@@ -8,7 +8,10 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.phys.EntityHitResult;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.common.TinkerTags;
@@ -19,6 +22,7 @@ import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHoo
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
+import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import slimeknights.tconstruct.library.tools.nbt.StatsNBT;
 
 import java.util.List;
@@ -32,6 +36,15 @@ public class Muramasa extends BaseModifiers {
     ;
 
     private static final ResourceLocation NEED_PACIFY = ResourceLocation.fromNamespaceAndPath("modid", "need_pacify");
+
+    /** 射出时把「欠一次和平生物」的状态抄到箭矢上（命中钩子拿不到 tool） */
+    private static final ResourceLocation ARROW_PACIFY = ResourceLocation.fromNamespaceAndPath("galtc2", "muramasa_arrow_pacify");
+    /** 每支箭只乘一次：baseDamage 是粘性值，穿射时反复乘会滚雪球 */
+    private static final ResourceLocation ARROW_DONE = ResourceLocation.fromNamespaceAndPath("galtc2", "muramasa_arrow_done");
+    /** 每支箭只扣一次血（命中时扣；穿射穿多只不重复扣） */
+    private static final ResourceLocation ARROW_BLED = ResourceLocation.fromNamespaceAndPath("galtc2", "muramasa_arrow_bled");
+    /** 命中一次扣多少血 */
+    private static final float HIT_HEALTH_COST = 1.0F;
 
     /**
      * 获取状态
@@ -108,6 +121,55 @@ public class Muramasa extends BaseModifiers {
     private boolean isPeaceful(LivingEntity entity) {
         return entity.getType().getCategory() == MobCategory.CREATURE
                 || entity.getType().getCategory() == MobCategory.AMBIENT;
+    }
+
+    /* ============================ 远程（弓 / 弩）分支 ============================ */
+
+    /**
+     * 射出：只把「欠一次和平生物」的状态抄到箭矢上（命中钩子拿不到 tool）。
+     * <p>
+     * 「用一次扣 1 点血」已按用户口径（2026-10-27）<b>改到命中时扣</b>（见 {@link #onProjectileHitTarget}）：
+     * 空放不扣血，命中才付代价，每支箭最多扣一次。
+     */
+    @Override
+    public void onProjectileShoot(IToolStackView bow, ModifierEntry modifier, LivingEntity shooter,
+                                  Projectile projectile, AbstractArrow arrow, ModDataNBT modDataNBT, boolean primary) {
+        if (arrow == null || shooter == null || shooter.level().isClientSide()) return;
+        modDataNBT.putBoolean(ARROW_PACIFY, needPacify(bow.getPersistentData()));
+    }
+
+    /**
+     * 箭矢命中：沿用近战的「和平生物不变、欠债 ×0.1、正常 ×3」，
+     * 但作用在箭矢自身的 baseDamage 上（写回箭矢，穿射的后续目标吃同一份伤害，不会再次相乘）。
+     * <p>
+     * 同时按用户口径收「用一次扣 1 点血」的代价：命中才扣（空放不扣）、只对玩家、血量 &gt; 1 不致死、
+     * 每支箭只扣一次（{@link #ARROW_BLED}，穿射穿多只不会重复扣）。
+     */
+    @Override
+    public void onProjectileHitTarget(ModifierNBT modifiers, ModDataNBT persistentData, int level,
+                                      Projectile projectile, AbstractArrow arrow, EntityHitResult hit,
+                                      LivingEntity attacker, LivingEntity target) {
+        if (arrow == null || attacker == null || target == null) return;
+        if (target.level().isClientSide()) return;
+        if (target.isDeadOrDying()) return;
+
+        // 用一次扣 1 点血：命中即付，每支箭一次
+        if (attacker instanceof Player player && player.getHealth() > HIT_HEALTH_COST
+                && !persistentData.contains(ARROW_BLED)) {
+            persistentData.putBoolean(ARROW_BLED, true);
+            player.hurt(player.damageSources().magic(), HIT_HEALTH_COST);
+        }
+
+        if (persistentData.contains(ARROW_DONE)) return;
+        // 和平生物不削也不加：和近战一致
+        if (isPeaceful(target)) return;
+
+        double base = arrow.getBaseDamage();
+        if (base <= 0.0D) return;
+
+        float factor = persistentData.getBoolean(ARROW_PACIFY) ? 0.1F : 3.0F;
+        arrow.setBaseDamage(base * factor);
+        persistentData.putBoolean(ARROW_DONE, true);
     }
 
 

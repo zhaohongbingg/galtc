@@ -5,18 +5,23 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.EntityHitResult;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
+import slimeknights.tconstruct.library.tools.helper.ToolAttackUtil;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.item.ModifiableItem;
 import slimeknights.tconstruct.library.tools.item.armor.ModifiableArmorItem;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
+import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
@@ -96,6 +101,29 @@ public class KisakiLikesModifier extends BaseModifiers {
         if (target.isDeadOrDying()) return actualDamage;
         float bonus = consumeRetaliation(player, target, modifier.getLevel());
         return actualDamage + bonus;
+    }
+
+    /**
+     * 箭矢命中：把「反击」搬到远程——射中近期伤害过自己的生物时，返还其累计伤害的
+     * {@value #RETALIATION_RATIO} × 等级（与近战同一条 {@link #consumeRetaliation}，结算即清记仇）。
+     * <p>
+     * 追加伤害走 {@code attackEntitySecondary}（不碰 {@code target.hurt}，否则箭矢自身伤害会被无敌帧吞掉），
+     * 来源挂箭矢，击杀统计仍归玩家。
+     */
+    @Override
+    public void onProjectileHitTarget(ModifierNBT modifiers, ModDataNBT persistentData, int level,
+                                      Projectile projectile, AbstractArrow arrow, EntityHitResult hit,
+                                      LivingEntity attacker, LivingEntity target) {
+        if (level <= 0 || attacker == null || target == null) return;
+        if (attacker.level().isClientSide() || target.isDeadOrDying()) return;
+        if (!(attacker instanceof Player player)) return;
+        if (!(projectile instanceof AbstractArrow)) return;
+
+        float bonus = consumeRetaliation(player, target, level);
+        if (bonus <= 0f) return;
+
+        ToolAttackUtil.attackEntitySecondary(player.damageSources().arrow(arrow, player),
+                bonus, target, target, true);
     }
 
     /** 结算反击：取出并清除记仇，返回额外伤害 */

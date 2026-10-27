@@ -4,5 +4,13 @@
       "name": "galtc2:muramasa",
       "level": 1
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:muramasa",
+        "level": 1
+      }
+    ]
+  }
 }

@@ -12,6 +12,12 @@
         "level": 1,
         "name": "galtc2:soul_eater"
       }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:soul_eater",
+        "level": 1
+      }
     ]
   }
 }

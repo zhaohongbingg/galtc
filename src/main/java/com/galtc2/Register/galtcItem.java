@@ -50,6 +50,21 @@ public class galtcItem {
     public static final RegistryObject<Item> guro_fragment =
             ITEMS.register("guro_fragment", () -> new Item(new Item.Properties()));//guro碎片
 
+    /**
+     * 酒狐锭 —— 酒狐（车万女仆 女仆）干活时产出。
+     * <p>
+     * <b>刻意不走「匠魂金属」那一套</b>（{@code galtcMetal#registerMetal}）：
+     * 那种注册会给材料自动生成「块 / 锭 / 粒」三件套 + 熔融流体 + 颜色遮罩，
+     * 而酒狐锭只是一个普通物品 —— 没有块、没有粒、没有熔融，也不参与铸造。
+     * 它进入匠魂材料系统靠的是 {@code data/galtc2/recipes/jiuhu/jiuhu_material.json}
+     * 里的 {@code tconstruct:material} 配方（和 苔藓牙 这类联动材料同一个写法）。
+     * <p>
+     * 贴图走自己的 {@code galtc2:item/jiuhu_ingot}，提示框里的酒狐立绘见
+     * {@code assets/galtc2/tooltip_images/jiuhu_ingot.json}。
+     */
+    public static final RegistryObject<Item> jiuhu_ingot =
+            ITEMS.register("jiuhu_ingot", () -> new Item(new Item.Properties()));
+
 
     /**
      * 创造栏的展示顺序（<b>只影响显示</b>：物品的注册顺序 = 上面字段的声明顺序，
@@ -62,7 +77,11 @@ public class galtcItem {
             // ---- 强化材料：万花镜 ----
             kaleidoscope,
             // ---- Gal水晶 与四种碎片 ----
-            gal_crystal, juqing_fragment, seqi_fragment, feimeng_fragment, guro_fragment
+            gal_crystal, juqing_fragment, seqi_fragment, feimeng_fragment, guro_fragment,
+            // ---- 酒狐锭（车万女仆 女仆干活产出） ----
+            jiuhu_ingot
+            // ---- 护甲（四部件测试头盔）暂时停用，恢复方法见 galcArmor ----
+            // , galcArmor.gal_helmet
     );
 
 

@@ -1,0 +1,23 @@
+{
+  "default": [],
+  "perStat": {
+    "tconstruct:melee_harvest": [
+      {
+        "level": 1,
+        "name": "galtc2:love_grows"
+      }
+    ],
+    "tconstruct:ranged": [
+      {
+        "level": 1,
+        "name": "galtc2:true_love"
+      }
+    ],
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "galtc2:one_heart"
+      }
+    ]
+  }
+}

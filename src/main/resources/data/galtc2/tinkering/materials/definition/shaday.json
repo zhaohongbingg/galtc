@@ -1,0 +1,10 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "aether_dragon"
+  },
+  "craftable": false,
+  "tier": 4,
+  "sortOrder": 78,
+  "hidden": false
+}

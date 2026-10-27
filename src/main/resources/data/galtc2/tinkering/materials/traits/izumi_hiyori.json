@@ -11,6 +11,7 @@
         "name": "galtc2:healed_by_sister",
         "level": 1
       }
-    ]
+    ],
+    "tconstruct:ranged": []
   }
 }

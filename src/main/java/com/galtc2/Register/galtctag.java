@@ -2,6 +2,8 @@ package com.galtc2.Register;
 
 
 import com.galtc2.Galtc2;
+import com.galtc2.compat.jerotes.JerotesCompat;
+import com.galtc2.jvt.Register.JvtMetal;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -22,11 +24,18 @@ public class galtctag {
                     .icon(() -> new ItemStack(galtcMetal.sprb.getIngot()))
                     .title(Component.translatable("itemGroup.galtctab"))
                     .displayItems((pParameters,pOutput)->{
-                        // ---- 1. 材料金属三件套：锭 -> 金属块 -> 粒（顺序见 galtcMetal.ALL_METALS）----
+                        // ---- 1. 材料金属：只列「锭」（块 / 粒仍然注册，配方和铸造都要用，只是不在创造栏展示）----
                         for (MetalItemObject metal : galtcMetal.ALL_METALS) {
                             pOutput.accept(metal.getIngot());
-                            pOutput.accept(metal.get());
-                            pOutput.accept(metal.getNugget());
+                        }
+
+                        // ---- 1b. JV Tinkers 的金属也并进本页（同一规则：只列锭）----
+                        // JvtMetal 只在装了 J村 时才会被 Jvt.init 初始化，所以这里必须先判断，
+                        // 否则未装 J村 时碰 JvtMetal 会触发它的静态初始化（注册表未挂到总线）。
+                        if (JerotesCompat.isJerotesLoaded()) {
+                            for (MetalItemObject metal : JvtMetal.ALL_METALS) {
+                                pOutput.accept(metal.getIngot());
+                            }
                         }
 
                         // ---- 2. Gal水晶 / 矿石碎片（顺序见 galtcItem.ALL_ITEMS）----

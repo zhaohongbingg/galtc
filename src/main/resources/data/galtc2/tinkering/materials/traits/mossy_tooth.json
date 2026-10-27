@@ -12,6 +12,12 @@
         "level": 1,
         "name": "galtc2:mossy_spike"
       }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:mossy_spike",
+        "level": 1
+      }
     ]
   }
 }

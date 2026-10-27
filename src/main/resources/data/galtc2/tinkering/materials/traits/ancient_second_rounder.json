@@ -11,6 +11,12 @@
         "name": "galtc2:ancient_second_rounder_armor",
         "level": 1
       }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:ancient_second_rounder",
+        "level": 1
+      }
     ]
   }
 }

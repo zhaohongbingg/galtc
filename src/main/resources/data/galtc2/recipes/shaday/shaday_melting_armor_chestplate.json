@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_dragon"
+    }
+  ],
+  "ingredient": {
+    "item": "aether_dragon:shaday_chestplate"
+  },
+  "result": {
+    "amount": 720,
+    "fluid": "galtc2:molten_shaday"
+  },
+  "temperature": 1500,
+  "time": 141
+}

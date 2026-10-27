@@ -4,5 +4,8 @@
       "name": "galtc2:aid",
       "level": 1
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:ranged": []
+  }
 }

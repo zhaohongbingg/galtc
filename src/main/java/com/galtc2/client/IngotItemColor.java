@@ -61,7 +61,10 @@ public class IngotItemColor {
         Map.entry("euthanasia", 0xFF8B0000),
         Map.entry("qingfeng", 0xFF9BA3AB),
         Map.entry("morgana", 0xFF6A4C93),
-        Map.entry("tianjin_zui", 0xFF9E8A9D)
+        Map.entry("tianjin_zui", 0xFF9E8A9D),
+        // 阴影：三件套用的是自己画的彩色贴图（深海军蓝 + 琥珀金边），
+        // 这里给白色（= 不染色），让 tintindex 0 之后贴图保持原色。
+        Map.entry("shaday", 0xFFFFFFFF)
     );
 
     /** 三件套的 id 后缀，顺序无关（只会命中一个）。 */

@@ -6,6 +6,12 @@
         "name": "galtc2:meror_standard",
         "level": 1
       }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:meror_bolt",
+        "level": 2
+      }
     ]
   }
 }

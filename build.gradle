@@ -27,8 +27,11 @@ plugins {
 apply plugin: 'org.spongepowered.mixin'
 
 
-group = mod_version
-version = mod_group_id
+// 注意这两行原本写反了：group 取了 mod_version、version 取了 mod_group_id，
+// 于是产物名变成 galtc2-com.jar（com 是 group id，不是版本号）。
+// 按标准写法换回来，产物名就是 galtc2-<mod_version>.jar，例如 galtc2-1.0.2.jar。
+group = mod_group_id
+version = mod_version
 
 base {
     archivesName = mod_id
@@ -106,6 +109,9 @@ minecraft {
         client {
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', mod_id
+            // 开发环境诊断用：让 JVM 为 fast-throw 的异常（AIOOBE/NPE 等）保留完整堆栈，
+            // 否则崩溃报告里只会有 "ArrayIndexOutOfBoundsException" 而没有栈帧。正式包不受影响。
+            jvmArg '-XX:-OmitStackTraceInFastThrow'
         }
 
         server {
@@ -252,6 +258,45 @@ dependencies {
     // 缺文件时重下 https://edge.forgecdn.net/files/8871/420/relicward-1.0.0.jar，
     // 放到 maven-repo/curse/maven/relicward-1694157/8871420/（jar + 同名最小 pom）。
     implementation fg.deobf("curse.maven:relicward-1694157:8871420")
+
+    // 车万女仆(Touhou Little Maid, modid: touhou_little_maid) 软联动：只做编译期/开发期依赖，
+    // 发布时不是前置，运行期通过 ModList 判断（源码见 com/galtc2/compat/littlemaid/，未装时全部跳过）。
+    // CF 项目 355044 / 文件 8061847 = touhoulittlemaid-1.5.3-forge+mc1.20.1.jar。
+    // 和其它 curse 依赖一样，本机访问不了 cfa2.cursemaven.com，所以文件放在项目内的离线兜底仓库。
+    // 缺文件时重下 https://edge.forgecdn.net/files/8061/847/touhoulittlemaid-1.5.3-forge%2Bmc1.20.1.jar，
+    // 放到 maven-repo/curse/maven/touhou-little-maid-355044/8061847/（jar + 同名最小 pom）。
+    // 强制前置：geckolib（上面的 geckolib-forge-1.20.1:4.8.4 已经带进来了）。
+    implementation fg.deobf("curse.maven:touhou-little-maid-355044:8061847")
+
+    // 以太基石生物重制(Aether Bedrock Mobs Reborn, modid: aether_bedrock_mobs_reborn) 软联动：
+    // 只做编译期/开发期依赖，发布时不是前置，运行期通过 ModList 判断（未装时全部跳过）。
+    // CF 项目 1739137 / 文件 9322377 = aether_bedrock_mobs_reborn-1.20.1-forge-1.10.jar（Forge 1.20.1）。
+    // 与 1.9.1 相比只改了 6 个条目：MANIFEST / mods.toml（版本号）/ RebornMobEntity / ShulkerCombat(+CombatGoal) / ModEntities；
+    // 我们用到的 GolemSkillEntity / NagaSkillEntity / SpiritSkillEntity 三个类逐字段签名一致（javap 实测），
+    // 引用的物品 id（crystalite / crystalitedust / lamp / spiritsword / dungeondagger …）也全部还在。
+    // mods.toml 的版本要求保持 [1.9.1,) 不变（用户口径：更新版本但不更新配置要求）；1.10 自身依赖仍是 aether_dragon [1.4.1,)。
+    // 和其它 curse 依赖一样，本机访问不了 cfa2.cursemaven.com，所以文件放在项目内的离线兜底仓库。
+    // 缺文件时重下 https://edge.forgecdn.net/files/9322/377/aether_bedrock_mobs_reborn-1.20.1-forge-1.10.jar，
+    // 放到 maven-repo/curse/maven/aether-bedrock-mobs-reborn-1739137/9322377/（jar + 同名最小 pom）。
+    // 强制前置：geckolib（上面已有）+ aether_dragon（紧接着下面那一条已经引进来了）。
+    implementation fg.deobf("curse.maven:aether-bedrock-mobs-reborn-1739137:9322377")
+
+    // 天境巨龙(Aether Dragon, modid: aether_dragon) —— 就是上面那个 mod 的 mandatory 前置，软联动同样处理。
+    // CF 项目 1740349 / 文件 9306964 = aether_dragon-1.4.1.jar（Forge 1.20.1，独立 Boss 模组：
+    // 天境巨龙多阶段 Boss + 天空结构；装了 以太基石生物重制 时结构挪到天境维度生成）。
+    // 缺文件时重下 https://edge.forgecdn.net/files/9306/964/aether_dragon-1.4.1.jar，
+    // 放到 maven-repo/curse/maven/aether-dragon-1740349/9306964/（jar + 同名最小 pom）。
+    // 强制前置：geckolib >= 4.8.4（上面已有）。
+    implementation fg.deobf("curse.maven:aether-dragon-1740349:9306964")
+
+    // 天境(The Aether, modid: aether) —— 上面两个 aether 系模组的「本体」。
+    // CF 项目 255308 / 文件 6134920 = aether-1.20.1-1.5.2-neoforge.jar（CF 上同时标了 Forge 兼容，
+    // 1.20.1 的 NeoForge 构建就是给 Forge 47 用的那一份）。
+    // 缺文件时重下 https://edge.forgecdn.net/files/6134/920/aether-1.20.1-1.5.2-neoforge.jar，
+    // 放到 maven-repo/curse/maven/aether-255308/6134920/（jar + 同名最小 pom）。
+    // 强制前置：curios >= 5.3.1+1.20.1（迎战 那一块已经引进了 curios-forge-5.14.1）。
+    // 注意这是个 38MB 的大包，第一次 fg.deobf 会慢一些。
+    implementation fg.deobf("curse.maven:aether-255308:6134920")
 
     // AutoJS：把运行中的游戏实例暴露成 MCP 端点（eval_js / 命令 / 物品标签查询），
     // 只在开发环境跑，发布包里不带。前置 Rhino 一并放 libs/，runClient 时会自动加载。

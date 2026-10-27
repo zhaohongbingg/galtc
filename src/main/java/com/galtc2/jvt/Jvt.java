@@ -7,6 +7,7 @@ import com.galtc2.jvt.Register.JvtFluid;
 import com.galtc2.jvt.Register.JvtMetal;
 import com.galtc2.jvt.Register.JvtModifier;
 import com.galtc2.jvt.event.NobleFactionEvents;
+import com.galtc2.jvt.modifiers.MerorRangedModifier;
 import com.mojang.logging.LogUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -51,10 +52,14 @@ public final class Jvt {
         // 3 种自有金属（金属块 / 锭 / 粒）：BlockDeferredRegister 自带 block 与 item 两张注册表
         JvtMetal.BLOCKS.register(modEventBus);
         JvtModifier.MODIFIERS.register(modEventBus);
-        JvtCreativeTabs.CREATIVE_TABS.register(modEventBus);
+        // 创造栏已并入主页面「旮旯匠魂」：JVT 只往那边补物品，不再单独注册 itemGroup.jvt
+        // （见 galtctag#galtctab；JvtCreativeTabs 保留源码但不挂事件总线）
         // 贵族强化的阵营判定：不能靠 @Mod.EventBusSubscriber（那样没装 J村 也会被 Forge 加载本类），
         // 必须放在这道判断之后手动挂。
         MinecraftForge.EVENT_BUS.register(NobleFactionEvents.class);
+        // 莫厄箭（meror_bolt）：让 J村 把 galtc2:meror_shot 认成"莫厄伤害"。
+        // 依赖 J村 的事件类，所以只能在这道"已装 J村"的判断之后按需挂（registerEvents 内部再自查一次 ModList）。
+        MerorRangedModifier.registerEvents();
         LOGGER.info("[galtc2-jvt] 已启用 JV Tinkers 内容：联动合金 / 物品 / 流体 / 强化 / 创造栏。");
     }
 

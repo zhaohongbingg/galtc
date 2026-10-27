@@ -20,6 +20,12 @@
         "level": 1,
         "name": "galtc2:kin_bond"
       }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:moon_cleave",
+        "level": 1
+      }
     ]
   }
 }

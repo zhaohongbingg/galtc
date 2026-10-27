@@ -1,9 +1,11 @@
 package com.galtc2.modifiers;
 
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -24,6 +26,16 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * 改写：命中时记下目标的护甲与最大生命，并加到自己身上。
  * 每个目标的加成独立计时，满 60 秒或该目标死亡时失效。
+ * <p>
+ * 加成用 <b>transient</b> modifier（{@code addTransientModifier}）写在攻击者自己的
+ * {@code Attributes.ARMOR} / {@code Attributes.MAX_HEALTH} 上，不落盘：
+ * 「偷了谁、什么时候到期」只记在内存表 {@link #STOLEN} 里，如果属性本身写进存档，
+ * 服务端重启后表清了、永久加成还在，就再也回收不掉（这正是本类之前被报的 bug）。
+ * <p>
+ * 与星旅（starry_travel）不冲突：星旅武器侧 {@code StarryTravelModifier} 走
+ * {@code MELEE_DAMAGE} 钩子直接放大本次攻击伤害（不写任何属性、没有 UUID），
+ * 本类走 {@code MELEE_HIT} + 攻击者的护甲 / 生命上限属性（UUID 见下），
+ * 两者钩子、作用对象、UUID 全不同，同一件武器上可以同时生效、互不覆盖。
  */
 public class RewriteModifier extends Modifier implements MeleeHitModifierHook {
 
@@ -84,6 +96,16 @@ public class RewriteModifier extends Modifier implements MeleeHitModifierHook {
         if (entity.level().isClientSide()) return;
 
         UUID entityId = entity.getUUID();
+
+        // 旧存档兜底：0.x 版本用 addPermanentModifier 把 rewrite_armor / rewrite_health 写进了存档，
+        // 改成 transient 之后这些旧值不会自己消失（当时只有"再拿武器命中一次"才会被 updateBonus 摘掉）。
+        // 没有任何活跃偷取状态时身上还挂着这两个 UUID，就只可能是旧版残留 → 直接摘掉并 clamp 血量。
+        // 必须放在下面 stolen == null 的早退之前，否则永远走不到这一段。
+        // 只对 Player 做：旧版只可能把永久加成写到玩家身上。
+        if (entity instanceof Player && !STOLEN.containsKey(entityId) && clearLegacyBonus(entity)) {
+            clampHealth(entity);
+        }
+
         Map<UUID, Steal> stolen = STOLEN.get(entityId);
         if (stolen == null) return;
 
@@ -101,6 +123,38 @@ public class RewriteModifier extends Modifier implements MeleeHitModifierHook {
         }
     }
 
+    /**
+     * 摘掉身上挂着的 {@link #ARMOR_UUID} / {@link #HEALTH_UUID}（只摘确实存在的那一个）。
+     * <p>
+     * 只由 {@link #onLivingTick} 的旧存档兜底调用，且调用前已确认该实体<b>没有</b>活跃偷取状态
+     * （{@code !STOLEN.containsKey(uuid)}），所以不会误摘正常生效中的加成。
+     *
+     * @return 至少摘掉了一个才返回 true（调用方据此 clamp 血量）
+     */
+    private static boolean clearLegacyBonus(LivingEntity entity) {
+        boolean removed = removeIfPresent(entity, Attributes.ARMOR, ARMOR_UUID);
+        removed |= removeIfPresent(entity, Attributes.MAX_HEALTH, HEALTH_UUID);
+        return removed;
+    }
+
+    /** 指定属性上确实挂着这个 UUID 的 modifier 时才摘（{@code getModifier} 判空后再动） */
+    private static boolean removeIfPresent(LivingEntity entity, Attribute attribute, UUID uuid) {
+        AttributeInstance instance = entity.getAttribute(attribute);
+        if (instance == null || instance.getModifier(uuid) == null) {
+            return false;
+        }
+        instance.removeModifier(uuid);
+        return true;
+    }
+
+    /** 生命上限被摘掉后把当前血量 clamp 回上限（旧版 +生命上限会让存档里的血量停在旧上限附近） */
+    private static void clampHealth(LivingEntity entity) {
+        float max = entity.getMaxHealth();
+        if (entity.getHealth() > max) {
+            entity.setHealth(max);
+        }
+    }
+
     /** 攻击者身上是否还挂着本次的加成（死亡重生、被其它东西清掉属性时需要补回） */
     private static boolean hasBonus(LivingEntity attacker) {
         AttributeInstance armorAttr = attacker.getAttribute(Attributes.ARMOR);
@@ -109,6 +163,19 @@ public class RewriteModifier extends Modifier implements MeleeHitModifierHook {
                 && (healthAttr == null || healthAttr.getModifier(HEALTH_UUID) != null);
     }
 
+    /**
+     * 重算并写入攻击者身上的加成（唯一写属性的地方）。
+     * <p>
+     * <b>用 transient 而不是 permanent</b>：{@code addPermanentModifier} 的属性会写进实体存档，
+     * 而「偷了谁、什么时候到期」记在内存静态表 {@link #STOLEN} 里 —— 服务端重启后表是空的，
+     * 永久加成却还在，没有任何记录能把它收回去（玩家会永久多出护甲 / 生命上限，正是罚抄被报的 bug）。
+     * transient modifier 不落盘，重启 / 重登后自然消失，不会留脏数据；到期与目标死亡照旧由
+     * {@link #onLivingTick} / {@link #onLivingDeath} 收回去。
+     * <p>
+     * <b>先 {@code removeModifier(uuid)} 再 add</b>（与 {@link RewriteArmorModifier} 的 {@code apply} 一致）：
+     * 同一个 UUID 重复 add 时 {@code AttributeInstance} 会抛 {@code IllegalArgumentException}，
+     * 而重算 / 旧存档里残留的同 UUID 永久 modifier 都可能让这个 UUID 已经存在。
+     */
     private static void updateBonus(LivingEntity attacker) {
         Map<UUID, Steal> stolen = STOLEN.get(attacker.getUUID());
 
@@ -127,13 +194,13 @@ public class RewriteModifier extends Modifier implements MeleeHitModifierHook {
         if (armorAttr != null) {
             armorAttr.removeModifier(ARMOR_UUID);
             if (totalArmor > 0) {
-                armorAttr.addPermanentModifier(new AttributeModifier(ARMOR_UUID, "rewrite_armor", totalArmor, AttributeModifier.Operation.ADDITION));
+                armorAttr.addTransientModifier(new AttributeModifier(ARMOR_UUID, "rewrite_armor", totalArmor, AttributeModifier.Operation.ADDITION));
             }
         }
         if (healthAttr != null) {
             healthAttr.removeModifier(HEALTH_UUID);
             if (totalHealth > 0) {
-                healthAttr.addPermanentModifier(new AttributeModifier(HEALTH_UUID, "rewrite_health", totalHealth, AttributeModifier.Operation.ADDITION));
+                healthAttr.addTransientModifier(new AttributeModifier(HEALTH_UUID, "rewrite_health", totalHealth, AttributeModifier.Operation.ADDITION));
             }
         }
     }

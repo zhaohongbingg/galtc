@@ -1,8 +1,17 @@
 {
-  "default": [
-    {
-      "name": "galtc2:rewrite",
-      "level": 1
-    }
-  ]
+  "default": [],
+  "perStat": {
+    "tconstruct:melee_harvest": [
+      {
+        "name": "galtc2:rewrite",
+        "level": 1
+      }
+    ],
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:rewrite_armor",
+        "level": 1
+      }
+    ]
+  }
 }

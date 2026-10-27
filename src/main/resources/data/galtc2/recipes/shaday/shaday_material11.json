@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "galtc2:shaday_ingot"
+  },
+  "material": "galtc2:shaday",
+  "needed": 1,
+  "value": 1,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_dragon"
+    }
+  ]
+}

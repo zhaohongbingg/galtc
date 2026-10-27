@@ -1,0 +1,23 @@
+{
+  "default": [],
+  "perStat": {
+    "tconstruct:melee_harvest": [
+      {
+        "name": "galtc2:shaday",
+        "level": 1
+      }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:shaday_ranged",
+        "level": 1
+      }
+    ],
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:shaday_armor",
+        "level": 1
+      }
+    ]
+  }
+}

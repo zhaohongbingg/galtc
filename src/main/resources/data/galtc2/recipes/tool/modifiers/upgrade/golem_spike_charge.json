@@ -1,0 +1,31 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_bedrock_mobs_reborn"
+    }
+  ],
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "item": "aether_bedrock_mobs_reborn:crystalitekeystone"
+    },
+    {
+      "item": "aether_bedrock_mobs_reborn:crystalite"
+    },
+    {
+      "item": "aether_bedrock_mobs_reborn:crystalite"
+    },
+    {
+      "item": "aether_bedrock_mobs_reborn:crystalite"
+    }
+  ],
+  "level": {
+    "max": 1
+  },
+  "result": "galtc2:golem_spike_charge",
+  "tools": {
+    "tag": "tconstruct:modifiable/armor"
+  }
+}

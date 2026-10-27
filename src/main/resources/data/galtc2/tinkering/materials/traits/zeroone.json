@@ -1,14 +1,21 @@
 {
-  "default": [
-    {
-      "name": "galtc2:eightstrike",
-      "level": 1
-    }
-  ],
+  "default": [],
   "perStat": {
+    "tconstruct:melee_harvest": [
+      {
+        "name": "galtc2:eightstrike",
+        "level": 1
+      }
+    ],
     "tconstruct:armor": [
       {
         "name": "galtc2:zeroone_armor",
+        "level": 1
+      }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:eightstrike_ranged",
         "level": 1
       }
     ]

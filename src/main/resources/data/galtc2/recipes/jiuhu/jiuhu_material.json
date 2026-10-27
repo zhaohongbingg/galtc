@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "galtc2:jiuhu_ingot"
+  },
+  "material": "galtc2:jiuhu",
+  "needed": 1,
+  "value": 1,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "touhou_little_maid"
+    }
+  ]
+}

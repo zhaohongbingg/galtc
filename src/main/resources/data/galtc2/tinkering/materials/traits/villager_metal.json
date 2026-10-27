@@ -12,6 +12,12 @@
         "name": "galtc2:villager_metal_melee",
         "level": 1
       }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:villager_metal_melee",
+        "level": 1
+      }
     ]
   }
 }

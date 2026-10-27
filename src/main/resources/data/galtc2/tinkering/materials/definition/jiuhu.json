@@ -1,0 +1,10 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "touhou_little_maid"
+  },
+  "craftable": true,
+  "tier": 4,
+  "sortOrder": 70,
+  "hidden": false
+}

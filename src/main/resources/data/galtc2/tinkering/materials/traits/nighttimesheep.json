@@ -11,6 +11,12 @@
         "name": "galtc2:nighttimesheep_armor",
         "level": 1
       }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:nighttimesheep",
+        "level": 1
+      }
     ]
   }
 }

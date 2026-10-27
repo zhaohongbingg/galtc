@@ -1,0 +1,45 @@
+{
+  "icon": {
+    "item": "galtc2:gal_helmet"
+  },
+  "input_slots": [
+    {
+      "filter": {
+        "item": "tconstruct:helmet_plating"
+      },
+      "icon": "tconstruct:helmet_plating",
+      "translation_key": "item.tconstruct.helmet_plating",
+      "x": 44,
+      "y": 29
+    },
+    {
+      "filter": {
+        "item": "tconstruct:helmet_plating"
+      },
+      "icon": "tconstruct:helmet_plating",
+      "translation_key": "item.tconstruct.helmet_plating",
+      "x": 25,
+      "y": 20
+    },
+    {
+      "filter": {
+        "item": "tconstruct:maille"
+      },
+      "icon": "tconstruct:maille",
+      "translation_key": "item.tconstruct.maille",
+      "x": 21,
+      "y": 52
+    },
+    {
+      "filter": {
+        "item": "tconstruct:maille"
+      },
+      "icon": "tconstruct:maille",
+      "translation_key": "item.tconstruct.maille",
+      "x": 50,
+      "y": 48
+    }
+  ],
+  "sortIndex": 16,
+  "translation_key": "item.galtc2.gal_helmet"
+}

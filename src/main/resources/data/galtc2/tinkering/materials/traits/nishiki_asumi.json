@@ -11,6 +11,12 @@
         "name": "galtc2:meatbun",
         "level": 1
       }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:vtb",
+        "level": 1
+      }
     ]
   }
 }

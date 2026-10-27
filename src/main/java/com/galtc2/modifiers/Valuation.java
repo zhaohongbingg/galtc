@@ -5,6 +5,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -14,6 +15,7 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
+import slimeknights.tconstruct.library.tools.helper.ToolAttackUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
@@ -118,7 +120,20 @@ public class Valuation extends BaseModifiers{
                 float multiplier = minMultiplier + RANDOM.nextFloat() * (maxMultiplier - minMultiplier);
                 float extraDamage = baseDamage * multiplier;
 
-                target.hurt(attacker.damageSources().playerAttack(attacker instanceof Player ? (Player)attacker : null), extraDamage);
+                // 伤害归属：attacker 是玩家时用 playerAttack（击杀统计/仇恨正常）；
+                // 不是玩家（女仆/其它模组生物射出的弓）时用 arrow 口径把来源挂到箭矢上，
+                // 不能像旧代码那样传 null（playerAttack(null) 会丢掉归属）。
+                DamageSource extraSource = attacker instanceof Player player
+                        ? attacker.damageSources().playerAttack(player)
+                        : attacker.damageSources().arrow(arrow, attacker);
+
+                // 走匠魂的二次伤害入口：它会在结算前把 target.invulnerableTime 临时置 0、
+                // 结算后恢复成旧值（ToolAttackUtil#attackEntitySecondary 内的注释就是
+                // "reset to the old time so bows work right"）。
+                // 旧写法直接 target.hurt(...) 会把 invulnerableTime 留成 20，
+                // 紧接着原版箭矢自己的伤害就会因为无敌帧被吞掉 —— 表现为「额外伤害替代了箭伤」。
+                // noKnockback=true：额外伤害不再叠一次击退。
+                ToolAttackUtil.attackEntitySecondary(extraSource, extraDamage, target, target, true);
 
                 // 视觉效果
                 if (target.level() instanceof ServerLevel serverLevel) {

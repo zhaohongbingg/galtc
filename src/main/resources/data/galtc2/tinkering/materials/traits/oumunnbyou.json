@@ -1,8 +1,23 @@
 {
-  "default": [
-    {
-      "name": "galtc2:oumunnbyou",
-      "level": 1
-    }
-  ]
+  "default": [],
+  "perStat": {
+    "tconstruct:melee_harvest": [
+      {
+        "name": "galtc2:oumunnbyou",
+        "level": 1
+      }
+    ],
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:oumnnbyou_armor",
+        "level": 1
+      }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:oumunnbyou",
+        "level": 1
+      }
+    ]
+  }
 }

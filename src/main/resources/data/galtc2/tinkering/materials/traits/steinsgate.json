@@ -1,8 +1,11 @@
 {
-  "default": [
-    {
-      "name": "galtc2:steinsgate",
-      "level": 1
-    }
-  ]
+  "default": [],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "galtc2:steinsgate",
+        "level": 1
+      }
+    ]
+  }
 }

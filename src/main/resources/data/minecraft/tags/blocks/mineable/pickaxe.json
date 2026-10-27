@@ -40,6 +40,7 @@
     "galtc2:small_gal_core_bud",
     "galtc2:medium_gal_core_bud",
     "galtc2:large_gal_core_bud",
-    "galtc2:budding_gal_core"
+    "galtc2:budding_gal_core",
+    "galtc2:shaday_block"
   ]
 }

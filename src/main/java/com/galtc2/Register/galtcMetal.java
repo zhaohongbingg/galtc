@@ -161,6 +161,9 @@ public class galtcMetal {
     /** 天津罪（灰紫；禁飞材料，见 TianjinZuiModifier） */
     public static final MetalItemObject tianjin_zui =
             BLOCKS.registerMetal("tianjin_zui", metalBuilder(MapColor.COLOR_PURPLE), BLOCK_ITEM, ITEM_PROPS);
+    /** 阴影（海军蓝 + 琥珀金；取自天境基石生物重制 阴影套，见 ShadayModifier / ShadayArmor） */
+    public static final MetalItemObject shaday =
+            BLOCKS.registerMetal("shaday", metalBuilder(MapColor.COLOR_BLUE), BLOCK_ITEM, ITEM_PROPS);
 
     // 注：万花镜(kaleidoscope) 不在这里。它不是匠魂材料，只作强化材料使用，
     // 因此保持普通物品注册（见 galtcItem#kaleidoscope），没有块与粒。
@@ -175,7 +178,7 @@ public class galtcMetal {
             steinsgate, azarashi, nighttimesheep, oumunnbyou, kisaragikurenai, blacklily,
             muramasa, shochou, izumi_hiyori, nishiki_asumi, qienidian, rewrite,
             badwoman, galaxy_railroad, ciallo, tsukiyashiro_kisaki,
-            saya, shoujing, euthanasia, qingfeng, morgana, tianjin_zui
+            saya, shoujing, euthanasia, qingfeng, morgana, tianjin_zui, shaday
     );
 
     public static void register() {

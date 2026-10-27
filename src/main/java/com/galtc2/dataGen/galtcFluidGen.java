@@ -54,6 +54,9 @@ public class galtcFluidGen extends AbstractFluidTextureProvider {
 
         this.molten(galtc2Fluid.molten_tianjin_zui, 0xFF9E8A9D);
 
+        // 阴影（天境基石生物重制 阴影套；海军蓝 + 琥珀金）
+        this.molten(galtc2Fluid.molten_shaday, 0xFF2A4A82);
+
         // J村 联动材料的流体只在安装了 J村 时才注册，因此这里也要判断：
         // 未安装时它们的 FluidType 不在注册表里，直接取会抛异常。
         // 对应的 4 个 mantle/fluid_texture/molten_*.json 已随代码提交，装了 J村 再跑 runData 会写出同样内容。

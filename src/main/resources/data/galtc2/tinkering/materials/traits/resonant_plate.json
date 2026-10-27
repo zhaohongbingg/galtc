@@ -12,6 +12,12 @@
         "level": 1,
         "name": "galtc2:echo_slam"
       }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:echo_slam",
+        "level": 1
+      }
     ]
   }
 }

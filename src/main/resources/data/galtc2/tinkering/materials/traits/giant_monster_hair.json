@@ -12,6 +12,12 @@
         "level": 1,
         "name": "galtc2:giant_monster_hair_melee"
       }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:giant_monster_hair_melee",
+        "level": 1
+      }
     ]
   }
 }

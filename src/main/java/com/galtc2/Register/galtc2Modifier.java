@@ -3,6 +3,7 @@ package com.galtc2.Register;
 import com.galtc2.Galtc2;
 import com.galtc2.modifiers.*;
 import com.galtc2.modifiers.armor.*;
+import com.galtc2.jvt.modifiers.MerorRangedModifier;
 
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
@@ -69,6 +70,10 @@ public class galtc2Modifier {
     public static final StaticModifier<QienModifier> qien = MODIFIERS.register("qien", QienModifier::new);
     public static final StaticModifier<YidianModifier> yidian = MODIFIERS.register("yidian", YidianModifier::new);
     public static final StaticModifier<RewriteModifier> rewrite = MODIFIERS.register("rewrite", RewriteModifier::new);
+    /** 改写（护甲侧）：被打时把攻击者的护甲/生命偷过来。 */
+    public static final StaticModifier<RewriteArmorModifier> rewrite_armor = MODIFIERS.register("rewrite_armor", RewriteArmorModifier::new);
+    /** 樱花印记（护甲侧）：被打时把樱花印记叠给攻击者。 */
+    public static final StaticModifier<OumnnbyouArmorModifier> oumnnbyou_armor = MODIFIERS.register("oumnnbyou_armor", OumnnbyouArmorModifier::new);
     public static final StaticModifier<HeartWallModifier> heartwall = MODIFIERS.register("heartwall", HeartWallModifier::new);
     public static final StaticModifier<ZouLeZouLeModifier> zoulezoule = MODIFIERS.register("zoulezoule", ZouLeZouLeModifier::new);
     // 卡缪斯 / 莫尔加那：攻防各自独立成条（原 camus / morgana 保留注册，供旧存档里的工具继续生效）
@@ -79,6 +84,9 @@ public class galtc2Modifier {
     public static final StaticModifier<StarryTravelModifier> starry_travel = MODIFIERS.register("starry_travel", StarryTravelModifier::new);
     public static final StaticModifier<StarryTravelArmorModifier> starry_travel_armor = MODIFIERS.register("starry_travel_armor", StarryTravelArmorModifier::new);
     public static final StaticModifier<SuperLuckyModifier> super_lucky = MODIFIERS.register("super_lucky", SuperLuckyModifier::new);
+
+    /** 你怎么这么熟练：每使用 100 次 +1% 全属性（能力槽）。 */
+    public static final StaticModifier<SkilledModifier> skilled = MODIFIERS.register("skilled", SkilledModifier::new);
 
 
     public static final StaticModifier<CialloModifier> ciallo = MODIFIERS.register("ciallo", CialloModifier::new);
@@ -122,6 +130,32 @@ public class galtc2Modifier {
     public static final StaticModifier<BlackLilyArmor> blacklily_armor = MODIFIERS.register("blacklily_armor", BlackLilyArmor::new);
     public static final StaticModifier<ShochouArmor> shochou_armor = MODIFIERS.register("shochou_armor", ShochouArmor::new);
     public static final StaticModifier<CialloArmor> ciallo_armor = MODIFIERS.register("ciallo_armor", CialloArmor::new);
+
+    // 阴影（取自天境基石生物重制 阴影套）：工具/远程/护甲三条龙系特性
+    public static final StaticModifier<ShadayModifier> shaday = MODIFIERS.register("shaday", ShadayModifier::new);
+    public static final StaticModifier<ShadayRangedModifier> shaday_ranged =
+            MODIFIERS.register("shaday_ranged", ShadayRangedModifier::new);
+    public static final StaticModifier<ShadayArmor> shaday_armor = MODIFIERS.register("shaday_armor", ShadayArmor::new);
+
+    /** 苍彼：近战命中把目标向上抛起约 64 格，之后自然下坠（只认手持武器，护甲不触发）。 */
+    public static final StaticModifier<AosoraLaunchModifier> aosora = MODIFIERS.register("aosora", AosoraLaunchModifier::new);
+
+    /* ---------------------------------------------------------------- 远程（弓/弩）特性 */
+
+    /**
+     * 零八式·乱射（zeroone 远程）：一次射击 8 支箭，每支 12.5% 箭伤（8 支合计 ≈ 1 支），只消耗 1 支弹药。
+     * 实现在 {@link com.galtc2.modifiers.EightStrikeRangedModifier}（PROJECTILE_LAUNCH 里补射）。
+     */
+    public static final StaticModifier<EightStrikeRangedModifier> eightstrike_ranged =
+            MODIFIERS.register("eightstrike_ranged", EightStrikeRangedModifier::new);
+
+    /**
+     * 莫厄箭（莫厄 / 精炼莫厄 远程）：箭矢命中追加 箭矢基础伤害 × 50% × 等级（1 级 +50%、2 级 +100%），
+     * 伤害类型 {@code galtc2:meror_shot}，并由 J村 事件认作莫厄伤害。
+     * 实现在 {@link MerorRangedModifier}（PROJECTILE_HIT，每支箭只结算一次）。
+     */
+    public static final StaticModifier<MerorRangedModifier> meror_bolt =
+            MODIFIERS.register("meror_bolt", MerorRangedModifier::new);
 
    public static void register(){}
 

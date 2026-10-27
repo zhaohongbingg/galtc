@@ -121,3 +121,22 @@ mandatory = false
 versionRange = "[1.0.0,)"
 ordering = "AFTER"
 side = "BOTH"
+
+# 天境基石生物重制(Aether Bedrock Mobs Reborn) 软联动：只做顺序约束，未安装时 galtc2 照常运行，
+# 娜迦震地 / 晶笼 / 灯灵天剑 三个强化与配方全部跳过（见 com.galtc2.compat.aetherbedrock.AetherBedrockCompat#init）。
+# 注意：它自带 geckolib + aether_dragon 两个强制前置，都不是 galtc2 的前置。
+[[dependencies.${ mod_id }]]
+modId = "aether_bedrock_mobs_reborn"
+mandatory = false
+versionRange = "[1.9.1,)"
+ordering = "AFTER"
+side = "BOTH"
+
+# 天境巨龙(Aether Dragon)：上一条的强制前置，同时是「阴影护甲 / 天境龙笛 / 极光石」的注册者。
+# 只做顺序约束；配方默认只引用 Boss 包（aether_bedrock_mobs_reborn）的物品，避免两包同名方块混用。
+[[dependencies.${ mod_id }]]
+modId = "aether_dragon"
+mandatory = false
+versionRange = "[1.4.1,)"
+ordering = "AFTER"
+side = "BOTH"

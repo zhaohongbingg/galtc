@@ -131,3 +131,14 @@ maven-repo/
 # Python caches (tools/autojs)
 __pycache__/
 *.pyc
+
+# materials.xlsx 每次同步脚本都会留的备份（不进仓库）
+materials.xlsx.bak-*
+
+# 仓库根目录的 jar 解包残留（META-INF/ assets/ data/ pack.mcmeta 等，源文件在 src/main/resources 下）
+/META-INF/
+/assets/
+/data/
+/pack.mcmeta
+/logo.png
+/guigraphics.txt

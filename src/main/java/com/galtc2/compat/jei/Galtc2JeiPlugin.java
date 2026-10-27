@@ -2,6 +2,7 @@ package com.galtc2.compat.jei;
 
 import com.galtc2.Galtc2;
 import com.galtc2.Register.galtcBlock;
+import com.galtc2.Register.galtcItem;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaTypes;
@@ -36,6 +37,15 @@ public class Galtc2JeiPlugin implements IModPlugin {
                 VanillaTypes.ITEM_STACK,
                 Component.literal("Gal 母岩：对相邻空位随机长出晶芽（小→中→大→Gal晶簇）"),
                 Component.literal("自然生成在 Gal 晶洞里（地下 y=-58~30，约每24区块一个）")
+        );
+
+        // 酒狐锭：酒狐干活时攒下，放进她自己的背包
+        registration.addIngredientInfo(
+                new ItemStack(galtcItem.jiuhu_ingot.get()),
+                VanillaTypes.ITEM_STACK,
+                Component.translatable("jei.galtc2.jiuhu_ingot.1"),
+                Component.translatable("jei.galtc2.jiuhu_ingot.2"),
+                Component.translatable("jei.galtc2.jiuhu_ingot.3")
         );
     }
 }

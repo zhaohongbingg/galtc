@@ -11,6 +11,12 @@
         "name": "galtc2:yidian",
         "level": 1
       }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:qien",
+        "level": 1
+      }
     ]
   }
 }

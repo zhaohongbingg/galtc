@@ -16,15 +16,14 @@
         "level": 1
       }
     ],
-    "tconstruct:melee_harvest": [
-      {
-        "name": "galtc2:camus_melee",
-        "level": 1
-      }
-    ],
+    "tconstruct:melee_harvest": [],
     "tconstruct:head": [
       {
         "name": "galtc2:starry_travel",
+        "level": 1
+      },
+      {
+        "name": "galtc2:camus_melee",
         "level": 1
       }
     ],
@@ -34,9 +33,13 @@
         "level": 1
       }
     ],
-    "tconstruct:grip": [
+    "tconstruct:ranged": [
       {
         "name": "galtc2:starry_travel",
+        "level": 1
+      },
+      {
+        "name": "galtc2:camus_melee",
         "level": 1
       }
     ]

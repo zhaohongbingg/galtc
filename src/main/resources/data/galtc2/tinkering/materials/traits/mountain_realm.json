@@ -4,5 +4,13 @@
       "level": 1,
       "name": "galtc2:mountain_realm"
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:mountain_realm",
+        "level": 1
+      }
+    ]
+  }
 }

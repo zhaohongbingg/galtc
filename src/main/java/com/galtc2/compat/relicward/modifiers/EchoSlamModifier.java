@@ -23,7 +23,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.library.modifiers.Modifier;
@@ -33,8 +35,11 @@ import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHoo
 import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InventoryTickModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.ranged.ProjectileHitModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
+import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -93,7 +98,8 @@ import java.util.Locale;
  * </ul>
  */
 public class EchoSlamModifier extends Modifier
-        implements GeneralInteractionModifierHook, TooltipModifierHook, InventoryTickModifierHook {
+        implements GeneralInteractionModifierHook, TooltipModifierHook, InventoryTickModifierHook,
+        ProjectileHitModifierHook {
 
     /** 最长蓄力（tick）：9 秒 */
     private static final int MAX_CHARGE = 180;
@@ -120,7 +126,28 @@ public class EchoSlamModifier extends Modifier
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
-        hookBuilder.addHook(this, ModifierHooks.GENERAL_INTERACT, ModifierHooks.TOOLTIP, ModifierHooks.INVENTORY_TICK);
+        hookBuilder.addHook(this, ModifierHooks.GENERAL_INTERACT, ModifierHooks.TOOLTIP, ModifierHooks.INVENTORY_TICK,
+                ModifierHooks.PROJECTILE_HIT);
+    }
+
+    /**
+     * 远程：箭矢命中时把「震击」的两条效果打上去 —— <b>裂甲 5 秒 + 0.7 击退</b>，
+     * 与右键落锤命中同一套数值/写法（照 {@code ArmorFractureModifier#onProjectileHitTarget}）。
+     * <p>箭矢本身伤害由原版结算，这里不调 {@code target.hurt()}，只补效果与击退。
+     */
+    @Override
+    public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier,
+                                         Projectile projectile, EntityHitResult hit,
+                                         @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
+        if (attacker == null || target == null || !target.isAlive()) {
+            return false;
+        }
+        if (projectile.level().isClientSide() || modifier.getEffectiveLevel() <= 0) {
+            return false;
+        }
+        ArmorFracture.apply(target, FRACTURE_TICKS);
+        target.knockback(KNOCKBACK, attacker.getX() - target.getX(), attacker.getZ() - target.getZ());
+        return false;
     }
 
     /** 工具提示里的上限提示：蓄力最多 [{@value #MAX_CHARGE} / 20] 秒，到点自动落锤 */

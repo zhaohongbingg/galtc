@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "amount": 90,
+    "fluid": "galtc2:molten_shaday"
+  },
+  "output": "galtc2:shaday",
+  "temperature": 1500,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_dragon"
+    }
+  ]
+}

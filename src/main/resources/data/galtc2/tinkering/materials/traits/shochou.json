@@ -11,6 +11,12 @@
         "name": "galtc2:shochou_armor",
         "level": 1
       }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "galtc2:shochou",
+        "level": 1
+      }
     ]
   }
 }
